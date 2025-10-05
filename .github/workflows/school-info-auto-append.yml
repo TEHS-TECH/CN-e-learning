@@ -113,8 +113,8 @@ jobs:
       - name: 提交更改
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: '自动追加学校信息到表格'
-          file_pattern: 'docs/school/index.md'
+          commit_message: '自动追加学校信息到表格及新建详情文件'
+          file_pattern: 'docs/school/index.md docs/school/list/*.md'
           commit_user_name: 'github-actions[bot]'
           commit_user_email: 'github-actions[bot]@users.noreply.github.com'
           commit_author: 'github-actions[bot] <github-actions[bot]@users.noreply.github.com>'
