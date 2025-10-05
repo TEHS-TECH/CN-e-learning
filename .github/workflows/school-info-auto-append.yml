@@ -81,6 +81,34 @@ jobs:
             } catch (error) {
               core.setFailed(`处理文件时出错: ${error.message}`);
             }
+              
+      - name: 新建学校详情文件
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            const issue = context.payload.issue;
+            // 字段提取函数，与前面保持一致
+            function extractField(body, field) {
+              const reg = new RegExp(`### ${field}\\s*([\\s\\S]*?)(?=\\n###|$)`, 'm');
+              const match = body.match(reg);
+              if (!match) return '';
+              return match[1].split('\n').map(s => s.trim()).filter(Boolean)[0] || '';
+            }
+            const name = extractField(issue.body, '学校名称');
+            if (!name) {
+              core.setFailed('未能提取学校名称，无法创建详情文件');
+              return;
+            }
+            const fileDir = 'docs/school/list';
+            const filePath = path.join(fileDir, `${name}.md`);
+            if (!fs.existsSync(fileDir)) {
+              fs.mkdirSync(fileDir, { recursive: true });
+            }
+            const content = `# ${name}\n\n${issue.body}`;
+            fs.writeFileSync(filePath, content, 'utf8');
 
       - name: 提交更改
         uses: stefanzweifel/git-auto-commit-action@v5
