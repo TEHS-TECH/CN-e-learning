@@ -35,10 +35,16 @@ jobs:
               return;
             }
             
-            // 解析学校信息字段
-            const location = issue.body.match(/school_location[:：]\s*(.+)/)?.[1]?.trim() || '';
-            const type = issue.body.match(/school_type[:：]\s*(.+)/)?.[1]?.trim() || '';
-            const name = issue.body.match(/school_name[:：]\s*(.+)/)?.[1]?.trim() || '';
+            // 解析学校信息字段（适配 markdown 标题格式）
+            const name = issue.body.match(/### 学校名称\s*([\s\S]*?)\s*###/m)?.[1]?.trim()
+              || issue.body.match(/### 学校名称\s*([\s\S]*)/m)?.[1]?.trim()
+              || '';
+            const location = issue.body.match(/### 地区\s*([\s\S]*?)\s*###/m)?.[1]?.trim()
+              || issue.body.match(/### 地区\s*([\s\S]*)/m)?.[1]?.trim()
+              || '';
+            const type = issue.body.match(/### 学校类型\s*([\s\S]*?)\s*###/m)?.[1]?.trim()
+              || issue.body.match(/### 学校类型\s*([\s\S]*)/m)?.[1]?.trim()
+              || '';
             
             // 验证必要字段
             if (!location || !type || !name) {
