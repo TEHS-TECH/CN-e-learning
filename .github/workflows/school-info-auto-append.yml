@@ -68,13 +68,13 @@ jobs:
                 return;
               }
               
-              // 找到表格最后一行插入
-              const lastRowIdx = content.lastIndexOf('\n|');
-              const insertIdx = lastRowIdx === -1 ? content.length : lastRowIdx;
+              // 确保文件以换行结尾
+              if (!content.endsWith('\n')) {
+                content += '\n';
+              }
+              // 直接在文件末尾追加新行
               const newRow = `| ${location} | ${type} | [${name}](/school/list/${name}) |\n`;
-              
-              // 插入到表格末尾
-              content = content.slice(0, insertIdx) + newRow + content.slice(insertIdx);
+              content += newRow;
               fs.writeFileSync(filePath, content, 'utf8');
               
               core.setOutput('result', '学校信息添加成功');
