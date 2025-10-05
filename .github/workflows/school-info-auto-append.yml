@@ -8,7 +8,7 @@ on:
 # 设置必要的权限
 permissions:
   contents: write
-  issues: read
+  issues: write
   pull-requests: write
 
 jobs:
@@ -35,10 +35,17 @@ jobs:
               return;
             }
             
-            // 解析学校信息字段
-            const location = issue.body.match(/school_location[:：]\s*(.+)/)?.[1]?.trim() || '';
-            const type = issue.body.match(/school_type[:：]\s*(.+)/)?.[1]?.trim() || '';
-            const name = issue.body.match(/school_name[:：]\s*(.+)/)?.[1]?.trim() || '';
+            // 只取每个字段下第一个非空行
+            function extractField(body, field) {
+              const reg = new RegExp(`### ${field}\\s*([\\s\\S]*?)(?=\\n###|$)`, 'm');
+              const match = body.match(reg);
+              if (!match) return '';
+              return match[1].split('\n').map(s => s.trim()).filter(Boolean)[0] || '';
+            }
+
+            const name = extractField(issue.body, '学校名称');
+            const location = extractField(issue.body, '地区');
+            const type = extractField(issue.body, '学校类型');
             
             // 验证必要字段
             if (!location || !type || !name) {
@@ -61,25 +68,87 @@ jobs:
                 return;
               }
               
-              // 找到表格最后一行插入
-              const lastRowIdx = content.lastIndexOf('\n|');
-              const insertIdx = lastRowIdx === -1 ? content.length : lastRowIdx;
+              // 确保文件以换行结尾
+              if (!content.endsWith('\n')) {
+                content += '\n';
+              }
+              // 直接在文件末尾追加新行
               const newRow = `| ${location} | ${type} | [${name}](/school/list/${name}) |\n`;
-              
-              // 插入到表格末尾
-              content = content.slice(0, insertIdx) + newRow + content.slice(insertIdx);
+              content += newRow;
               fs.writeFileSync(filePath, content, 'utf8');
               
               core.setOutput('result', '学校信息添加成功');
             } catch (error) {
               core.setFailed(`处理文件时出错: ${error.message}`);
             }
+              
+      - name: 新建学校详情文件
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            const issue = context.payload.issue;
+            // 字段提取函数，与前面保持一致
+            function extractField(body, field) {
+              const reg = new RegExp(`### ${field}\\s*([\\s\\S]*?)(?=\\n###|$)`, 'm');
+              const match = body.match(reg);
+              if (!match) return '';
+              return match[1].split('\n').map(s => s.trim()).filter(Boolean)[0] || '';
+            }
+            const name = extractField(issue.body, '学校名称');
+            if (!name) {
+              core.setFailed('未能提取学校名称，无法创建详情文件');
+              return;
+            }
+            const fileDir = 'docs/school/list';
+            const filePath = path.join(fileDir, `${name}.md`);
+            if (!fs.existsSync(fileDir)) {
+              fs.mkdirSync(fileDir, { recursive: true });
+            }
+            const content = `# ${name}\n\n${issue.body}`;
+            fs.writeFileSync(filePath, content, 'utf8');
 
       - name: 提交更改
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: '自动追加学校信息到表格'
-          file_pattern: 'docs/school/index.md'
+          commit_message: '自动追加学校信息到表格及新建详情文件'
+          file_pattern: 'docs/school/index.md docs/school/list/*.md'
           commit_user_name: 'github-actions[bot]'
           commit_user_email: 'github-actions[bot]@users.noreply.github.com'
           commit_author: 'github-actions[bot] <github-actions[bot]@users.noreply.github.com>'
+
+      - name: 更新标签并关闭 Issue
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const issue_number = context.payload.issue.number;
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            // 添加“添加完成”标签
+            await github.rest.issues.addLabels({
+              owner,
+              repo,
+              issue_number,
+              labels: ['添加完成']
+            });
+            // 移除“等待添加”标签（如果有）
+            try {
+              await github.rest.issues.removeLabel({
+                owner,
+                repo,
+                issue_number,
+                name: '等待添加'
+              });
+            } catch (e) {
+              // 如果没有该标签则忽略
+            }
+            // 关闭 issue
+            await github.rest.issues.update({
+              owner,
+              repo,
+              issue_number,
+              state: 'closed'
+            });
