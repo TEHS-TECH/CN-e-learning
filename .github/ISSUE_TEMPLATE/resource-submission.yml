@@ -46,3 +46,5 @@ body:
     attributes:
       label: 备注
       description: 需要备注的其他事项
+    validations:
+      required: false
