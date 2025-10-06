@@ -37,7 +37,7 @@ export default defineConfig({
   themeConfig: {
     logo: '/logo.png',
     nav: [
-      { text: '<i class="fa-solid fa-book"></i> 指南', link: '/guide/before-starting' },
+      { text: '<i class="fa-solid fa-book"></i> 指南', link: '/guide/before-starting.md' },
       { text: '<i class="fa-solid fa-question-circle"></i> 常见问题', link: '/faq/the-soft-keyboard-cannot-type' },
       { text: '<i class="fa-solid fa-school"></i> 多校联盟', link: '/school' },
       { text: '<i class="fa-solid fa-info-circle"></i> 关于', link: '/about' },
