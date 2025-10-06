@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitepress'
 import mdItCustomAttrs from 'markdown-it-custom-attrs'
+import { generateSidebar } from 'vitepress-sidebar';
 
 export default defineConfig({
   title: '电教委员指南',
@@ -41,35 +42,23 @@ export default defineConfig({
       { text: '<i class="fa-solid fa-school"></i> 多校联盟', link: '/school' },
       { text: '<i class="fa-solid fa-question-circle"></i> 常见问题', link: '/faq/the-soft-keyboard-cannot-type' }
     ],
-    sidebar: [
-      { text: '关于', link: '/about' },
-      { text: '友情链接', link: '/links' },
-      { text: '多校联盟', link: '/school' },
-      {
-        text: '指南',
-        collapsed: false,
-        items: [
-          { text: '前言', link: '/guide/before-starting'},
-	      { text: '在Office中启用flash内容', link: '/guide/how-to-enable-flash-contents-in-microsoft-office' },
-          { text: '善用任务管理器', link: '/guide/task-manager' }
-        ]
-      }, 
-      {
-        text: '常见问题',
-        collapsed: false,
-        items: [
-          { text: '电脑软键盘无法输入字符', link: '/faq/the-soft-keyboard-cannot-type' },
-          { text: 'Windows蓝屏错误代码', link: '/faq/bugcheck-codes' }
-        ]
-      },
-	  {
-        text: '资源汇总',
-        collapsed: false,
-        items: [
-          { text: '教学一体机/交互白板的触摸校准/触摸驱动', link: '/guide/Common-Touch-Driver-Summaries-for-All-in-One-Teaching-Displays' }
-        ]
-      }
-    ],
+    // 侧边栏配置
+    sidebar: generateSidebar({
+      /*
+       * For detailed instructions, see the links below:
+       * https://vitepress-sidebar.cdget.com/zhHans/guide/options
+       */
+      documentRootPath: '/docs',
+      useTitleFromFileHeading: true,
+      useFolderTitleFromIndexFile: true,
+      useFolderLinkFromIndexFile: true,
+      collapsed: true,
+      collapseDepth: 2,
+      sortFolderTo: 'top',
+      sortMenusByFrontmatterOrder: true,
+      manualSortFileNameByPriority: ['guide', 'faq', 'school'],
+      excludeByGlobPattern: ['school/list/'],
+    }),
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/TEHS-TECH/CN-e-learning' },
