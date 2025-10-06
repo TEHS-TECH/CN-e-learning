@@ -50,8 +50,9 @@ export default defineConfig({
         collapsed: false,
         items: [
           { text: '前言', link: '/guide/before-starting'},
-	      { text: '在Office中启用flash内容', link: '/guide/how-to-enable-flash-contents-in-microsoft-office' },
-          { text: '善用任务管理器', link: '/guide/task-manager' }
+          { text: '如何正确打开或关闭电脑', link: '/faq/correctly-turn-on-and-off-the-computer' },
+          { text: '善用任务管理器', link: '/guide/task-manager' },
+	        { text: '在Office中启用flash内容', link: '/guide/how-to-enable-flash-contents-in-microsoft-office' }
         ]
       }, 
       {
@@ -59,7 +60,8 @@ export default defineConfig({
         collapsed: false,
         items: [
           { text: '电脑软键盘无法输入字符', link: '/faq/the-soft-keyboard-cannot-type' },
-          { text: 'Windows蓝屏错误代码', link: '/faq/bugcheck-codes' }
+          { text: 'Windows蓝屏错误代码', link: '/faq/bugcheck-codes' },
+          { text: '修复Microsoft Office无法正常打开的问题', link: '/faq/How-to-fix-MS_Office_Startup' }
         ]
       },
 	  {
