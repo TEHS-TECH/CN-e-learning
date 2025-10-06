@@ -7,7 +7,6 @@ import Layout from './components/Layout.vue'
 import BilibiliVideo from './components/BilibiliVideo.vue'
 import Linkcard from './components/Linkcard.vue'
 import ArticleMetadata from './components/ArticleMetadata.vue'
-import GitHubCard from './components/GitHubCard.vue'
 import HomeUnderline from './components/HomeUnderline.vue'
 import busuanzi from 'busuanzi.pure.js'
 import './style.css'
@@ -20,7 +19,6 @@ export default {
   enhanceApp({ app, router, siteData }) {
     app.component('BilibiliVideo', BilibiliVideo);
     app.component('Linkcard' , Linkcard);
-    app.component('GitHubCard' , GitHubCard)
     app.component('HomeUnderline' , HomeUnderline)
     app.component('ArticleMetadata' , ArticleMetadata)
 

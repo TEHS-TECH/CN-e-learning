@@ -5,9 +5,6 @@
       <!-- 在这里添加 Twikoo 评论组件 -->
       <Twikoo />
     </template>
-    <template #layout-bottom>
-      <Footer />
-    </template>
     <template #aside-top>
       <bsz />
     </template>
@@ -25,7 +22,6 @@ import Layout from 'vitepress/dist/client/theme-default/Layout.vue'
 import Twikoo from './Twikoo.vue'
 import bsz from "./bsz.vue";
 import backtotop from "./backtotop.vue";
-import Footer from './Footer.vue';
 import Ad from './Ad.vue';
 </script>
 

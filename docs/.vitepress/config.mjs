@@ -82,6 +82,11 @@ export default defineConfig({
       }
     ],
 
+    footer: {
+      message: '<span style="display: inline-flex; align-items: center; gap: 4px;"><img src="https://i.theojs.cn/logo/miit.webp" alt="miit" width="14" height="14" style="vertical-align: middle;" /> <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">津ICP备2025035356号 - 10</a></span> | <span style="display: inline-flex; align-items: center; gap: 4px;"><img src="https://forum.smart-teach.cn/assets/favicon-v4ksoaxf.png" alt="stcn" width="14" height="14" style="vertical-align: middle;" /> <a href="https://www.smart-teach.cn/" target="_blank" rel="noopener noreferrer">智教联盟提供技术支持</a></span>',
+      copyright: '<div class="copyright" style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 4px;">本文档采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display: inline-flex; align-items: center; gap: 4px;">CC-BY-NC-SA 4.0 许可<img style="height:22px!important;vertical-align:middle;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;vertical-align:middle;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;vertical-align:middle;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;vertical-align:middle;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a>发布 | 版权所有 © 2025 电教委员指南</div>'
+    },
+
     outline: {
       level: 'deep',
       label: '页面导航'
