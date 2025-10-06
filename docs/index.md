@@ -10,8 +10,8 @@ hero:
     alt: Logo
   actions:
     - theme: brand
-      text: 从这里开始
-      link: /guide/before-starting
+      text: 开始阅读
+      link: /guide
     - theme: alt
       text: 友情链接
       link: /links
