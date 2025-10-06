@@ -68,7 +68,7 @@ npm run docs:build
 
 欢迎全国各学校的电教委员贡献经验和知识，具体贡献方式请关注项目后续更新的贡献指南。
 
-## 🙏贡献者
+## 🙏 贡献者
 <a href="https://github.com/TEHS-TECH/CN-e-learning/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=TEHS-TECH/CN-e-learning" />
 </a>
@@ -81,7 +81,11 @@ npm run docs:build
 
 [![Star History Chart](https://api.star-history.com/svg?repos=TEHS-TECH/CN-e-learning&type=Date)](https://www.star-history.com/#TEHS-TECH/CN-e-learning&Date)
 
+<div align="center">
+
 **如果这个项目对您有帮助，请点亮 Star ⭐！**
+
+</div>
 
 ## 🔗 友情链接
 - <image src="https://avatars.githubusercontent.com/u/184760810" height="18"/> **[Awesome-Iwb](https://github.com/awesome-iwb/awesome-iwb)** - ✨ 全网最全的 教学辅助软件/一体机软件 推荐清单
