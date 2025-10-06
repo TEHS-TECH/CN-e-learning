@@ -16,13 +16,13 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.7.2",
     "dotenv": "^16.3.1",
     "instantsearch.css": "^8.5.1",
     "markdown-it-custom-attrs": "^1.0.2",
     "ts-node": "^10.9.2",
     "vitepress": "^1.6.4",
-    "vue-instantsearch": "^4.21.3",
-    "@fortawesome/fontawesome-free": "^6.7.2"
+    "vue-instantsearch": "^4.21.3"
   },
   "devDependencies": {
     "algoliasearch": "^5.38.0",
