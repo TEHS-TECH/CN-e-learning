@@ -117,7 +117,7 @@ jobs:
           file_pattern: 'docs/school/index.md docs/school/list/*.md'
           commit_user_name: 'github-actions[bot]'
           commit_user_email: 'github-actions[bot]@users.noreply.github.com'
-          commit_author: 'github-actions[bot] <github-actions[bot]@users.noreply.github.com>'
+          commit_author: ${{ github.event.issue.user.name || github.event.issue.user.login }} <${{ github.event.issue.user.id }}+${{ github.event.issue.user.login }}@users.noreply.github.com>
 
       - name: 更新标签并关闭 Issue
         uses: actions/github-script@v7
