@@ -2,7 +2,7 @@
     "index_name": "guide",
     "start_urls": [
         {
-            "url": "https://cn-e-learning.tjsy.dpdns.org",
+            "url": "https://cnel.smart-teach.cn/",
             "selectors_key": ""
         }
     ],

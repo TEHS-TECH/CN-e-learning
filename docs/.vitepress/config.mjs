@@ -75,10 +75,6 @@ export default defineConfig({
       }
     ],
 
-    footer: {
-      message: '本文档根据 CC-BY-NC-SA 4.0 许可发布',
-      copyright: '版权所有 © 2025 电教委员指南'
-    },
     outline: {
       level: 'deep',
       label: '页面导航'

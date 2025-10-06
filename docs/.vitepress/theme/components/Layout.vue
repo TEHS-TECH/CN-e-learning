@@ -6,8 +6,13 @@
       <Twikoo />
     </template>
     <template #layout-bottom>
+      <Footer />
+    </template>
+    <template #aside-top>
       <bsz />
-      <IcpInfo />
+    </template>
+    <template #aside-outline-after>
+      <Ad />
     </template>
     <template #doc-footer-before>
       <backtotop />
@@ -20,7 +25,8 @@ import Layout from 'vitepress/dist/client/theme-default/Layout.vue'
 import Twikoo from './Twikoo.vue'
 import bsz from "./bsz.vue";
 import backtotop from "./backtotop.vue";
-import IcpInfo from './IcpInfo.vue';
+import Footer from './Footer.vue';
+import Ad from './Ad.vue';
 </script>
 
 <style scoped>
