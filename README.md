@@ -66,7 +66,7 @@ npm run docs:build
 
 ## 🤝 贡献指南
 
-欢迎全国各学校的电教委员贡献经验和知识，具体贡献方式请关注项目后续更新的贡献指南。
+欢迎全国各学校的电教委员贡献经验和知识，具体贡献方式请在[此处](https://github.com/TEHS-TECH/CN-e-learning/wiki/%E5%86%85%E5%AE%B9%E8%B4%A1%E7%8C%AE%E6%8C%87%E5%8D%97)查看。
 
 ## 🙏 贡献者
 <a href="https://github.com/TEHS-TECH/CN-e-learning/graphs/contributors">
