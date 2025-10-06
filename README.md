@@ -71,6 +71,91 @@ npm run docs:build
 ## 🙏 贡献者
 
 <!-- readme: contributors -start -->
+<table>
+	<tbody>
+		<tr>
+            <td align="center">
+                <a href="https://github.com/Peter267">
+                    <img src="https://avatars.githubusercontent.com/u/175904095?v=4" width="100;" alt="Peter267"/>
+                    <br />
+                    <sub><b>Wujingbo</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/weizhizhuangwzz">
+                    <img src="https://avatars.githubusercontent.com/u/103792860?v=4" width="100;" alt="weizhizhuangwzz"/>
+                    <br />
+                    <sub><b>位置装</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/Jursin">
+                    <img src="https://avatars.githubusercontent.com/u/127487914?v=4" width="100;" alt="Jursin"/>
+                    <br />
+                    <sub><b>Jursin</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/jiangyin14">
+                    <img src="https://avatars.githubusercontent.com/u/106649516?v=4" width="100;" alt="jiangyin14"/>
+                    <br />
+                    <sub><b>姜胤</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/typed-sigterm">
+                    <img src="https://avatars.githubusercontent.com/u/145281501?v=4" width="100;" alt="typed-sigterm"/>
+                    <br />
+                    <sub><b>Typed SIGTERM</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/Lyang1273">
+                    <img src="https://avatars.githubusercontent.com/u/160390179?v=4" width="100;" alt="Lyang1273"/>
+                    <br />
+                    <sub><b>Lyang</b></sub>
+                </a>
+            </td>
+		</tr>
+		<tr>
+            <td align="center">
+                <a href="https://github.com/Yihggh">
+                    <img src="https://avatars.githubusercontent.com/u/161115959?v=4" width="100;" alt="Yihggh"/>
+                    <br />
+                    <sub><b>Yihggh</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/xingbiao996">
+                    <img src="https://avatars.githubusercontent.com/u/181859181?v=4" width="100;" alt="xingbiao996"/>
+                    <br />
+                    <sub><b>星标</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/MYZ2030">
+                    <img src="https://avatars.githubusercontent.com/u/200359622?v=4" width="100;" alt="MYZ2030"/>
+                    <br />
+                    <sub><b>MYZ2030</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/Windows-git">
+                    <img src="https://avatars.githubusercontent.com/u/109967664?v=4" width="100;" alt="Windows-git"/>
+                    <br />
+                    <sub><b>緒山まひろ</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/baldi233">
+                    <img src="https://avatars.githubusercontent.com/u/124134387?v=4" width="100;" alt="baldi233"/>
+                    <br />
+                    <sub><b>baldi233</b></sub>
+                </a>
+            </td>
+		</tr>
+	<tbody>
+</table>
 <!-- readme: contributors -end -->
 
 ## 📄 许可证
