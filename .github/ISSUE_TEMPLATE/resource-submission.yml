@@ -7,8 +7,8 @@ body:
     id: name
     attributes:
       label: 内容标题
-      description: 请填写您要提交的资源的标题
-      placeholder: [纯新手向]Re：从零开始的电教委之旅
+      description: '请填写您要提交的资源的标题'
+      placeholder: '[纯新手向]Re：从零开始的电教委之旅'
     validations:
       required: true
   
@@ -16,8 +16,8 @@ body:
     id: link
     attributes:
       label: 内容链接
-      description: 请填写您要提交的资源的出处(文章链接)
-      placeholder: https://forum.smart-teach.cn/d/175
+      description: '请填写您要提交的资源的出处(文章链接)'
+      placeholder: 'https://forum.smart-teach.cn/d/175'
     validations:
       required: true
 
@@ -34,7 +34,7 @@ body:
     id: way-to-submission
     attributes:
       label: 收录方式
-      description: 选择如何收录(默认请选择“全文收录”）
+      description: '选择如何收录(默认请选择“全文收录”）'
       options:
         - 全文收录
         - 仅收录链接
