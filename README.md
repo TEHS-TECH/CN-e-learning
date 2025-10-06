@@ -140,13 +140,6 @@ npm run docs:build
                 </a>
             </td>
             <td align="center">
-                <a href="https://github.com/Makitoid">
-                    <img src="https://avatars.githubusercontent.com/u/123004192?v=4" width="100;" alt="Makitoid"/>
-                    <br />
-                    <sub><b>Makitoid Wang</b></sub>
-                </a>
-            </td>
-            <td align="center">
                 <a href="https://github.com/Windows-git">
                     <img src="https://avatars.githubusercontent.com/u/109967664?v=4" width="100;" alt="Windows-git"/>
                     <br />
