@@ -1,10 +1,9 @@
-# 在 Microsoft Office 中启用 flash 内容
+# 在Microsoft Office中启用flash内容
 
 > 本文转载自[2-2-3-trimethylpentane](https://forum.smart-teach.cn/u/2-2-3-trimethylpentane)发布在[STCN论坛](https://forum.smart-teach.cn/)上的文章：[【教程】Microsoft Office启用flash内容](https://forum.smart-teach.cn/d/310)，转载已获得[原作者授权](https://github.com/TEHS-TECH/CN-e-learning/issues/15#issue-3484354303)。以下是原文的转载授权信息：
->
 >> 本文中的注册表文件、教程及部分插图来源于[@AlanCRL](https://forum.smart-teach.cn/u/AlanCRL)大佬，已获得许可使用，十分感谢他🤝。
 原教程地址：https://blog.csdn.net/alan16356/article/details/147173208?fromshare=blogdetail&sharetype=blogdetail&sharerId=147173208&sharerefer=PC&sharesource=alan16356&sharefrom=from_link
->
+
 > 如无特殊说明，下文中的“本人”均指[2-2-3-trimethylpentane](https://forum.smart-teach.cn/u/2-2-3-trimethylpentane)。
 
 ## 一、引言
