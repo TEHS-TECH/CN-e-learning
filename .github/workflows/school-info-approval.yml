@@ -32,7 +32,7 @@ jobs:
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 issue_number: context.payload.issue.number,
-                body: `✅ 审核成功\n\n您的学校信息审核成功，请等待维护人员将信息上传至网站。若14日内未上线，请联系\`wujingbo12@qq.com\``
+                body: `✅ 审核通过\n\n您的学校信息审核成功，请等待维护人员将信息上传至网站。若14日内未上线，请联系\`wujingbo12@qq.com\``
               });
               console.log('自动回复已添加');
             } else {

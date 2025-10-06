@@ -1,0 +1,50 @@
+name: 内容贡献
+description: 贡献文章、提交资源来让我们更好！
+title: "[内容贡献]："
+labels: ["内容贡献"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: 内容标题
+      description: '请填写您要提交的资源的标题'
+      placeholder: '[纯新手向]Re：从零开始的电教委之旅'
+    validations:
+      required: true
+  
+  - type: input
+    id: link
+    attributes:
+      label: 内容链接
+      description: '请填写您要提交的资源的出处(文章链接)'
+      placeholder: 'https://forum.smart-teach.cn/d/175'
+    validations:
+      required: true
+
+  - type: input
+    id: original-author
+    attributes:
+      label: 内容原作者
+      description: 请填写您要提交的资源的原作者
+      placeholder: weizhizhuang
+    validations:
+      required: true
+
+  - type: dropdown
+    id: way-to-submission
+    attributes:
+      label: 收录方式
+      description: '选择如何收录(默认请选择“全文收录”）'
+      options:
+        - 全文收录
+        - 仅收录链接
+    validations:
+      required: true
+
+  - type: textarea
+    id: remarks
+    attributes:
+      label: 备注
+      description: 需要备注的其他事项
+    validations:
+      required: false

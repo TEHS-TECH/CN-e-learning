@@ -49,7 +49,9 @@ export default defineConfig({
         text: '指南',
         collapsed: false,
         items: [
-          { text: '前言', link: '/guide/before-starting'}
+          { text: '前言', link: '/guide/before-starting'},
+	      { text: '在Office中启用flash内容', link: '/guide/how-to-enable-flash-contents-in-microsoft-office' },
+          { text: '善用任务管理器', link: '/guide/task-manager' }
         ]
       }, 
       {
@@ -57,9 +59,14 @@ export default defineConfig({
         collapsed: false,
         items: [
           { text: '电脑软键盘无法输入字符', link: '/faq/the-soft-keyboard-cannot-type' },
-          { text: 'Windows常见蓝屏错误代码', link: '/faq/bugcheck-codes' },
-          { text: '在Microsoft Office中启用flash内容', link: '/faq/how-to-enable-flash-contents-in-microsoft-office' },
-          { text: '常见品牌的教学一体机/交互白板适用的触摸校准/触摸驱动汇总', link: '/faq/Common-Touch-Driver-Summaries-for-All-in-One-Teaching-Displays.md' }
+          { text: 'Windows蓝屏错误代码', link: '/faq/bugcheck-codes' }
+        ]
+      },
+	  {
+        text: '资源汇总',
+        collapsed: false,
+        items: [
+          { text: '教学一体机/交互白板的触摸校准/触摸驱动', link: '/guide/Common-Touch-Driver-Summaries-for-All-in-One-Teaching-Displays' }
         ]
       }
     ],

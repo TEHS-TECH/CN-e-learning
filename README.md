@@ -16,7 +16,7 @@ CN-e-learning 是一个专注于帮助电教委员提升工作能力的指南项
 
 - **内容优质**：由经验丰富的电教委精心编写，确保内容的专业性和实用性
 - **覆盖面广**：包含多种计算机知识、设备操作指南及常见错误应对方法
-- **多校联盟**：汇集全国多所学校的电教委经验，提供学校专属信息（筹备中）
+- **多校联盟**：汇集全国多所学校的电教委经验，提供学校专属信息
 - **易于阅读**：文档结构清晰，语言简洁明了，便于快速查阅和学习
 
 ## 🚀 快速开始
@@ -68,7 +68,7 @@ npm run docs:build
 
 欢迎全国各学校的电教委员贡献经验和知识，具体贡献方式请关注项目后续更新的贡献指南。
 
-## 贡献者
+## 🙏 贡献者
 <a href="https://github.com/TEHS-TECH/CN-e-learning/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=TEHS-TECH/CN-e-learning" />
 </a>
@@ -81,7 +81,11 @@ npm run docs:build
 
 [![Star History Chart](https://api.star-history.com/svg?repos=TEHS-TECH/CN-e-learning&type=Date)](https://www.star-history.com/#TEHS-TECH/CN-e-learning&Date)
 
+<div align="center">
+
 **如果这个项目对您有帮助，请点亮 Star ⭐！**
+
+</div>
 
 ## 🔗 友情链接
 - <image src="https://avatars.githubusercontent.com/u/184760810" height="18"/> **[Awesome-Iwb](https://github.com/awesome-iwb/awesome-iwb)** - ✨ 全网最全的 教学辅助软件/一体机软件 推荐清单
