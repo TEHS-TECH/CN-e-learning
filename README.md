@@ -103,21 +103,12 @@ npm run docs:build
                 </a>
             </td>
             <td align="center">
-                <a href="https://github.com/Makitoid">
-                    <img src="https://avatars.githubusercontent.com/u/123004192?v=4" width="100;" alt="Makitoid"/>
-                    <br />
-                    <sub><b>Makitoid Wang</b></sub>
-                </a>
-            </td>
-            <td align="center">
                 <a href="https://github.com/typed-sigterm">
                     <img src="https://avatars.githubusercontent.com/u/145281501?v=4" width="100;" alt="typed-sigterm"/>
                     <br />
                     <sub><b>Typed SIGTERM</b></sub>
                 </a>
             </td>
-		</tr>
-		<tr>
             <td align="center">
                 <a href="https://github.com/Lyang1273">
                     <img src="https://avatars.githubusercontent.com/u/160390179?v=4" width="100;" alt="Lyang1273"/>
@@ -125,6 +116,8 @@ npm run docs:build
                     <sub><b>Lyang</b></sub>
                 </a>
             </td>
+		</tr>
+		<tr>
             <td align="center">
                 <a href="https://github.com/Yihggh">
                     <img src="https://avatars.githubusercontent.com/u/161115959?v=4" width="100;" alt="Yihggh"/>
@@ -144,6 +137,13 @@ npm run docs:build
                     <img src="https://avatars.githubusercontent.com/u/200359622?v=4" width="100;" alt="MYZ2030"/>
                     <br />
                     <sub><b>MYZ2030</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/Makitoid">
+                    <img src="https://avatars.githubusercontent.com/u/123004192?v=4" width="100;" alt="Makitoid"/>
+                    <br />
+                    <sub><b>Makitoid Wang</b></sub>
                 </a>
             </td>
             <td align="center">
