@@ -1,6 +1,6 @@
 # <i class="fa-solid fa-info-circle"></i> 关于
 
-![电教委员指南](/images/banner.png)
+![电教委员指南](/images/new_banner.png)
 
 > CN-e-learning 是一个专注于帮助电教委员提升工作能力的指南项目。本指南由顶尖电教委编撰，内容涵盖多种计算机知识、错误应对方法等，旨在助力每一位电教委员成为优秀的技术支持角色。
 

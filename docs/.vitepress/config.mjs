@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
-import mdItCustomAttrs from 'markdown-it-custom-attrs'
 import { generateSidebar } from 'vitepress-sidebar';
+import mdItCustomAttrs from 'markdown-it-custom-attrs'
+import markdownItTaskCheckbox from 'markdown-it-task-checkbox'
 
 export default defineConfig({
   title: '电教委员指南',
@@ -27,6 +28,7 @@ export default defineConfig({
         if (tokens[idx].tag === 'h1') htmlResult += `<ArticleMetadata />`;
         return htmlResult;
       };
+      md.use(markdownItTaskCheckbox)
     },
     image: {
       // 开启图片懒加载
@@ -64,7 +66,7 @@ export default defineConfig({
     }),
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/TEHS-TECH/CN-e-learning' },
+      { icon: 'github', link: 'https://github.com/CN-E-Learning/CN-e-learning' },
       { icon: 'qq', link: 'https://qm.qq.com/q/XOabZnlEMm' },
       {
         icon: {
@@ -84,7 +86,7 @@ export default defineConfig({
       label: '页面导航'
     },
     editLink: {
-      pattern: 'https://github.com/TEHS-TECH/CN-e-learning/edit/main/docs/:path',
+      pattern: 'https://github.com/CN-E-Learning/CN-e-learning/edit/main/docs/:path',
       text: '在 GitHub 上编辑此页面'
     },
     docFooter: {
