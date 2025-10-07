@@ -20,6 +20,7 @@
     "dotenv": "^16.3.1",
     "instantsearch.css": "^8.5.1",
     "markdown-it-custom-attrs": "^1.0.2",
+    "markdown-it-image-figures": "^2.1.1",
     "ts-node": "^10.9.2",
     "vitepress": "^1.6.4",
     "vue-instantsearch": "^4.21.3"
