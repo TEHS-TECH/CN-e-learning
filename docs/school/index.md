@@ -1,12 +1,28 @@
 <!-- 
-    在本文“学校列表”表格部分中的数据来源/构成如下("school_location"、"school_type"、"school_name"默认来自issue)：
+    在本文"学校列表"表格部分中的数据来源/构成如下("school_location"、"school_type"、"school_name"、"province_code"、"coordinates"默认来自issue)：
         地区："school_location"
         学校类型："school_type"
         学校：["school_name"](/school/list/"school_name")
+        省份编号："province_code"
+        经纬度坐标："coordinates"
 -->
 # <i class="fa-solid fa-school"></i> 多校联盟
 
-“**多校联盟**”是一个由《电教委员指南》创建的学校大屏信息汇总平台。它主要帮助电教委员快速查看全国各地学校的大屏应用实例，为自身工作提供参考模板和灵感。
+"**多校联盟**"是一个由《电教委员指南》创建的学校大屏信息汇总平台。它主要帮助电教委员快速查看全国各地学校的大屏应用实例，为自身工作提供参考模板和灵感。
+
+<script setup>
+import HeatmapComponent from './heatmap-component.vue'
+</script>
+
+## 全国分布概览
+
+<HeatmapComponent />
+
+## 快速导航
+
+- 📋 [学校信息汇总](/school/all-schools) - 查看所有学校的详细信息，支持纵向滚动浏览
+- 📊 [学校列表](#学校列表) - 按地区和类型查看学校概览
+- 🗺️ [分布热力图](#全国分布概览) - 可视化查看全国学校分布情况
 
 ## 学校列表
 
@@ -44,3 +60,6 @@
 | 浙江省金华市婺城区 | 初级中学 | [金华市第四中学](/school/list/金华市第四中学) |
 | 广东省揭阳市榕城区 | 高级中学 | [揭阳华侨高级中学](/school/list/揭阳华侨高级中学) |
 | 上海市松江区 | 高级中学 | [华东师范大学松江实验高级中学](/school/list/华东师范大学松江实验高级中学) |
+| 河南省郑州市金水区 | 高级中学 | [郑州市第四十七高级中学](/school/list/郑州市第四十七高级中学) |
+| 广西壮族自治区 来宾市 兴宾区 | 小学 | [来宾市实验小学](/school/list/来宾市实验小学) |
+| 北京市测试区 | 完全中学 | [北京市测试学校](/school/list/北京市测试学校) |

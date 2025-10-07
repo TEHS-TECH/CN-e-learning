@@ -2,7 +2,7 @@
 
 # CN-e-learning 电教委员指南
 
-![banner](./docs/public/images/banner.png)
+![banner](./docs/public/images/new_banner.png)
 
 [![CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC_BY--NC--SA_4.0-blue.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0)
 [![QQ群](https://img.shields.io/badge/QQ%20%E7%BE%A4-982310822-blue?style=flat&logo=QQ)](https://qm.qq.com/q/XOabZnlEMm)
@@ -26,7 +26,7 @@ CN-e-learning 是一个专注于帮助电教委员提升工作能力的指南项
 1. 克隆仓库
 
     ```bash
-    git clone https://github.com/TEHS-TECH/CN-e-learning.git
+    git clone https://github.com/CN-E-Learning/CN-e-learning.git
     cd CN-e-learning
     ```
 
@@ -64,9 +64,7 @@ npm run docs:build
 - [VitePress](https://vitepress.dev/)：静态站点生成器，基于 Vue 3
 - Markdown：文档内容编写格式
 
-## 🤝 贡献指南
-
-欢迎全国各学校的电教委员贡献经验和知识，具体贡献方式请在[此处](https://github.com/TEHS-TECH/CN-e-learning/wiki/%E5%86%85%E5%AE%B9%E8%B4%A1%E7%8C%AE%E6%8C%87%E5%8D%97)查看。
+## 🤝 [贡献指南](https://github.com/CN-E-Learning/CN-e-learning?tab=contributing-ov-file)
 
 ## 🙏 贡献者
 
@@ -103,12 +101,21 @@ npm run docs:build
                 </a>
             </td>
             <td align="center">
-                <a href="https://github.com/typed-sigterm">
-                    <img src="https://avatars.githubusercontent.com/u/145281501?v=4" width="100;" alt="typed-sigterm"/>
+                <a href="https://github.com/Makitoid">
+                    <img src="https://avatars.githubusercontent.com/u/123004192?v=4" width="100;" alt="Makitoid"/>
                     <br />
-                    <sub><b>Typed SIGTERM</b></sub>
+                    <sub><b>Makitoid Wang</b></sub>
                 </a>
             </td>
+            <td align="center">
+                <a href="https://github.com/wwcrdrvf6u">
+                    <img src="https://avatars.githubusercontent.com/u/122241403?v=4" width="100;" alt="wwcrdrvf6u"/>
+                    <br />
+                    <sub><b>wwcrdrvf6u</b></sub>
+                </a>
+            </td>
+		</tr>
+		<tr>
             <td align="center">
                 <a href="https://github.com/Lyang1273">
                     <img src="https://avatars.githubusercontent.com/u/160390179?v=4" width="100;" alt="Lyang1273"/>
@@ -116,8 +123,13 @@ npm run docs:build
                     <sub><b>Lyang</b></sub>
                 </a>
             </td>
-		</tr>
-		<tr>
+            <td align="center">
+                <a href="https://github.com/typed-sigterm">
+                    <img src="https://avatars.githubusercontent.com/u/145281501?v=4" width="100;" alt="typed-sigterm"/>
+                    <br />
+                    <sub><b>Typed SIGTERM</b></sub>
+                </a>
+            </td>
             <td align="center">
                 <a href="https://github.com/Yihggh">
                     <img src="https://avatars.githubusercontent.com/u/161115959?v=4" width="100;" alt="Yihggh"/>
@@ -133,19 +145,21 @@ npm run docs:build
                 </a>
             </td>
             <td align="center">
+                <a href="https://github.com/MF-Dust">
+                    <img src="https://avatars.githubusercontent.com/u/128943330?v=4" width="100;" alt="MF-Dust"/>
+                    <br />
+                    <sub><b>MF.</b></sub>
+                </a>
+            </td>
+            <td align="center">
                 <a href="https://github.com/MYZ2030">
                     <img src="https://avatars.githubusercontent.com/u/200359622?v=4" width="100;" alt="MYZ2030"/>
                     <br />
                     <sub><b>MYZ2030</b></sub>
                 </a>
             </td>
-            <td align="center">
-                <a href="https://github.com/Makitoid">
-                    <img src="https://avatars.githubusercontent.com/u/123004192?v=4" width="100;" alt="Makitoid"/>
-                    <br />
-                    <sub><b>Makitoid Wang</b></sub>
-                </a>
-            </td>
+		</tr>
+		<tr>
             <td align="center">
                 <a href="https://github.com/Windows-git">
                     <img src="https://avatars.githubusercontent.com/u/109967664?v=4" width="100;" alt="Windows-git"/>
@@ -160,6 +174,13 @@ npm run docs:build
                     <sub><b>baldi233</b></sub>
                 </a>
             </td>
+            <td align="center">
+                <a href="https://github.com/MengHanLOVE1027">
+                    <img src="https://avatars.githubusercontent.com/u/99132833?v=4" width="100;" alt="MengHanLOVE1027"/>
+                    <br />
+                    <sub><b>梦涵LOVE</b></sub>
+                </a>
+            </td>
 		</tr>
 	<tbody>
 </table>
@@ -171,7 +192,7 @@ npm run docs:build
 
 ## 🌟 Stars 历史图表
 
-[![Star History Chart](https://api.star-history.com/svg?repos=TEHS-TECH/CN-e-learning&type=Date)](https://www.star-history.com/#TEHS-TECH/CN-e-learning&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=CN-E-Learning/CN-e-learning&type=Date)](https://www.star-history.com/#CN-E-Learning/CN-e-learning&Date)
 
 <div align="center">
 
@@ -180,6 +201,6 @@ npm run docs:build
 </div>
 
 ## 🔗 友情链接
+- <image src="https://forum.smart-teach.cn/assets/favicon-v4ksoaxf.png" height="18"/> [**SmartTeachCN**](https://forum.smart-teach.cn/) - 智教联盟致力于为教学辅助类应用提供全方面扶持与帮助。
 - <image src="https://avatars.githubusercontent.com/u/184760810" height="18"/> **[Awesome-Iwb](https://github.com/awesome-iwb/awesome-iwb)** - ✨ 全网最全的 教学辅助软件/一体机软件 推荐清单
 - <image src="https://nav.jursin.top/acs.png" height="18"/> [**Awesome-Class-Softwares**](https://github.com/Jursin/Awesome-Class-Softwares) - 🌟 适用于班级一体机的优质软件合集
-- <image src="https://forum.smart-teach.cn/assets/favicon-v4ksoaxf.png" height="18"/> [**SmartTeachCN**](https://forum.smart-teach.cn/) - 智教联盟致力于为教学辅助类应用提供全方面扶持与帮助。

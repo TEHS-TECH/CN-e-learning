@@ -46,10 +46,12 @@ jobs:
             const name = extractField(issue.body, '学校名称');
             const location = extractField(issue.body, '地区');
             const type = extractField(issue.body, '学校类型');
+            const provinceCode = extractField(issue.body, '省份');
+            const coordinates = extractField(issue.body, '经纬度坐标');
             
             // 验证必要字段
-            if (!location || !type || !name) {
-              core.setFailed('缺少必要字段：school_location、school_type、school_name');
+            if (!location || !type || !name || !provinceCode) {
+              core.setFailed('缺少必要字段：school_location、school_type、school_name、province_code');
               return;
             }
             
@@ -78,6 +80,9 @@ jobs:
               fs.writeFileSync(filePath, content, 'utf8');
               
               core.setOutput('result', '学校信息添加成功');
+              core.setOutput('school_name', name);
+              core.setOutput('province_code', provinceCode);
+              core.setOutput('coordinates', coordinates);
             } catch (error) {
               core.setFailed(`处理文件时出错: ${error.message}`);
             }
@@ -110,11 +115,175 @@ jobs:
             const content = `# ${name}\n\n${issue.body}`;
             fs.writeFileSync(filePath, content, 'utf8');
 
+      - name: 更新省份数据统计
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            const issue = context.payload.issue;
+            
+            // 字段提取函数
+            function extractField(body, field) {
+              const reg = new RegExp(`### ${field}\\s*([\\s\\S]*?)(?=\\n###|$)`, 'm');
+              const match = body.match(reg);
+              if (!match) return '';
+              return match[1].split('\n').map(s => s.trim()).filter(Boolean)[0] || '';
+            }
+            
+            const name = extractField(issue.body, '学校名称');
+            const location = extractField(issue.body, '地区');
+            const type = extractField(issue.body, '学校类型');
+            const provinceCodeRaw = extractField(issue.body, '省份');
+            const coordinates = extractField(issue.body, '经纬度坐标');
+            
+            // 提取省份编号（格式：110000 - 北京市）
+            const provinceCode = provinceCodeRaw.split(' - ')[0];
+            
+            if (!provinceCode || !name) {
+              core.setFailed('缺少必要的省份数据字段');
+              return;
+            }
+            
+            const dataFilePath = 'docs/school/province-data.json';
+            
+            try {
+              // 读取现有数据
+              let provinceData = {};
+              if (fs.existsSync(dataFilePath)) {
+                const rawData = fs.readFileSync(dataFilePath, 'utf8');
+                provinceData = JSON.parse(rawData);
+              } else {
+                // 初始化数据结构
+                provinceData = {
+                  lastUpdated: new Date().toISOString(),
+                  totalSchools: 0,
+                  provinces: {}
+                };
+              }
+              
+              // 确保省份数据结构存在
+              if (!provinceData.provinces[provinceCode]) {
+                provinceData.provinces[provinceCode] = {
+                  name: provinceCodeRaw.split(' - ')[1] || '',
+                  count: 0,
+                  schools: []
+                };
+              }
+              
+              // 检查学校是否已存在
+              const existingSchool = provinceData.provinces[provinceCode].schools.find(
+                school => school.name === name
+              );
+              
+              if (!existingSchool) {
+                // 解析坐标（如果提供的话）
+                let coordinatesArray = null;
+                if (coordinates && coordinates.trim()) {
+                  try {
+                    const [lng, lat] = coordinates.split(',').map(coord => parseFloat(coord.trim()));
+                    if (!isNaN(lng) && !isNaN(lat)) {
+                      coordinatesArray = [lng, lat];
+                    }
+                  } catch (error) {
+                    console.log('坐标解析失败，将使用null值');
+                  }
+                }
+                
+                // 添加新学校
+                provinceData.provinces[provinceCode].schools.push({
+                  name: name,
+                  location: location,
+                  type: type,
+                  coordinates: coordinatesArray,
+                  addedDate: new Date().toISOString()
+                });
+                
+                // 更新计数
+                provinceData.provinces[provinceCode].count++;
+                provinceData.totalSchools++;
+                provinceData.lastUpdated = new Date().toISOString();
+                
+                // 写入文件
+                fs.writeFileSync(dataFilePath, JSON.stringify(provinceData, null, 2), 'utf8');
+                
+                core.setOutput('result', `省份数据更新成功，${provinceCodeRaw} 新增学校：${name}`);
+              } else {
+                core.setOutput('result', '学校已存在于省份数据中，跳过更新');
+              }
+              
+            } catch (error) {
+              core.setFailed(`更新省份数据时出错: ${error.message}`);
+            }
+
+      - name: 生成热力图数据
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            
+            try {
+              const dataFilePath = 'docs/school/province-data.json';
+              const heatmapDataPath = 'docs/school/heatmap-data.json';
+              
+              if (!fs.existsSync(dataFilePath)) {
+                core.setFailed('省份数据文件不存在');
+                return;
+              }
+              
+              const provinceData = JSON.parse(fs.readFileSync(dataFilePath, 'utf8'));
+              const provinceMappingPath = 'docs/school/province-mapping.json';
+              
+              let provinceMapping = {};
+              if (fs.existsSync(provinceMappingPath)) {
+                provinceMapping = JSON.parse(fs.readFileSync(provinceMappingPath, 'utf8'));
+              }
+              
+              // 生成热力图数据
+              const heatmapData = {
+                lastUpdated: provinceData.lastUpdated,
+                totalSchools: provinceData.totalSchools,
+                data: []
+              };
+              
+              // 转换为热力图格式
+              Object.keys(provinceData.provinces).forEach(code => {
+                const province = provinceData.provinces[code];
+                if (province.count > 0) {
+                  const mapping = provinceMapping[code];
+                  if (mapping && mapping.center) {
+                    heatmapData.data.push({
+                      name: province.name,
+                      code: code,
+                      value: province.count,
+                      center: mapping.center,
+                      schools: province.schools.map(school => ({
+                        name: school.name,
+                        coordinates: school.coordinates || null,
+                        type: school.type
+                      }))
+                    });
+                  }
+                }
+              });
+              
+              // 写入热力图数据文件
+              fs.writeFileSync(heatmapDataPath, JSON.stringify(heatmapData, null, 2), 'utf8');
+              
+              core.setOutput('result', `热力图数据生成成功，包含 ${heatmapData.data.length} 个省份的数据`);
+              
+            } catch (error) {
+              core.setFailed(`生成热力图数据时出错: ${error.message}`);
+            }
+
       - name: 提交更改
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: '自动追加学校信息到表格及新建详情文件'
-          file_pattern: 'docs/school/index.md docs/school/list/*.md'
+          commit_message: '自动追加学校信息到表格及更新热力图数据'
+          file_pattern: 'docs/school/index.md docs/school/list/*.md docs/school/province-data.json docs/school/heatmap-data.json'
           commit_user_name: 'github-actions[bot]'
           commit_user_email: 'github-actions[bot]@users.noreply.github.com'
           commit_author: ${{ github.event.issue.user.name || github.event.issue.user.login }} <${{ github.event.issue.user.id }}+${{ github.event.issue.user.login }}@users.noreply.github.com>
@@ -127,14 +296,14 @@ jobs:
             const issue_number = context.payload.issue.number;
             const owner = context.repo.owner;
             const repo = context.repo.repo;
-            // 添加“添加完成”标签
+            // 添加"添加完成"标签
             await github.rest.issues.addLabels({
               owner,
               repo,
               issue_number,
               labels: ['添加完成']
             });
-            // 移除“等待添加”标签（如果有）
+            // 移除"等待添加"标签（如果有）
             try {
               await github.rest.issues.removeLabel({
                 owner,
