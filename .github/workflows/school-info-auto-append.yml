@@ -279,11 +279,76 @@ jobs:
               core.setFailed(`生成热力图数据时出错: ${error.message}`);
             }
 
+      - name: 更新all-schools.md文件
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            const issue = context.payload.issue;
+            
+            // 字段提取函数
+            function extractField(body, field) {
+              const reg = new RegExp(`### ${field}\\s*([\\s\\S]*?)(?=\\n###|$)`, 'm');
+              const match = body.match(reg);
+              if (!match) return '';
+              return match[1].split('\n').map(s => s.trim()).filter(Boolean)[0] || '';
+            }
+            
+            const name = extractField(issue.body, '学校名称');
+            if (!name) {
+              core.setFailed('未能提取学校名称，无法更新all-schools.md');
+              return;
+            }
+            
+            const allSchoolsPath = 'docs/school/all-schools.md';
+            
+            try {
+              let content = fs.readFileSync(allSchoolsPath, 'utf8');
+              
+              // 检查是否已存在该学校
+              if (content.includes(`## ${name}`)) {
+                console.log('学校已存在于all-schools.md中，跳过添加');
+                return;
+              }
+              
+              // 1. 更新目录导航
+              const navigationRegex = /(## 目录导航\s*\n)([\s\S]*?)(\n---)/;
+              const navigationMatch = content.match(navigationRegex);
+              
+              if (navigationMatch) {
+                const currentNavigation = navigationMatch[2];
+                const lines = currentNavigation.split('\n').filter(line => line.trim());
+                
+                // 计算新的序号
+                const newNumber = lines.length + 1;
+                const newNavigationItem = `${newNumber}. [${name}](#${name.replace(/[（）()]/g, '').replace(/\s+/g, '')})`;
+                
+                // 添加新的导航项
+                lines.push(newNavigationItem);
+                const updatedNavigation = lines.join('\n');
+                
+                content = content.replace(navigationRegex, `$1${updatedNavigation}$3`);
+              }
+              
+              // 2. 在文档末尾添加学校详细信息
+              const schoolContent = `\n---\n\n## ${name}\n\n${issue.body}\n\n[↑ 返回目录](#目录导航)\n`;
+              content += schoolContent;
+              
+              // 写入文件
+              fs.writeFileSync(allSchoolsPath, content, 'utf8');
+              console.log(`成功更新all-schools.md，添加了学校：${name}`);
+              
+            } catch (error) {
+              core.setFailed(`更新all-schools.md时出错: ${error.message}`);
+            }
+
       - name: 提交更改
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: '自动追加学校信息到表格及更新热力图数据'
-          file_pattern: 'docs/school/index.md docs/school/list/*.md docs/school/province-data.json docs/school/heatmap-data.json'
+          file_pattern: 'docs/school/index.md docs/school/list/*.md docs/school/all-schools.md docs/school/province-data.json docs/school/heatmap-data.json'
           commit_user_name: 'github-actions[bot]'
           commit_user_email: 'github-actions[bot]@users.noreply.github.com'
           commit_author: ${{ github.event.issue.user.name || github.event.issue.user.login }} <${{ github.event.issue.user.id }}+${{ github.event.issue.user.login }}@users.noreply.github.com>

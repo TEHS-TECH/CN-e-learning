@@ -83,6 +83,7 @@ const getColor = (value) => {
  */
 const loadHeatmapData = async () => {
   try {
+    // 使用绝对路径，确保在生产环境中正确加载
     const response = await fetch('/school/heatmap-data.json')
     if (!response.ok) {
       // 如果文件不存在，返回空数据
