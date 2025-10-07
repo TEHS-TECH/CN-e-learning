@@ -70,7 +70,7 @@ export default defineConfig({
     }),
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/TEHS-TECH/CN-e-learning' },
+      { icon: 'github', link: 'https://github.com/CN-E-Learning/CN-e-learning' },
       { icon: 'qq', link: 'https://qm.qq.com/q/XOabZnlEMm' },
       {
         icon: {
@@ -90,7 +90,7 @@ export default defineConfig({
       label: '页面导航'
     },
     editLink: {
-      pattern: 'https://github.com/TEHS-TECH/CN-e-learning/edit/main/docs/:path',
+      pattern: 'https://github.com/CN-E-Learning/CN-e-learning/edit/main/docs/:path',
       text: '在 GitHub 上编辑此页面'
     },
     docFooter: {

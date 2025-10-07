@@ -32,9 +32,9 @@
 
 ## 📤 提交方式
 ### 方式1：直接提交 PR（Pull Request）
-1. **Fork 仓库**：访问 [CN-e-learning 仓库](https://github.com/TEHS-TECH/CN-e-learning)，点击右上角「Fork」复刻到个人仓库。
+1. **Fork 仓库**：访问 [CN-e-learning 仓库](https://github.com/CN-E-Learning/CN-e-learning)，点击右上角「Fork」复刻到个人仓库。
 2. **在线修改或本地修改**
-   > 根据目前的项目规划，同学们**仅可以**在 `/docs/faq` 中贡献内容。如果您认为 `/docs/guide` 中的文件需要修改请提交 [Issue](https://github.com/TEHS-TECH/CN-e-learning/issues) 等待处理。
+   > 根据目前的项目规划，同学们**仅可以**在 `/docs/faq` 中贡献内容。如果您认为 `/docs/guide` 中的文件需要修改请提交 [Issue](https://github.com/CN-E-Learning/CN-e-learning/issues) 等待处理。
 
 3. **提交 PR**：
    - 提交在线/本地修改并推送至个人仓库。
