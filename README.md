@@ -2,7 +2,7 @@
 
 # CN-e-learning 电教委员指南
 
-![banner](./docs/public/images/banner.png)
+![banner](./docs/public/images/new_banner.png)
 
 [![CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC_BY--NC--SA_4.0-blue.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0)
 [![QQ群](https://img.shields.io/badge/QQ%20%E7%BE%A4-982310822-blue?style=flat&logo=QQ)](https://qm.qq.com/q/XOabZnlEMm)
