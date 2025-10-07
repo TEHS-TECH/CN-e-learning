@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2025-10-07T12:18:51.082Z",
-  "totalSchools": 34,
+  "lastUpdated": "2025-10-07T12:44:09.453Z",
+  "totalSchools": 35,
   "data": [
     {
       "name": "北京市",
@@ -296,7 +296,7 @@
     {
       "name": "广东省",
       "code": "440000",
-      "value": 5,
+      "value": 6,
       "center": [
         113.2804,
         23.1291
@@ -341,6 +341,11 @@
             23.5439
           ],
           "type": "高级中学"
+        },
+        {
+          "name": "深圳测试中学",
+          "coordinates": null,
+          "type": "中等职业学校"
         }
       ]
     },
