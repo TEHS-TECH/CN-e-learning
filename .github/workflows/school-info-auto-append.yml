@@ -50,8 +50,8 @@ jobs:
             const coordinates = extractField(issue.body, '经纬度坐标');
             
             // 验证必要字段
-            if (!location || !type || !name || !provinceCode || !coordinates) {
-              core.setFailed('缺少必要字段：school_location、school_type、school_name、province_code、coordinates');
+            if (!location || !type || !name || !provinceCode) {
+              core.setFailed('缺少必要字段：school_location、school_type、school_name、province_code');
               return;
             }
             
@@ -141,7 +141,7 @@ jobs:
             // 提取省份编号（格式：110000 - 北京市）
             const provinceCode = provinceCodeRaw.split(' - ')[0];
             
-            if (!provinceCode || !name || !coordinates) {
+            if (!provinceCode || !name) {
               core.setFailed('缺少必要的省份数据字段');
               return;
             }
@@ -178,15 +178,25 @@ jobs:
               );
               
               if (!existingSchool) {
-                // 解析坐标
-                const [lng, lat] = coordinates.split(',').map(coord => parseFloat(coord.trim()));
+                // 解析坐标（如果提供的话）
+                let coordinatesArray = null;
+                if (coordinates && coordinates.trim()) {
+                  try {
+                    const [lng, lat] = coordinates.split(',').map(coord => parseFloat(coord.trim()));
+                    if (!isNaN(lng) && !isNaN(lat)) {
+                      coordinatesArray = [lng, lat];
+                    }
+                  } catch (error) {
+                    console.log('坐标解析失败，将使用null值');
+                  }
+                }
                 
                 // 添加新学校
                 provinceData.provinces[provinceCode].schools.push({
                   name: name,
                   location: location,
                   type: type,
-                  coordinates: [lng, lat],
+                  coordinates: coordinatesArray,
                   addedDate: new Date().toISOString()
                 });
                 
@@ -252,7 +262,7 @@ jobs:
                       center: mapping.center,
                       schools: province.schools.map(school => ({
                         name: school.name,
-                        coordinates: school.coordinates,
+                        coordinates: school.coordinates || null,
                         type: school.type
                       }))
                     });

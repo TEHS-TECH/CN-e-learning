@@ -1,4 +1,4 @@
-#本template中需要用在docs/index.md"学校列表"中的内容有"school_location"、"school_type"、"school_name"、"province_code"、"coordinates"
+#本template中需要用在docs/index.md"学校列表"中的内容有"school_location"、"school_type"、"school_name"、"province_code"、"coordinates"（可选）
 #其余内容将会被填写在docs/schools/"school_name".md中
 name: 学校信息填报
 description: 请填写学校的相关信息，帮助其他电教委员
@@ -69,11 +69,11 @@ body:
   - type: input
     id: coordinates
     attributes:
-      label: 经纬度坐标
-      description: 填写学校的经纬度坐标（格式：经度,纬度，如：117.2008,39.0842）
+      label: 经纬度坐标（可选）
+      description: 填写学校的经纬度坐标（格式：经度,纬度，如：117.2008,39.0842）。如不确定可留空，不影响学校信息录入。
       placeholder: 117.2008,39.0842
     validations:
-      required: true
+      required: false
 
   - type: input
     id: school_location_details
