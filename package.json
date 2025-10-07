@@ -33,6 +33,7 @@
     "glob": "^11.0.3",
     "gray-matter": "^4.0.3",
     "medium-zoom": "^1.1.0",
+    "nprogress-v2": "^1.1.10",
     "vitepress-sidebar": "^1.33.0"
   }
 }
