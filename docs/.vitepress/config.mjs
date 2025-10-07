@@ -39,7 +39,13 @@ export default defineConfig({
     nav: [
       { text: '<i class="fa-solid fa-book"></i> 指南', link: '/guide/before-starting.md' },
       { text: '<i class="fa-solid fa-question-circle"></i> 常见问题', link: '/faq/the-soft-keyboard-cannot-type' },
-      { text: '<i class="fa-solid fa-school"></i> 多校联盟', link: '/school' },
+      { 
+        text: '<i class="fa-solid fa-school"></i> 多校联盟', 
+        items: [
+          { text: '学校列表', link: '/school' },
+          { text: '学校信息汇总', link: '/school/all-schools' }
+        ]
+      },
       { text: '<i class="fa-solid fa-info-circle"></i> 关于', link: '/about' },
       { text: '<i class="fa-solid fa-link"></i> 友情链接', link: '/links' }
 

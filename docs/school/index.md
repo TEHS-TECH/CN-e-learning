@@ -1,12 +1,28 @@
 <!-- 
-    在本文“学校列表”表格部分中的数据来源/构成如下("school_location"、"school_type"、"school_name"默认来自issue)：
+    在本文"学校列表"表格部分中的数据来源/构成如下("school_location"、"school_type"、"school_name"、"province_code"、"coordinates"默认来自issue)：
         地区："school_location"
         学校类型："school_type"
         学校：["school_name"](/school/list/"school_name")
+        省份编号："province_code"
+        经纬度坐标："coordinates"
 -->
 # <i class="fa-solid fa-school"></i> 多校联盟
 
-“**多校联盟**”是一个由《电教委员指南》创建的学校大屏信息汇总平台。它主要帮助电教委员快速查看全国各地学校的大屏应用实例，为自身工作提供参考模板和灵感。
+"**多校联盟**"是一个由《电教委员指南》创建的学校大屏信息汇总平台。它主要帮助电教委员快速查看全国各地学校的大屏应用实例，为自身工作提供参考模板和灵感。
+
+<script setup>
+import HeatmapComponent from './heatmap-component.vue'
+</script>
+
+## 全国分布概览
+
+<HeatmapComponent />
+
+## 快速导航
+
+- 📋 [学校信息汇总](/school/all-schools) - 查看所有学校的详细信息，支持纵向滚动浏览
+- 📊 [学校列表](#学校列表) - 按地区和类型查看学校概览
+- 🗺️ [分布热力图](#全国分布概览) - 可视化查看全国学校分布情况
 
 ## 学校列表
 
