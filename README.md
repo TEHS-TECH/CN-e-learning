@@ -96,17 +96,17 @@ npm run docs:build
                 </a>
             </td>
             <td align="center">
-                <a href="https://github.com/jiangyin14">
-                    <img src="https://avatars.githubusercontent.com/u/106649516?v=4" width="100;" alt="jiangyin14"/>
-                    <br />
-                    <sub><b>姜胤</b></sub>
-                </a>
-            </td>
-            <td align="center">
                 <a href="https://github.com/Makitoid">
                     <img src="https://avatars.githubusercontent.com/u/123004192?v=4" width="100;" alt="Makitoid"/>
                     <br />
                     <sub><b>Makitoid Wang</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/jiangyin14">
+                    <img src="https://avatars.githubusercontent.com/u/106649516?v=4" width="100;" alt="jiangyin14"/>
+                    <br />
+                    <sub><b>姜胤</b></sub>
                 </a>
             </td>
             <td align="center">
