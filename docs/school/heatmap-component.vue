@@ -40,11 +40,11 @@ const totalSchools = ref(0)
 const activeProvinces = ref(0)
 const lastUpdated = ref('')
 const legendItems = ref([
-  { min: 0, max: 0, color: '#f7f7f7', label: '暂无数据' },
-  { min: 1, max: 5, color: '#c6e48b', label: '1-5所' },
-  { min: 6, max: 10, color: '#7bc96f', label: '6-10所' },
-  { min: 11, max: 20, color: '#239a3b', label: '11-20所' },
-  { min: 21, max: 999, color: '#196127', label: '20所以上' }
+  { min: 0, max: 0, color: '#f0f0f0', label: '暂无数据' },
+  { min: 1, max: 5, color: '#ffeb3b', label: '1-5所' },
+  { min: 6, max: 10, color: '#ff9800', label: '6-10所' },
+  { min: 11, max: 20, color: '#f44336', label: '11-20所' },
+  { min: 21, max: 999, color: '#9c27b0', label: '20所以上' }
 ])
 
 /**
@@ -70,11 +70,11 @@ const formatDate = (dateString) => {
  * @returns {string} 对应的颜色值
  */
 const getColor = (value) => {
-  if (value === 0) return '#f7f7f7'
-  if (value <= 5) return '#c6e48b'
-  if (value <= 10) return '#7bc96f'
-  if (value <= 20) return '#239a3b'
-  return '#196127'
+  if (value === 0) return '#f0f0f0'
+  if (value <= 5) return '#ffeb3b'
+  if (value <= 10) return '#ff9800'
+  if (value <= 20) return '#f44336'
+  return '#9c27b0'
 }
 
 /**
@@ -171,7 +171,7 @@ const initChart = async (heatmapData) => {
       top: 'bottom',
       text: ['高', '低'],
       inRange: {
-        color: ['#f7f7f7', '#c6e48b', '#7bc96f', '#239a3b', '#196127']
+        color: ['#f0f0f0', '#ffeb3b', '#ff9800', '#f44336', '#9c27b0']
       },
       calculable: true
     },
@@ -229,7 +229,7 @@ onMounted(async () => {
 
 .heatmap-header {
   padding: 16px 20px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #007BFF;
   color: white;
 }
 
