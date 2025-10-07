@@ -22,32 +22,32 @@
 建议优先选择GitLab镜像源以规避网络问题：
 - **GitLab（推荐）**  
   https://gitlab.com/cleanflash/installer/-/releases/34.0.0.325  
-  ![GitLab下载界面](../public/images/how-to-enable-flash-contents-in-microsoft-office/1.png)
+  ![GitLab下载界面](/images/how-to-enable-flash-contents-in-microsoft-office/1.png)
 - **GitHub（备用）**  
   https://github.com/TCOTC/CleanFlash_Installer/releases  
-  ![GitHub下载界面](../public/images/how-to-enable-flash-contents-in-microsoft-office/2.png)
+  ![GitHub下载界面](/images/how-to-enable-flash-contents-in-microsoft-office/2.png)
 
 #### 安装教程
 1. **协议确认**  
    勾选许可协议复选框 → 点击"Agree"  
-   ![协议确认界面](../public/images/how-to-enable-flash-contents-in-microsoft-office/3.png)
+   ![协议确认界面](/images/how-to-enable-flash-contents-in-microsoft-office/3.png)
 
 2. **组件选择**  
    全选三个功能模块 → 点击"Next"  
-   ![组件选择界面](../public/images/how-to-enable-flash-contents-in-microsoft-office/4.png)
+   ![组件选择界面](/images/how-to-enable-flash-contents-in-microsoft-office/4.png)
 
 3. **快捷方式**  
    按需选择 → 点击"Next"  
-   ![快捷方式设置界面](../public/images/how-to-enable-flash-contents-in-microsoft-office/5.png)
+   ![快捷方式设置界面](/images/how-to-enable-flash-contents-in-microsoft-office/5.png)
 
 4. **版本选择**  
    忽略调试版选项 → 直接点击"Next"  
-   ![版本选择界面](../public/images/how-to-enable-flash-contents-in-microsoft-office/6.png)
+   ![版本选择界面](/images/how-to-enable-flash-contents-in-microsoft-office/6.png)
 
 5. **完成安装**  
    点击"Install"执行安装 → 完成后点击"Quit"退出
-   ![安装过程界面](../public/images/how-to-enable-flash-contents-in-microsoft-office/12.png)  
-   ![安装完成界面](../public/images/how-to-enable-flash-contents-in-microsoft-office/13.png)
+   ![安装过程界面](/images/how-to-enable-flash-contents-in-microsoft-office/12.png)  
+   ![安装完成界面](/images/how-to-enable-flash-contents-in-microsoft-office/13.png)
 
 
 
@@ -57,9 +57,9 @@
 
 打开这个网址：
 https://www.flash.cn/download-wins
-![7](../public/images/how-to-enable-flash-contents-in-microsoft-office/7.png)
+![7](/images/how-to-enable-flash-contents-in-microsoft-office/7.png)
 
-![8](../public/images/how-to-enable-flash-contents-in-microsoft-office/8.png)
+![8](/images/how-to-enable-flash-contents-in-microsoft-office/8.png)
 
 ---
 
@@ -69,14 +69,14 @@ https://www.flash.cn/download-wins
 
 打开压缩包，**依次**将**三个都**合入注册表。
 
-![9](../public/images/how-to-enable-flash-contents-in-microsoft-office/9.png)
+![9](/images/how-to-enable-flash-contents-in-microsoft-office/9.png)
 
 如果不出意外的话，您的Office打开含flash的幻灯片时就会出现这个提示。
 
-![10](../public/images/how-to-enable-flash-contents-in-microsoft-office/10.png)
+![10](/images/how-to-enable-flash-contents-in-microsoft-office/10.png)
 
 勾上 **“我可以识别此内容。允许播放”** 并点击继续。
 
-![11](../public/images/how-to-enable-flash-contents-in-microsoft-office/11.png)
+![11](/images/how-to-enable-flash-contents-in-microsoft-office/11.png)
 
 很好，这样您的flash已经成功动起来了！

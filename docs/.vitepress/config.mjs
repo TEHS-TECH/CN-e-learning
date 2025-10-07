@@ -60,7 +60,7 @@ export default defineConfig({
       sortFolderTo: 'top',
       sortMenusByFrontmatterOrder: true,
       manualSortFileNameByPriority: ['guide', 'faq', 'school'],
-      excludeByGlobPattern: ['school/list/'],
+      excludeByGlobPattern: ['school/list'],
     }),
 
     socialLinks: [

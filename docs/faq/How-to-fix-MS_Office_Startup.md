@@ -5,7 +5,7 @@
 
 ## 通过 控制面板\程序\程序和功能 修复
  - 打开 控制面板<br>
-<img width="784" height="697" alt="image" src="https://github.com/user-atta chments/assets/a98b6277-969a-44b8-ba9d-55ea520bfbb0" /><br>
+<img width="784" height="697" alt="image" src="https://github.com/user-attachments/assets/a98b6277-969a-44b8-ba9d-55ea520bfbb0" /><br>
 
  - 点击 卸载程序<br>
 <img width="1121" height="622" alt="image" src="https://github.com/user-attachments/assets/636cdf72-7190-45b7-a468-3ef3acc12375" /><br>
