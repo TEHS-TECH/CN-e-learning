@@ -19,7 +19,7 @@ jobs:
       - name: 检出代码
         uses: actions/checkout@v4
 
-      - name: 追加学校信息到表格
+      - name: 追加学校信息到表格并同步数据
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -48,6 +48,104 @@ jobs:
             const type = extractField(issue.body, '学校类型');
             const provinceCode = extractField(issue.body, '省份');
             const coordinates = extractField(issue.body, '经纬度坐标');
+            
+            /**
+             * 同步数据到JSON文件
+             */
+            function syncToDataFiles(schoolData) {
+              try {
+                const heatmapPath = 'docs/school/heatmap-data.json';
+                const provincePath = 'docs/school/province-data.json';
+                const publicHeatmapPath = 'docs/public/school/heatmap-data.json';
+                const publicProvincePath = 'docs/public/school/province-data.json';
+                
+                // 解析坐标
+                let coords = [0, 0];
+                if (schoolData.coordinates) {
+                  const coordMatch = schoolData.coordinates.match(/([0-9.]+),\s*([0-9.]+)/);
+                  if (coordMatch) {
+                    coords = [parseFloat(coordMatch[1]), parseFloat(coordMatch[2])];
+                  }
+                }
+                
+                // 更新热力图数据
+                if (fs.existsSync(heatmapPath)) {
+                  const heatmapData = JSON.parse(fs.readFileSync(heatmapPath, 'utf8'));
+                  
+                  // 查找或创建省份数据
+                  let provinceData = heatmapData.data.find(p => p.code === schoolData.provinceCode);
+                  if (!provinceData) {
+                    // 获取省份名称映射
+                    const mappingPath = 'docs/school/province-mapping.json';
+                    let provinceName = schoolData.location.split('省')[0] + '省';
+                    if (fs.existsSync(mappingPath)) {
+                      const mapping = JSON.parse(fs.readFileSync(mappingPath, 'utf8'));
+                      provinceName = mapping[schoolData.provinceCode] || provinceName;
+                    }
+                    
+                    provinceData = {
+                      name: provinceName,
+                      code: schoolData.provinceCode,
+                      value: 0,
+                      center: coords,
+                      schools: []
+                    };
+                    heatmapData.data.push(provinceData);
+                  }
+                  
+                  // 添加学校到省份数据
+                  if (!provinceData.schools.find(s => s.name === schoolData.name)) {
+                    provinceData.schools.push({
+                      name: schoolData.name,
+                      coordinates: coords,
+                      type: schoolData.type
+                    });
+                    provinceData.value = provinceData.schools.length;
+                    heatmapData.totalSchools++;
+                  }
+                  
+                  heatmapData.lastUpdated = new Date().toISOString();
+                  fs.writeFileSync(heatmapPath, JSON.stringify(heatmapData, null, 2));
+                  
+                  // 同步到public环境
+                  const publicDir = path.dirname(publicHeatmapPath);
+                  if (!fs.existsSync(publicDir)) {
+                    fs.mkdirSync(publicDir, { recursive: true });
+                  }
+                  fs.writeFileSync(publicHeatmapPath, JSON.stringify(heatmapData, null, 2));
+                }
+                
+                // 更新省份数据
+                if (fs.existsSync(provincePath)) {
+                  const provinceData = JSON.parse(fs.readFileSync(provincePath, 'utf8'));
+                  
+                  if (provinceData.provinces[schoolData.provinceCode]) {
+                    const schools = provinceData.provinces[schoolData.provinceCode].schools;
+                    if (!schools.find(s => s.name === schoolData.name)) {
+                      schools.push({
+                        name: schoolData.name,
+                        location: schoolData.location,
+                        type: schoolData.type,
+                        coordinates: coords,
+                        addedDate: new Date().toISOString()
+                      });
+                      provinceData.provinces[schoolData.provinceCode].count = schools.length;
+                      provinceData.totalSchools++;
+                    }
+                  }
+                  
+                  provinceData.lastUpdated = new Date().toISOString();
+                  fs.writeFileSync(provincePath, JSON.stringify(provinceData, null, 2));
+                  
+                  // 同步到public环境
+                  fs.writeFileSync(publicProvincePath, JSON.stringify(provinceData, null, 2));
+                }
+                
+                console.log('✅ 数据已同步到JSON文件');
+              } catch (error) {
+                console.error('❌ 数据同步失败:', error.message);
+              }
+            }
             
             // 验证必要字段
             if (!location || !type || !name || !provinceCode) {
@@ -83,6 +181,16 @@ jobs:
               core.setOutput('school_name', name);
               core.setOutput('province_code', provinceCode);
               core.setOutput('coordinates', coordinates);
+              
+              // 同步数据到JSON文件
+              syncToDataFiles({
+                name: name,
+                location: location,
+                type: type,
+                provinceCode: provinceCode,
+                coordinates: coordinates
+              });
+              
             } catch (error) {
               core.setFailed(`处理文件时出错: ${error.message}`);
             }

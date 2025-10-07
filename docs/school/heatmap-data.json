@@ -1,21 +1,16 @@
 {
-  "lastUpdated": "2025-10-07T12:44:09.453Z",
-  "totalSchools": 35,
+  "lastUpdated": "2025-10-07T13:36:23.221Z",
+  "totalSchools": 33,
   "data": [
     {
       "name": "北京市",
       "code": "110000",
-      "value": 4,
+      "value": 3,
       "center": [
         116.4074,
         39.9042
       ],
       "schools": [
-        {
-          "name": "北京市测试学校",
-          "coordinates": null,
-          "type": "完全中学"
-        },
         {
           "name": "北京探月学校",
           "coordinates": [
@@ -296,7 +291,7 @@
     {
       "name": "广东省",
       "code": "440000",
-      "value": 6,
+      "value": 5,
       "center": [
         113.2804,
         23.1291
@@ -341,11 +336,6 @@
             23.5439
           ],
           "type": "高级中学"
-        },
-        {
-          "name": "深圳测试中学",
-          "coordinates": null,
-          "type": "中等职业学校"
         }
       ]
     },

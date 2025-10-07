@@ -1,0 +1,344 @@
+# 多校联盟数据同步验证工作流
+name: 多校联盟数据同步验证
+
+on:
+  # 定时检查数据一致性（每天凌晨2点）
+  schedule:
+    - cron: '0 2 * * *'
+  # 手动触发
+  workflow_dispatch:
+  # 当数据文件发生变化时触发
+  push:
+    paths:
+      - 'docs/school/**/*.json'
+      - 'docs/public/school/**/*.json'
+    branches: [ main, master ]
+
+# 设置必要的权限
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  validate-and-sync-data:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 设置 Node.js 环境
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: 创建数据验证脚本
+        run: |
+          cat > validate-data.js << 'EOF'
+          const fs = require('fs');
+          const path = require('path');
+
+          /**
+           * 验证多校联盟数据一致性
+           */
+          function validateDataConsistency() {
+            const devHeatmapPath = 'docs/school/heatmap-data.json';
+            const publicHeatmapPath = 'docs/public/school/heatmap-data.json';
+            const devProvincePath = 'docs/school/province-data.json';
+            const publicProvincePath = 'docs/public/school/province-data.json';
+            
+            const issues = [];
+            
+            try {
+              // 检查文件是否存在
+              if (!fs.existsSync(devHeatmapPath)) {
+                issues.push(`❌ 缺失文件: ${devHeatmapPath}`);
+              }
+              if (!fs.existsSync(publicHeatmapPath)) {
+                issues.push(`❌ 缺失文件: ${publicHeatmapPath}`);
+              }
+              if (!fs.existsSync(devProvincePath)) {
+                issues.push(`❌ 缺失文件: ${devProvincePath}`);
+              }
+              if (!fs.existsSync(publicProvincePath)) {
+                issues.push(`❌ 缺失文件: ${publicProvincePath}`);
+              }
+              
+              if (issues.length > 0) {
+                return { valid: false, issues };
+              }
+              
+              // 读取数据文件
+              const devHeatmap = JSON.parse(fs.readFileSync(devHeatmapPath, 'utf8'));
+              const publicHeatmap = JSON.parse(fs.readFileSync(publicHeatmapPath, 'utf8'));
+              const devProvince = JSON.parse(fs.readFileSync(devProvincePath, 'utf8'));
+              const publicProvince = JSON.parse(fs.readFileSync(publicProvincePath, 'utf8'));
+              
+              // 验证学校总数一致性
+              if (devHeatmap.totalSchools !== publicHeatmap.totalSchools) {
+                issues.push(`❌ 学校总数不一致: dev(${devHeatmap.totalSchools}) vs public(${publicHeatmap.totalSchools})`);
+              }
+              
+              if (devProvince.totalSchools !== publicProvince.totalSchools) {
+                issues.push(`❌ 省份数据学校总数不一致: dev(${devProvince.totalSchools}) vs public(${publicProvince.totalSchools})`);
+              }
+              
+              // 验证省份数据一致性
+              const devProvinces = Object.keys(devProvince.provinces);
+              const publicProvinces = Object.keys(publicProvince.provinces);
+              
+              if (devProvinces.length !== publicProvinces.length) {
+                issues.push(`❌ 省份数量不一致: dev(${devProvinces.length}) vs public(${publicProvinces.length})`);
+              }
+              
+              // 验证每个省份的学校数量
+              for (const provinceCode of devProvinces) {
+                const devCount = devProvince.provinces[provinceCode]?.count || 0;
+                const publicCount = publicProvince.provinces[provinceCode]?.count || 0;
+                
+                if (devCount !== publicCount) {
+                  const provinceName = devProvince.provinces[provinceCode]?.name || provinceCode;
+                  issues.push(`❌ ${provinceName}学校数量不一致: dev(${devCount}) vs public(${publicCount})`);
+                }
+              }
+              
+              // 验证热力图数据省份数量
+              if (devHeatmap.data.length !== publicHeatmap.data.length) {
+                issues.push(`❌ 热力图省份数量不一致: dev(${devHeatmap.data.length}) vs public(${publicHeatmap.data.length})`);
+              }
+              
+              console.log('✅ 数据验证完成');
+              if (issues.length === 0) {
+                console.log('✅ 所有数据一致性检查通过');
+                return { valid: true, issues: [] };
+              } else {
+                console.log('❌ 发现数据不一致问题:');
+                issues.forEach(issue => console.log(`  ${issue}`));
+                return { valid: false, issues };
+              }
+              
+            } catch (error) {
+              issues.push(`❌ 验证过程中发生错误: ${error.message}`);
+              return { valid: false, issues };
+            }
+          }
+
+          /**
+           * 同步数据文件
+           */
+          function syncDataFiles() {
+            try {
+              const devHeatmapPath = 'docs/school/heatmap-data.json';
+              const publicHeatmapPath = 'docs/public/school/heatmap-data.json';
+              const devProvincePath = 'docs/school/province-data.json';
+              const publicProvincePath = 'docs/public/school/province-data.json';
+              const devMappingPath = 'docs/school/province-mapping.json';
+              const publicMappingPath = 'docs/public/school/province-mapping.json';
+              
+              // 确保public目录存在
+              const publicDir = path.dirname(publicHeatmapPath);
+              if (!fs.existsSync(publicDir)) {
+                fs.mkdirSync(publicDir, { recursive: true });
+              }
+              
+              // 同步文件（以dev环境为准）
+              if (fs.existsSync(devHeatmapPath)) {
+                fs.copyFileSync(devHeatmapPath, publicHeatmapPath);
+                console.log('✅ 已同步 heatmap-data.json');
+              }
+              
+              if (fs.existsSync(devProvincePath)) {
+                fs.copyFileSync(devProvincePath, publicProvincePath);
+                console.log('✅ 已同步 province-data.json');
+              }
+              
+              if (fs.existsSync(devMappingPath)) {
+                fs.copyFileSync(devMappingPath, publicMappingPath);
+                console.log('✅ 已同步 province-mapping.json');
+              }
+              
+              return true;
+            } catch (error) {
+              console.error('❌ 同步失败:', error.message);
+              return false;
+            }
+          }
+
+          // 主执行逻辑
+          const validation = validateDataConsistency();
+          
+          if (!validation.valid) {
+            console.log('🔄 检测到数据不一致，开始自动同步...');
+            const syncSuccess = syncDataFiles();
+            
+            if (syncSuccess) {
+              console.log('✅ 数据同步完成');
+              // 重新验证
+              const revalidation = validateDataConsistency();
+              if (revalidation.valid) {
+                console.log('✅ 同步后验证通过');
+                process.exit(0);
+              } else {
+                console.log('❌ 同步后仍存在问题');
+                process.exit(1);
+              }
+            } else {
+              console.log('❌ 数据同步失败');
+              process.exit(1);
+            }
+          } else {
+            console.log('✅ 数据一致性验证通过，无需同步');
+            process.exit(0);
+          }
+          EOF
+
+      - name: 执行数据验证和同步
+        id: validate
+        run: |
+          node validate-data.js
+          echo "validation_result=$?" >> $GITHUB_OUTPUT
+
+      - name: 检查是否有文件变更
+        id: check_changes
+        run: |
+          if git diff --quiet; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: 提交同步后的文件
+        if: steps.check_changes.outputs.has_changes == 'true'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add docs/public/school/
+          git commit -m "🔄 自动同步多校联盟数据文件
+
+          - 同步 heatmap-data.json
+          - 同步 province-data.json  
+          - 同步 province-mapping.json
+          
+          确保 public 和 dev 环境数据一致性"
+          git push
+
+      - name: 创建问题报告（如果验证失败）
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const title = '🚨 多校联盟数据一致性验证失败';
+            const body = `
+            ## 数据一致性验证失败
+
+            **触发时间**: ${new Date().toISOString()}
+            **工作流**: ${context.workflow}
+            **运行ID**: ${context.runId}
+
+            ### 问题描述
+            多校联盟数据在 public 和 dev 环境之间存在不一致问题。
+
+            ### 需要检查的文件
+            - \`docs/school/heatmap-data.json\`
+            - \`docs/public/school/heatmap-data.json\`
+            - \`docs/school/province-data.json\`
+            - \`docs/public/school/province-data.json\`
+            - \`docs/school/province-mapping.json\`
+            - \`docs/public/school/province-mapping.json\`
+
+            ### 建议操作
+            1. 检查上述文件的数据一致性
+            2. 手动运行数据同步工作流
+            3. 如果问题持续存在，请联系维护人员
+
+            ### 相关链接
+            - [工作流运行详情](https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId})
+            `;
+
+            // 检查是否已存在相同的问题
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: ['数据同步', '自动化']
+            });
+
+            const existingIssue = issues.find(issue => issue.title === title);
+
+            if (!existingIssue) {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: title,
+                body: body,
+                labels: ['数据同步', '自动化', 'bug']
+              });
+              console.log('已创建问题报告');
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: existingIssue.number,
+                body: `🔄 **${new Date().toISOString()}** 再次检测到数据不一致问题\n\n[查看最新运行详情](https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId})`
+              });
+              console.log('已更新现有问题报告');
+            }
+
+  # 数据完整性检查任务
+  data-integrity-check:
+    runs-on: ubuntu-latest
+    needs: validate-and-sync-data
+    if: always()
+    
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 数据完整性检查
+        run: |
+          echo "🔍 执行数据完整性检查..."
+          
+          # 检查必要的数据文件是否存在
+          files=(
+            "docs/school/heatmap-data.json"
+            "docs/public/school/heatmap-data.json"
+            "docs/school/province-data.json"
+            "docs/public/school/province-data.json"
+            "docs/school/province-mapping.json"
+            "docs/public/school/province-mapping.json"
+          )
+          
+          missing_files=()
+          for file in "${files[@]}"; do
+            if [ ! -f "$file" ]; then
+              missing_files+=("$file")
+            fi
+          done
+          
+          if [ ${#missing_files[@]} -eq 0 ]; then
+            echo "✅ 所有必要的数据文件都存在"
+          else
+            echo "❌ 缺失以下文件:"
+            printf '%s\n' "${missing_files[@]}"
+            exit 1
+          fi
+          
+          # 检查JSON文件格式
+          echo "🔍 检查JSON文件格式..."
+          for file in "${files[@]}"; do
+            if [ -f "$file" ]; then
+              if jq empty "$file" 2>/dev/null; then
+                echo "✅ $file 格式正确"
+              else
+                echo "❌ $file 格式错误"
+                exit 1
+              fi
+            fi
+          done
+          
+          echo "✅ 数据完整性检查通过"

@@ -1,0 +1,330 @@
+# 多校联盟数据异常告警系统
+name: 数据异常告警系统
+
+on:
+  # 当数据同步验证失败时触发
+  workflow_run:
+    workflows: ["多校联盟数据同步验证"]
+    types:
+      - completed
+  # 手动触发
+  workflow_dispatch:
+    inputs:
+      alert_type:
+        description: '告警类型'
+        required: true
+        default: 'data_inconsistency'
+        type: choice
+        options:
+        - data_inconsistency
+        - sync_failure
+        - validation_error
+      message:
+        description: '自定义告警消息'
+        required: false
+        type: string
+
+# 设置必要的权限
+permissions:
+  contents: read
+  issues: write
+  discussions: write
+
+jobs:
+  check-workflow-status:
+    runs-on: ubuntu-latest
+    if: github.event.workflow_run.conclusion == 'failure'
+    outputs:
+      should_alert: ${{ steps.check.outputs.should_alert }}
+      alert_level: ${{ steps.check.outputs.alert_level }}
+      
+    steps:
+      - name: 检查工作流状态
+        id: check
+        run: |
+          echo "工作流 '${{ github.event.workflow_run.name }}' 执行失败"
+          echo "结论: ${{ github.event.workflow_run.conclusion }}"
+          echo "should_alert=true" >> $GITHUB_OUTPUT
+          echo "alert_level=high" >> $GITHUB_OUTPUT
+
+  send-alerts:
+    runs-on: ubuntu-latest
+    needs: [check-workflow-status]
+    if: always() && (needs.check-workflow-status.outputs.should_alert == 'true' || github.event_name == 'workflow_dispatch')
+    
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 生成告警信息
+        id: generate_alert
+        run: |
+          # 设置告警信息
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            ALERT_TYPE="${{ github.event.inputs.alert_type }}"
+            CUSTOM_MESSAGE="${{ github.event.inputs.message }}"
+          else
+            ALERT_TYPE="workflow_failure"
+            CUSTOM_MESSAGE="工作流执行失败: ${{ github.event.workflow_run.name }}"
+          fi
+          
+          # 生成告警标题和内容
+          case $ALERT_TYPE in
+            "data_inconsistency")
+              TITLE="🚨 数据不一致告警"
+              PRIORITY="high"
+              LABELS="数据同步,告警,高优先级"
+              ;;
+            "sync_failure")
+              TITLE="⚠️ 数据同步失败告警"
+              PRIORITY="medium"
+              LABELS="数据同步,告警,中优先级"
+              ;;
+            "validation_error")
+              TITLE="❌ 数据验证错误告警"
+              PRIORITY="medium"
+              LABELS="数据验证,告警,中优先级"
+              ;;
+            "workflow_failure")
+              TITLE="🔧 工作流执行失败告警"
+              PRIORITY="high"
+              LABELS="工作流,告警,高优先级"
+              ;;
+            *)
+              TITLE="🔔 系统告警"
+              PRIORITY="low"
+              LABELS="系统,告警"
+              ;;
+          esac
+          
+          echo "alert_title=$TITLE" >> $GITHUB_OUTPUT
+          echo "alert_type=$ALERT_TYPE" >> $GITHUB_OUTPUT
+          echo "priority=$PRIORITY" >> $GITHUB_OUTPUT
+          echo "labels=$LABELS" >> $GITHUB_OUTPUT
+          echo "custom_message=$CUSTOM_MESSAGE" >> $GITHUB_OUTPUT
+
+      - name: 创建或更新告警Issue
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const title = '${{ steps.generate_alert.outputs.alert_title }}';
+            const alertType = '${{ steps.generate_alert.outputs.alert_type }}';
+            const priority = '${{ steps.generate_alert.outputs.priority }}';
+            const labels = '${{ steps.generate_alert.outputs.labels }}'.split(',');
+            const customMessage = '${{ steps.generate_alert.outputs.custom_message }}';
+            
+            // 生成告警内容
+            const currentTime = new Date().toISOString();
+            const runUrl = `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            
+            let body = `## 告警详情\n\n`;
+            body += `**告警时间**: ${currentTime}\n`;
+            body += `**告警类型**: ${alertType}\n`;
+            body += `**优先级**: ${priority}\n`;
+            body += `**触发方式**: ${context.eventName}\n\n`;
+            
+            if (customMessage) {
+              body += `**详细信息**: ${customMessage}\n\n`;
+            }
+            
+            // 根据告警类型添加具体信息
+            switch (alertType) {
+              case 'data_inconsistency':
+                body += `### 数据不一致问题\n\n`;
+                body += `检测到多校联盟数据在 public 和 dev 环境之间存在不一致。\n\n`;
+                body += `#### 需要检查的文件\n`;
+                body += `- \`docs/school/heatmap-data.json\` vs \`docs/public/school/heatmap-data.json\`\n`;
+                body += `- \`docs/school/province-data.json\` vs \`docs/public/school/province-data.json\`\n`;
+                body += `- \`docs/school/province-mapping.json\` vs \`docs/public/school/province-mapping.json\`\n\n`;
+                body += `#### 建议操作\n`;
+                body += `1. 运行数据验证脚本: \`pnpm run validate:data\`\n`;
+                body += `2. 如有问题，运行数据同步: \`pnpm run sync:data\`\n`;
+                body += `3. 检查最新的数据同步工作流执行情况\n`;
+                break;
+                
+              case 'sync_failure':
+                body += `### 数据同步失败\n\n`;
+                body += `自动数据同步过程中发生错误。\n\n`;
+                body += `#### 可能原因\n`;
+                body += `- 源文件格式错误或损坏\n`;
+                body += `- 文件权限问题\n`;
+                body += `- 网络或系统临时故障\n\n`;
+                body += `#### 建议操作\n`;
+                body += `1. 检查源数据文件的完整性\n`;
+                body += `2. 手动运行同步脚本进行诊断\n`;
+                body += `3. 查看详细的错误日志\n`;
+                break;
+                
+              case 'validation_error':
+                body += `### 数据验证错误\n\n`;
+                body += `数据文件验证过程中发现错误。\n\n`;
+                body += `#### 可能问题\n`;
+                body += `- JSON格式错误\n`;
+                body += `- 数据结构不符合预期\n`;
+                body += `- 必要字段缺失\n\n`;
+                body += `#### 建议操作\n`;
+                body += `1. 检查数据文件的JSON格式\n`;
+                body += `2. 验证数据结构的完整性\n`;
+                body += `3. 对比正确的数据模板\n`;
+                break;
+                
+              case 'workflow_failure':
+                body += `### 工作流执行失败\n\n`;
+                body += `GitHub Actions 工作流执行过程中发生错误。\n\n`;
+                if (context.payload.workflow_run) {
+                  body += `**失败的工作流**: ${context.payload.workflow_run.name}\n`;
+                  body += `**工作流URL**: ${context.payload.workflow_run.html_url}\n\n`;
+                }
+                body += `#### 建议操作\n`;
+                body += `1. 查看工作流的详细日志\n`;
+                body += `2. 检查相关的代码变更\n`;
+                body += `3. 验证工作流配置的正确性\n`;
+                break;
+            }
+            
+            body += `\n### 相关链接\n`;
+            body += `- [当前告警工作流](${runUrl})\n`;
+            body += `- [数据验证脚本](https://github.com/${context.repo.owner}/${context.repo.repo}/blob/main/scripts/validate-data-consistency.js)\n`;
+            body += `- [数据同步脚本](https://github.com/${context.repo.owner}/${context.repo.repo}/blob/main/scripts/sync-data-files.js)\n\n`;
+            
+            body += `---\n`;
+            body += `*此告警由自动化系统生成，如需帮助请联系维护团队。*`;
+            
+            // 检查是否已存在相同类型的开放告警
+            const { data: existingIssues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: labels[0] // 使用第一个标签进行筛选
+            });
+            
+            const existingAlert = existingIssues.find(issue => 
+              issue.title.includes(alertType) && 
+              issue.labels.some(label => label.name === '告警')
+            );
+            
+            if (existingAlert) {
+              // 更新现有告警
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: existingAlert.number,
+                body: `🔄 **${currentTime}** 再次触发告警\n\n${customMessage ? `**详情**: ${customMessage}\n\n` : ''}[查看最新执行详情](${runUrl})`
+              });
+              
+              // 更新标签（如果优先级更高）
+              if (priority === 'high') {
+                await github.rest.issues.addLabels({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: existingAlert.number,
+                  labels: ['高优先级']
+                });
+              }
+              
+              console.log(`已更新现有告警 Issue #${existingAlert.number}`);
+            } else {
+              // 创建新的告警Issue
+              const newIssue = await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: title,
+                body: body,
+                labels: labels
+              });
+              
+              console.log(`已创建新的告警 Issue #${newIssue.data.number}`);
+            }
+
+      - name: 发送通知到讨论区
+        if: steps.generate_alert.outputs.priority == 'high'
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const title = '${{ steps.generate_alert.outputs.alert_title }}';
+            const alertType = '${{ steps.generate_alert.outputs.alert_type }}';
+            const customMessage = '${{ steps.generate_alert.outputs.custom_message }}';
+            const currentTime = new Date().toISOString();
+            const runUrl = `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            
+            const body = `## 🚨 高优先级系统告警\n\n` +
+                        `**时间**: ${currentTime}\n` +
+                        `**类型**: ${alertType}\n` +
+                        `**详情**: ${customMessage}\n\n` +
+                        `请相关维护人员及时处理。\n\n` +
+                        `[查看详细信息](${runUrl})`;
+            
+            try {
+              // 尝试在讨论区发布通知（需要仓库启用讨论功能）
+              const { data: categories } = await github.rest.repos.listDiscussionCategories({
+                owner: context.repo.owner,
+                repo: context.repo.repo
+              });
+              
+              const announcementCategory = categories.find(cat => 
+                cat.name.toLowerCase().includes('announcement') || 
+                cat.name.toLowerCase().includes('通知')
+              );
+              
+              if (announcementCategory) {
+                await github.rest.repos.createDiscussion({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  title: title,
+                  body: body,
+                  category_id: announcementCategory.id
+                });
+                console.log('已在讨论区发布高优先级告警通知');
+              }
+            } catch (error) {
+              console.log('无法在讨论区发布通知（可能未启用讨论功能）:', error.message);
+            }
+
+  cleanup-resolved-alerts:
+    runs-on: ubuntu-latest
+    if: always()
+    
+    steps:
+      - name: 清理已解决的告警
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            // 查找所有开放的告警Issue
+            const { data: alertIssues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: '告警'
+            });
+            
+            console.log(`找到 ${alertIssues.length} 个开放的告警Issue`);
+            
+            // 检查告警是否已解决（超过24小时且无新活动）
+            const oneDayAgo = new Date(Date.now() - 24 * 60 * 60 * 1000);
+            
+            for (const issue of alertIssues) {
+              const updatedAt = new Date(issue.updated_at);
+              
+              if (updatedAt < oneDayAgo) {
+                // 添加评论并关闭Issue
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: issue.number,
+                  body: '🔄 此告警已超过24小时无新活动，系统自动关闭。如问题仍存在，请重新打开此Issue。'
+                });
+                
+                await github.rest.issues.update({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: issue.number,
+                  state: 'closed',
+                  labels: [...issue.labels.map(l => l.name), '自动关闭']
+                });
+                
+                console.log(`已自动关闭告警Issue #${issue.number}`);
+              }
+            }
