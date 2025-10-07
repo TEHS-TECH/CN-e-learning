@@ -1,0 +1,22 @@
+{
+  "lastUpdated": "2025-10-07T12:18:51.082Z",
+  "totalSchools": 1,
+  "data": [
+    {
+      "name": "北京市",
+      "code": "110000",
+      "value": 1,
+      "center": [
+        116.4074,
+        39.9042
+      ],
+      "schools": [
+        {
+          "name": "北京市测试学校",
+          "coordinates": null,
+          "type": "完全中学"
+        }
+      ]
+    }
+  ]
+}

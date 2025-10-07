@@ -39,7 +39,13 @@ export default defineConfig({
     nav: [
       { text: '<i class="fa-solid fa-book"></i> 指南', link: '/guide/before-starting.md' },
       { text: '<i class="fa-solid fa-question-circle"></i> 常见问题', link: '/faq/the-soft-keyboard-cannot-type' },
-      { text: '<i class="fa-solid fa-school"></i> 多校联盟', link: '/school' },
+      { 
+        text: '<i class="fa-solid fa-school"></i> 多校联盟', 
+        items: [
+          { text: '学校列表', link: '/school' },
+          { text: '学校信息汇总', link: '/school/all-schools' }
+        ]
+      },
       { text: '<i class="fa-solid fa-info-circle"></i> 关于', link: '/about' },
       { text: '<i class="fa-solid fa-link"></i> 友情链接', link: '/links' }
 
@@ -64,7 +70,7 @@ export default defineConfig({
     }),
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/TEHS-TECH/CN-e-learning' },
+      { icon: 'github', link: 'https://github.com/CN-E-Learning/CN-e-learning' },
       { icon: 'qq', link: 'https://qm.qq.com/q/XOabZnlEMm' },
       {
         icon: {
@@ -75,7 +81,7 @@ export default defineConfig({
     ],
 
     footer: {
-      message: '<span style="display: inline-flex; align-items: center; gap: 4px;"><img src="https://i.theojs.cn/logo/miit.webp" alt="miit" width="14" height="14" style="vertical-align: middle;" /> <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">津ICP备2025035356号 - 10</a></span> | <span style="display: inline-flex; align-items: center; gap: 4px;"><img src="https://forum.smart-teach.cn/assets/favicon-v4ksoaxf.png" alt="stcn" width="14" height="14" style="vertical-align: middle;" /> <a href="https://www.smart-teach.cn/" target="_blank" rel="noopener noreferrer">智教联盟提供技术支持</a></span>',
+      message: '<span style="display: inline-flex; align-items: center; gap: 4px;"><img src="/images/miit.webp" alt="miit" width="14" height="14" style="vertical-align: middle;" /> <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">津ICP备2025035356号 - 10</a></span> | <span style="display: inline-flex; align-items: center; gap: 4px;"><img src="/images/stcn.png" alt="stcn" width="14" height="14" style="vertical-align: middle;" /> <a href="https://www.smart-teach.cn/" target="_blank" rel="noopener noreferrer">智教联盟提供技术支持</a></span>',
       copyright: '<span class="copyright" style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 4px;">本文档采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display: inline-flex; align-items: center; gap: 4px;">CC-BY-NC-SA 4.0 许可<img style="height:22px!important;vertical-align:middle;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;vertical-align:middle;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;vertical-align:middle;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;vertical-align:middle;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a>发布 | 版权所有 © 2025 电教委员指南</span>'
     },
 
@@ -84,7 +90,7 @@ export default defineConfig({
       label: '页面导航'
     },
     editLink: {
-      pattern: 'https://github.com/TEHS-TECH/CN-e-learning/edit/main/docs/:path',
+      pattern: 'https://github.com/CN-E-Learning/CN-e-learning/edit/main/docs/:path',
       text: '在 GitHub 上编辑此页面'
     },
     docFooter: {
