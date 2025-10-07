@@ -119,17 +119,17 @@ npm run docs:build
 		</tr>
 		<tr>
             <td align="center">
-                <a href="https://github.com/typed-sigterm">
-                    <img src="https://avatars.githubusercontent.com/u/145281501?v=4" width="100;" alt="typed-sigterm"/>
-                    <br />
-                    <sub><b>Typed SIGTERM</b></sub>
-                </a>
-            </td>
-            <td align="center">
                 <a href="https://github.com/Lyang1273">
                     <img src="https://avatars.githubusercontent.com/u/160390179?v=4" width="100;" alt="Lyang1273"/>
                     <br />
                     <sub><b>Lyang</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/typed-sigterm">
+                    <img src="https://avatars.githubusercontent.com/u/145281501?v=4" width="100;" alt="typed-sigterm"/>
+                    <br />
+                    <sub><b>Typed SIGTERM</b></sub>
                 </a>
             </td>
             <td align="center">
@@ -174,6 +174,13 @@ npm run docs:build
                     <img src="https://avatars.githubusercontent.com/u/124134387?v=4" width="100;" alt="baldi233"/>
                     <br />
                     <sub><b>baldi233</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/MengHanLOVE1027">
+                    <img src="https://avatars.githubusercontent.com/u/99132833?v=4" width="100;" alt="MengHanLOVE1027"/>
+                    <br />
+                    <sub><b>梦涵LOVE</b></sub>
                 </a>
             </td>
 		</tr>
