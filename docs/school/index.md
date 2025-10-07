@@ -63,3 +63,4 @@ import HeatmapComponent from './heatmap-component.vue'
 | 河南省郑州市金水区 | 高级中学 | [郑州市第四十七高级中学](/school/list/郑州市第四十七高级中学) |
 | 广西壮族自治区 来宾市 兴宾区 | 小学 | [来宾市实验小学](/school/list/来宾市实验小学) |
 | 北京市测试区 | 完全中学 | [北京市测试学校](/school/list/北京市测试学校) |
+| 广东省深圳市南山区 | 中等职业学校 | [深圳测试中学](/school/list/深圳测试中学) |
