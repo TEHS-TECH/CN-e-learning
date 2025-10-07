@@ -1,11 +1,19 @@
 {
-  "lastUpdated": "2024-01-01T00:00:00Z",
-  "totalSchools": 0,
+  "lastUpdated": "2025-10-07T12:18:51.082Z",
+  "totalSchools": 1,
   "provinces": {
     "110000": {
       "name": "北京市",
-      "count": 0,
-      "schools": []
+      "count": 1,
+      "schools": [
+        {
+          "name": "北京市测试学校",
+          "location": "北京市测试区",
+          "type": "完全中学",
+          "coordinates": null,
+          "addedDate": "2025-10-07T12:18:51.082Z"
+        }
+      ]
     },
     "120000": {
       "name": "天津市",

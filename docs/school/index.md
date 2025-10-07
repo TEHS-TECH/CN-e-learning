@@ -62,3 +62,4 @@ import HeatmapComponent from './heatmap-component.vue'
 | 上海市松江区 | 高级中学 | [华东师范大学松江实验高级中学](/school/list/华东师范大学松江实验高级中学) |
 | 河南省郑州市金水区 | 高级中学 | [郑州市第四十七高级中学](/school/list/郑州市第四十七高级中学) |
 | 广西壮族自治区 来宾市 兴宾区 | 小学 | [来宾市实验小学](/school/list/来宾市实验小学) |
+| 北京市测试区 | 完全中学 | [北京市测试学校](/school/list/北京市测试学校) |
