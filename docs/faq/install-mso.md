@@ -1,2 +1,2 @@
-# 安装Microsoft Office
+# 安装Microsoft Office <Badge type="tip" text="基础" />
 🚧🚧🚧未完工，敬请期待……

@@ -1,2 +1,2 @@
-# GitHub使用及其加速工具
+# GitHub使用及其加速工具 <Badge type="tip" text="基础" />
 🚧🚧🚧未完工，敬请期待……
