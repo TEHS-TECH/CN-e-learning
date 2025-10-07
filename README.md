@@ -110,14 +110,21 @@ npm run docs:build
                 </a>
             </td>
             <td align="center">
+                <a href="https://github.com/wwcrdrvf6u">
+                    <img src="https://avatars.githubusercontent.com/u/122241403?v=4" width="100;" alt="wwcrdrvf6u"/>
+                    <br />
+                    <sub><b>wwcrdrvf6u</b></sub>
+                </a>
+            </td>
+		</tr>
+		<tr>
+            <td align="center">
                 <a href="https://github.com/typed-sigterm">
                     <img src="https://avatars.githubusercontent.com/u/145281501?v=4" width="100;" alt="typed-sigterm"/>
                     <br />
                     <sub><b>Typed SIGTERM</b></sub>
                 </a>
             </td>
-		</tr>
-		<tr>
             <td align="center">
                 <a href="https://github.com/Lyang1273">
                     <img src="https://avatars.githubusercontent.com/u/160390179?v=4" width="100;" alt="Lyang1273"/>
@@ -140,12 +147,21 @@ npm run docs:build
                 </a>
             </td>
             <td align="center">
+                <a href="https://github.com/MF-Dust">
+                    <img src="https://avatars.githubusercontent.com/u/128943330?v=4" width="100;" alt="MF-Dust"/>
+                    <br />
+                    <sub><b>MF.</b></sub>
+                </a>
+            </td>
+            <td align="center">
                 <a href="https://github.com/MYZ2030">
                     <img src="https://avatars.githubusercontent.com/u/200359622?v=4" width="100;" alt="MYZ2030"/>
                     <br />
                     <sub><b>MYZ2030</b></sub>
                 </a>
             </td>
+		</tr>
+		<tr>
             <td align="center">
                 <a href="https://github.com/Windows-git">
                     <img src="https://avatars.githubusercontent.com/u/109967664?v=4" width="100;" alt="Windows-git"/>
