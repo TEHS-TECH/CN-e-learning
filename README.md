@@ -119,6 +119,13 @@ npm run docs:build
 		</tr>
 		<tr>
             <td align="center">
+                <a href="https://github.com/JerryZeng20142">
+                    <img src="https://avatars.githubusercontent.com/u/131527911?v=4" width="100;" alt="JerryZeng20142"/>
+                    <br />
+                    <sub><b>Jerry Zeng(曾 予翮)</b></sub>
+                </a>
+            </td>
+            <td align="center">
                 <a href="https://github.com/Lyang1273">
                     <img src="https://avatars.githubusercontent.com/u/160390179?v=4" width="100;" alt="Lyang1273"/>
                     <br />
@@ -153,6 +160,8 @@ npm run docs:build
                     <sub><b>Yihggh</b></sub>
                 </a>
             </td>
+		</tr>
+		<tr>
             <td align="center">
                 <a href="https://github.com/MYZ2030">
                     <img src="https://avatars.githubusercontent.com/u/200359622?v=4" width="100;" alt="MYZ2030"/>
@@ -160,8 +169,6 @@ npm run docs:build
                     <sub><b>MYZ2030</b></sub>
                 </a>
             </td>
-		</tr>
-		<tr>
             <td align="center">
                 <a href="https://github.com/Windows-git">
                     <img src="https://avatars.githubusercontent.com/u/109967664?v=4" width="100;" alt="Windows-git"/>
