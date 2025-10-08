@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
-import mdItCustomAttrs from 'markdown-it-custom-attrs'
 import { generateSidebar } from 'vitepress-sidebar';
+import mdItCustomAttrs from 'markdown-it-custom-attrs'
+import markdownItTaskCheckbox from 'markdown-it-task-checkbox'
 
 export default defineConfig({
   title: '电教委员指南',
@@ -27,6 +28,7 @@ export default defineConfig({
         if (tokens[idx].tag === 'h1') htmlResult += `<ArticleMetadata />`;
         return htmlResult;
       };
+      md.use(markdownItTaskCheckbox)
     },
     image: {
       // 开启图片懒加载
