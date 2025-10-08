@@ -64,7 +64,9 @@ npm run docs:build
 - [VitePress](https://vitepress.dev/)：静态站点生成器，基于 Vue 3
 - Markdown：文档内容编写格式
 
-## 🤝 [贡献指南](https://github.com/CN-E-Learning/CN-e-learning?tab=contributing-ov-file)
+## 🤝 贡献指南
+
+请参阅 [贡献指南](https://github.com/CN-E-Learning/CN-e-learning?tab=contributing-ov-file)，了解更多信息。
 
 ## 🙏 贡献者
 
