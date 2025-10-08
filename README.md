@@ -133,10 +133,10 @@ npm run docs:build
                 </a>
             </td>
             <td align="center">
-                <a href="https://github.com/Yihggh">
-                    <img src="https://avatars.githubusercontent.com/u/161115959?v=4" width="100;" alt="Yihggh"/>
+                <a href="https://github.com/xingbiao996">
+                    <img src="https://avatars.githubusercontent.com/u/181859181?v=4" width="100;" alt="xingbiao996"/>
                     <br />
-                    <sub><b>Yihggh</b></sub>
+                    <sub><b>星标</b></sub>
                 </a>
             </td>
             <td align="center">
@@ -147,10 +147,26 @@ npm run docs:build
                 </a>
             </td>
             <td align="center">
-                <a href="https://github.com/xingbiao996">
-                    <img src="https://avatars.githubusercontent.com/u/181859181?v=4" width="100;" alt="xingbiao996"/>
+                <a href="https://github.com/Yihggh">
+                    <img src="https://avatars.githubusercontent.com/u/161115959?v=4" width="100;" alt="Yihggh"/>
                     <br />
-                    <sub><b>星标</b></sub>
+                    <sub><b>Yihggh</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/MYZ2030">
+                    <img src="https://avatars.githubusercontent.com/u/200359622?v=4" width="100;" alt="MYZ2030"/>
+                    <br />
+                    <sub><b>MYZ2030</b></sub>
+                </a>
+            </td>
+		</tr>
+		<tr>
+            <td align="center">
+                <a href="https://github.com/Windows-git">
+                    <img src="https://avatars.githubusercontent.com/u/109967664?v=4" width="100;" alt="Windows-git"/>
+                    <br />
+                    <sub><b>緒山まひろ</b></sub>
                 </a>
             </td>
             <td align="center">
@@ -160,20 +176,11 @@ npm run docs:build
                     <sub><b>MF.</b></sub>
                 </a>
             </td>
-		</tr>
-		<tr>
             <td align="center">
-                <a href="https://github.com/MYZ2030">
-                    <img src="https://avatars.githubusercontent.com/u/200359622?v=4" width="100;" alt="MYZ2030"/>
+                <a href="https://github.com/hujinming0722ispassword">
+                    <img src="https://avatars.githubusercontent.com/u/156481894?v=4" width="100;" alt="hujinming0722ispassword"/>
                     <br />
-                    <sub><b>MYZ2030</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/Windows-git">
-                    <img src="https://avatars.githubusercontent.com/u/109967664?v=4" width="100;" alt="Windows-git"/>
-                    <br />
-                    <sub><b>緒山まひろ</b></sub>
+                    <sub><b>hujinming0722ispassword</b></sub>
                 </a>
             </td>
             <td align="center">
