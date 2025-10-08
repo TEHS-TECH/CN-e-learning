@@ -138,6 +138,13 @@ npm run docs:build
                 </a>
             </td>
             <td align="center">
+                <a href="https://github.com/baldi233">
+                    <img src="https://avatars.githubusercontent.com/u/124134387?v=4" width="100;" alt="baldi233"/>
+                    <br />
+                    <sub><b>baldi233</b></sub>
+                </a>
+            </td>
+            <td align="center">
                 <a href="https://github.com/xingbiao996">
                     <img src="https://avatars.githubusercontent.com/u/181859181?v=4" width="100;" alt="xingbiao996"/>
                     <br />
@@ -151,6 +158,8 @@ npm run docs:build
                     <sub><b>MF.</b></sub>
                 </a>
             </td>
+		</tr>
+		<tr>
             <td align="center">
                 <a href="https://github.com/MYZ2030">
                     <img src="https://avatars.githubusercontent.com/u/200359622?v=4" width="100;" alt="MYZ2030"/>
@@ -158,20 +167,11 @@ npm run docs:build
                     <sub><b>MYZ2030</b></sub>
                 </a>
             </td>
-		</tr>
-		<tr>
             <td align="center">
                 <a href="https://github.com/Windows-git">
                     <img src="https://avatars.githubusercontent.com/u/109967664?v=4" width="100;" alt="Windows-git"/>
                     <br />
                     <sub><b>緒山まひろ</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/baldi233">
-                    <img src="https://avatars.githubusercontent.com/u/124134387?v=4" width="100;" alt="baldi233"/>
-                    <br />
-                    <sub><b>baldi233</b></sub>
                 </a>
             </td>
             <td align="center">

@@ -21,6 +21,7 @@
     "echarts": "^6.0.0",
     "instantsearch.css": "^8.5.1",
     "markdown-it-custom-attrs": "^1.0.2",
+    "markdown-it-task-checkbox": "^1.0.6",
     "ts-node": "^10.9.2",
     "vitepress": "^1.6.4",
     "vue-instantsearch": "^4.21.3"
@@ -33,6 +34,7 @@
     "glob": "^11.0.3",
     "gray-matter": "^4.0.3",
     "medium-zoom": "^1.1.0",
+    "nprogress-v2": "^1.1.10",
     "vitepress-sidebar": "^1.33.0"
   }
 }
