@@ -103,26 +103,26 @@ npm run docs:build
                 </a>
             </td>
             <td align="center">
+                <a href="https://github.com/JerryZeng20142">
+                    <img src="https://avatars.githubusercontent.com/u/131527911?v=4" width="100;" alt="JerryZeng20142"/>
+                    <br />
+                    <sub><b>Jerry Zeng(曾 予翮)</b></sub>
+                </a>
+            </td>
+            <td align="center">
                 <a href="https://github.com/Makitoid">
                     <img src="https://avatars.githubusercontent.com/u/123004192?v=4" width="100;" alt="Makitoid"/>
                     <br />
                     <sub><b>Makitoid Wang</b></sub>
                 </a>
             </td>
+		</tr>
+		<tr>
             <td align="center">
                 <a href="https://github.com/wwcrdrvf6u">
                     <img src="https://avatars.githubusercontent.com/u/122241403?v=4" width="100;" alt="wwcrdrvf6u"/>
                     <br />
                     <sub><b>wwcrdrvf6u</b></sub>
-                </a>
-            </td>
-		</tr>
-		<tr>
-            <td align="center">
-                <a href="https://github.com/JerryZeng20142">
-                    <img src="https://avatars.githubusercontent.com/u/131527911?v=4" width="100;" alt="JerryZeng20142"/>
-                    <br />
-                    <sub><b>Jerry Zeng(曾 予翮)</b></sub>
                 </a>
             </td>
             <td align="center">
