@@ -184,6 +184,13 @@ npm run docs:build
                 </a>
             </td>
             <td align="center">
+                <a href="https://github.com/fhzit">
+                    <img src="https://avatars.githubusercontent.com/u/152045732?v=4" width="100;" alt="fhzit"/>
+                    <br />
+                    <sub><b>Hellofhz</b></sub>
+                </a>
+            </td>
+            <td align="center">
                 <a href="https://github.com/hujinming0722ispassword">
                     <img src="https://avatars.githubusercontent.com/u/156481894?v=4" width="100;" alt="hujinming0722ispassword"/>
                     <br />
