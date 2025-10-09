@@ -103,12 +103,21 @@ npm run docs:build
                 </a>
             </td>
             <td align="center">
+                <a href="https://github.com/JerryZeng20142">
+                    <img src="https://avatars.githubusercontent.com/u/131527911?v=4" width="100;" alt="JerryZeng20142"/>
+                    <br />
+                    <sub><b>Jerry Zeng(曾 予翮)</b></sub>
+                </a>
+            </td>
+            <td align="center">
                 <a href="https://github.com/jiangyin14">
                     <img src="https://avatars.githubusercontent.com/u/106649516?v=4" width="100;" alt="jiangyin14"/>
                     <br />
                     <sub><b>姜胤</b></sub>
                 </a>
             </td>
+		</tr>
+		<tr>
             <td align="center">
                 <a href="https://github.com/wwcrdrvf6u">
                     <img src="https://avatars.githubusercontent.com/u/122241403?v=4" width="100;" alt="wwcrdrvf6u"/>
@@ -116,8 +125,6 @@ npm run docs:build
                     <sub><b>wwcrdrvf6u</b></sub>
                 </a>
             </td>
-		</tr>
-		<tr>
             <td align="center">
                 <a href="https://github.com/Lyang1273">
                     <img src="https://avatars.githubusercontent.com/u/160390179?v=4" width="100;" alt="Lyang1273"/>
@@ -153,22 +160,8 @@ npm run docs:build
                     <sub><b>Yihggh</b></sub>
                 </a>
             </td>
-            <td align="center">
-                <a href="https://github.com/JerryZeng20142">
-                    <img src="https://avatars.githubusercontent.com/u/131527911?v=4" width="100;" alt="JerryZeng20142"/>
-                    <br />
-                    <sub><b>Jerry Zeng(曾 予翮)</b></sub>
-                </a>
-            </td>
 		</tr>
 		<tr>
-            <td align="center">
-                <a href="https://github.com/MF-Dust">
-                    <img src="https://avatars.githubusercontent.com/u/128943330?v=4" width="100;" alt="MF-Dust"/>
-                    <br />
-                    <sub><b>MF.</b></sub>
-                </a>
-            </td>
             <td align="center">
                 <a href="https://github.com/MYZ2030">
                     <img src="https://avatars.githubusercontent.com/u/200359622?v=4" width="100;" alt="MYZ2030"/>
@@ -181,6 +174,13 @@ npm run docs:build
                     <img src="https://avatars.githubusercontent.com/u/109967664?v=4" width="100;" alt="Windows-git"/>
                     <br />
                     <sub><b>緒山まひろ</b></sub>
+                </a>
+            </td>
+            <td align="center">
+                <a href="https://github.com/MF-Dust">
+                    <img src="https://avatars.githubusercontent.com/u/128943330?v=4" width="100;" alt="MF-Dust"/>
+                    <br />
+                    <sub><b>MF.</b></sub>
                 </a>
             </td>
             <td align="center">
