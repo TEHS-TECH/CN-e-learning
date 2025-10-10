@@ -147,26 +147,26 @@ npm run docs:build
                 </a>
             </td>
             <td align="center">
+                <a href="https://github.com/hujinming0722ispassword">
+                    <img src="https://avatars.githubusercontent.com/u/156481894?v=4" width="100;" alt="hujinming0722ispassword"/>
+                    <br />
+                    <sub><b>hujinming0722ispassword</b></sub>
+                </a>
+            </td>
+            <td align="center">
                 <a href="https://github.com/baldi233">
                     <img src="https://avatars.githubusercontent.com/u/124134387?v=4" width="100;" alt="baldi233"/>
                     <br />
                     <sub><b>baldi233</b></sub>
                 </a>
             </td>
+		</tr>
+		<tr>
             <td align="center">
                 <a href="https://github.com/Yihggh">
                     <img src="https://avatars.githubusercontent.com/u/161115959?v=4" width="100;" alt="Yihggh"/>
                     <br />
                     <sub><b>Yihggh</b></sub>
-                </a>
-            </td>
-		</tr>
-		<tr>
-            <td align="center">
-                <a href="https://github.com/MYZ2030">
-                    <img src="https://avatars.githubusercontent.com/u/200359622?v=4" width="100;" alt="MYZ2030"/>
-                    <br />
-                    <sub><b>MYZ2030</b></sub>
                 </a>
             </td>
             <td align="center">
@@ -177,10 +177,10 @@ npm run docs:build
                 </a>
             </td>
             <td align="center">
-                <a href="https://github.com/MF-Dust">
-                    <img src="https://avatars.githubusercontent.com/u/128943330?v=4" width="100;" alt="MF-Dust"/>
+                <a href="https://github.com/MYZ2030">
+                    <img src="https://avatars.githubusercontent.com/u/200359622?v=4" width="100;" alt="MYZ2030"/>
                     <br />
-                    <sub><b>MF.</b></sub>
+                    <sub><b>MYZ2030</b></sub>
                 </a>
             </td>
             <td align="center">
@@ -191,10 +191,10 @@ npm run docs:build
                 </a>
             </td>
             <td align="center">
-                <a href="https://github.com/hujinming0722ispassword">
-                    <img src="https://avatars.githubusercontent.com/u/156481894?v=4" width="100;" alt="hujinming0722ispassword"/>
+                <a href="https://github.com/MF-Dust">
+                    <img src="https://avatars.githubusercontent.com/u/128943330?v=4" width="100;" alt="MF-Dust"/>
                     <br />
-                    <sub><b>hujinming0722ispassword</b></sub>
+                    <sub><b>MF.</b></sub>
                 </a>
             </td>
             <td align="center">
