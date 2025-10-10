@@ -1,389 +1,680 @@
 # Windows 常见蓝屏报错代码
 
-![蓝屏](/images/bugcheck-codes/1.webp)
+![蓝屏](https://i.p-i.vip/88/20251001-68dcb6e9f1a1c.webp)
 
 下表中列出了Windows常见的蓝屏错误代码（BugcheckCode），您可以使用`Ctrl + F`来检索代码。
 
-此表格来源于[完美代码](https://www.perfcode.com/windows/bsod/bugcheck-codes)，在此表示感谢！
+以下内容来源于[完美代码](https://www.perfcode.com/windows/bsod/bugcheck-codes)，在此表示感谢！
 
-| 代码       | 名称                                                     | 描述                                                         |
-| ---------- | -------------------------------------------------------- | ------------------------------------------------------------ |
-| 0x00000001 | APC_INDEX_MISMATCH                                       | 异步过程调用 (APC) 状态索引不匹配                            |
-| 0x00000002 | DEVICE_QUEUE_NOT_BUSY                                    |                                                              |
-| 0x00000003 | INVALID_AFFINITY_SET                                     |                                                              |
-| 0x00000004 | INVALID_DATA_ACCESS_TRAP                                 | 数据访问陷阱不正确                                           |
-| 0x00000005 | INVALID_PROCESS_ATTACH_ATTEMPT                           | 线程在不允许的情况下附加到进程                               |
-| 0x00000006 | INVALID_PROCESS_DETACH_ATTEMPT                           |                                                              |
-| 0x00000007 | INVALID_SOFTWARE_INTERRUPT                               |                                                              |
-| 0x00000008 | IRQL_NOT_DISPATCH_LEVEL                                  |                                                              |
-| 0x00000009 | IRQL_NOT_GREATER_OR_EQUAL                                |                                                              |
-| 0x0000000A | IRQL_NOT_LESS_OR_EQUAL                                   | 在提高中断请求级别时，访问了无效地址                         |
-| 0x0000000B | NO_EXCEPTION_HANDLING_SUPPORT                            |                                                              |
-| 0x0000000C | MAXIMUM_WAIT_OBJECTS_EXCEEDED                            | 线程超过了允许的等待对象数                                   |
-| 0x0000000D | MUTEX_LEVEL_NUMBER_VIOLATION                             |                                                              |
-| 0x0000000E | NO_USER_MODE_CONTEXT                                     | 在启动系统线程的过程中，如果控制从初始线程过程返回，则会发生此错误 |
-| 0x0000000F | SPIN_LOCK_ALREADY_OWNED                                  | 这表示在已拥有自旋锁的情况下启动了对自旋锁的请求。           |
-| 0x00000010 | SPIN_LOCK_NOT_OWNED                                      |                                                              |
-| 0x00000011 | THREAD_NOT_MUTEX_OWNER                                   |                                                              |
-| 0x00000012 | TRAP_CAUSE_UNKNOWN                                       |                                                              |
-| 0x00000013 | EMPTY_THREAD_REAPER_LIST                                 |                                                              |
-| 0x00000014 | CREATE_DELETE_LOCK_NOT_LOCKED                            |                                                              |
-| 0x00000015 | LAST_CHANCE_CALLED_FROM_KMODE                            |                                                              |
-| 0x00000016 | CID_HANDLE_CREATION                                      |                                                              |
-| 0x00000017 | CID_HANDLE_DELETION                                      |                                                              |
-| 0x00000018 | REFERENCE_BY_POINTER                                     | 这表示对象的引用计数对于对象的当前状态是非法的。             |
-| 0x00000019 | BAD_POOL_HEADER                                          | 这表示池标头已损坏。                                         |
-| 0x0000001A | MEMORY_MANAGEMENT                                        | 发生了严重的内存管理错误。                                   |
-| 0x0000001B | PFN_SHARE_COUNT                                          |                                                              |
-| 0x0000001C | PFN_REFERENCE_COUNT                                      | 检测到引用计数错误                                           |
-| 0x0000001D | NO_SPIN_LOCK_AVAILABLE                                   |                                                              |
-| 0x0000001E | KMODE_EXCEPTION_NOT_HANDLED                              | 内核模式应用程序产生了错误处理程序未捕获到的异常             |
-| 0x0000001F | SHARED_RESOURCE_CONV_ERROR                               |                                                              |
-| 0x00000020 | KERNEL_APC_PENDING_DURING_EXIT                           | 线程退出时，异步过程调用 (APC) 仍处于待处理状态              |
-| 0x00000021 | QUOTA_UNDERFLOW                                          |                                                              |
-| 0x00000022 | FILE_SYSTEM                                              |                                                              |
-| 0x00000023 | FAT_FILE_SYSTEM                                          | 这表明 FAT 文件系统出现了问题。                              |
-| 0x00000024 | NTFS_FILE_SYSTEM                                         | 这表明 ntfs.sys 出现了问题，该驱动文件允许系统读写 NTFS 驱动器 |
-| 0x00000025 | NPFS_FILE_SYSTEM                                         | 这表明 NPFS 文件系统出现了问题                               |
-| 0x00000026 | CDFS_FILE_SYSTEM                                         | 这表明 CD 文件系统出现了问题                                 |
-| 0x00000027 | RDR_FILE_SYSTEM                                          | 表明 SMB 重定向文件系统中出现了问题                          |
-| 0x00000028 | CORRUPT_ACCESS_TOKEN                                     |                                                              |
-| 0x00000029 | SECURITY_SYSTEM                                          |                                                              |
-| 0x0000002A | INCONSISTENT_IRP                                         | 这表示发现 IRP 包含不一致的信息                              |
-| 0x0000002B | PANIC_STACK_SWITCH                                       | 这表示内核模式堆栈已溢出                                     |
-| 0x0000002C | PORT_DRIVER_INTERNAL                                     |                                                              |
-| 0x0000002D | SCSI_DISK_DRIVER_INTERNAL                                |                                                              |
-| 0x0000002E | DATA_BUS_ERROR                                           | 这通常表示检测到系统内存中的奇偶校验错误                     |
-| 0x0000002F | INSTRUCTION_BUS_ERROR                                    |                                                              |
-| 0x00000030 | SET_OF_INVALID_CONTEXT                                   | 这表明陷阱帧中的堆栈指针值无效                               |
-| 0x00000031 | PHASE0_INITIALIZATION_FAILED                             | 这表明系统初始化失败                                         |
-| 0x00000032 | PHASE1_INITIALIZATION_FAILED                             | 这表明系统初始化失败                                         |
-| 0x00000033 | UNEXPECTED_INITIALIZATION_CALL                           |                                                              |
-| 0x00000034 | CACHE_MANAGER                                            | 这表明文件系统的缓存管理器出现了问题                         |
-| 0x00000035 | NO_MORE_IRP_STACK_LOCATIONS                              |                                                              |
-| 0x00000036 | DEVICE_REFERENCE_COUNT_NOT_ZERO                          | 这表示驱动程序尝试删除仍具有正引用计数的设备对象             |
-| 0x00000037 | FLOPPY_INTERNAL_ERROR                                    |                                                              |
-| 0x00000038 | SERIAL_DRIVER_INTERNAL                                   |                                                              |
-| 0x00000039 | SYSTEM_EXIT_OWNED_MUTEX                                  | 这表明工作例程返回时没有释放它所拥有的 Mutex 对象            |
-| 0x0000003A | SYSTEM_UNWIND_PREVIOUS_USER                              |                                                              |
-| 0x0000003B | SYSTEM_SERVICE_EXCEPTION                                 | 这表示在执行从非特权代码转换为特权代码的例程时发生了异常     |
-| 0x0000003C | INTERRUPT_UNWIND_ATTEMPTED                               |                                                              |
-| 0x0000003D | INTERRUPT_EXCEPTION_NOT_HANDLED                          | 这表明内核中断对象中断管理的异常处理程序无法处理生成的异常   |
-| 0x0000003E | MULTIPROCESSOR_CONFIGURATION_NOT_SUPPORTED               | 这表明系统有多个处理器，但它们彼此之间不对称                 |
-| 0x0000003F | NO_MORE_SYSTEM_PTES                                      | 这是系统执行过多 I/O 操作的结果。 这导致了系统页表条目 (PTE) 碎片化 |
-| 0x00000040 | TARGET_MDL_TOO_SMALL                                     | 这表明驱动程序未正确使用 IoBuildPartialMdl                   |
-| 0x00000041 | MUST_SUCCEED_POOL_EMPTY                                  | 这表示内核模式线程请求了太多必须成功的池                     |
-| 0x00000042 | ATDISK_DRIVER_INTERNAL                                   |                                                              |
-| 0x00000043 | NO_SUCH_PARTITION                                        |                                                              |
-| 0x00000044 | MULTIPLE_IRP_COMPLETE_REQUESTS                           | 这表示驱动程序已试图请求完成一个已完成的 IRP                 |
-| 0x00000045 | INSUFFICIENT_SYSTEM_MAP_REGS                             |                                                              |
-| 0x00000046 | DEREF_UNKNOWN_LOGON_SESSION                              |                                                              |
-| 0x00000047 | REF_UNKNOWN_LOGON_SESSION                                |                                                              |
-| 0x00000048 | CANCEL_STATE_IN_COMPLETED_IRP                            | 这表明 I/O 请求数据包 (IRP) 已完成，随后被取消               |
-| 0x00000049 | PAGE_FAULT_WITH_INTERRUPTS_OFF                           |                                                              |
-| 0x0000004A | IRQL_GT_ZERO_AT_SYSTEM_SERVICE                           | 这表示当线程的 IRQL 仍高于PASSIVE_LEVEL时，线程正从系统调用返回到用户模式 |
-| 0x0000004B | STREAMS_INTERNAL_ERROR                                   |                                                              |
-| 0x0000004C | FATAL_UNHANDLED_HARD_ERROR                               |                                                              |
-| 0x0000004D | NO_PAGES_AVAILABLE                                       | 这表示没有可用页面来继续操作                                 |
-| 0x0000004E | PFN_LIST_CORRUPT                                         | 这表示页框号 (PFN) 列表已损坏                                |
-| 0x0000004F | NDIS_INTERNAL_ERROR                                      |                                                              |
-| 0x00000050 | PAGE_FAULT_IN_NONPAGED_AREA                              | 这表明引用了无效的系统内存                                   |
-| 0x00000051 | REGISTRY_ERROR                                           | 这表示发生了严重的注册表错误                                 |
-| 0x00000052 | MAILSLOT_FILE_SYSTEM                                     |                                                              |
-| 0x00000053 | NO_BOOT_DEVICE                                           |                                                              |
-| 0x00000054 | LM_SERVER_INTERNAL_ERROR                                 |                                                              |
-| 0x00000055 | DATA_COHERENCY_EXCEPTION                                 |                                                              |
-| 0x00000056 | INSTRUCTION_COHERENCY_EXCEPTION                          |                                                              |
-| 0x00000057 | XNS_INTERNAL_ERROR                                       |                                                              |
-| 0x00000058 | FTDISK_INTERNAL_ERROR                                    | 如果系统从镜像分区的错误副本启动，则会出现此问题             |
-| 0x00000059 | PINBALL_FILE_SYSTEM                                      | 这表明 Pinball 文件系统出现了问题                            |
-| 0x0000005A | CRITICAL_SERVICE_FAILED                                  |                                                              |
-| 0x0000005B | SET_ENV_VAR_FAILED                                       |                                                              |
-| 0x0000005C | HAL_INITIALIZATION_FAILED                                | 这表明 HAL 初始化失败                                        |
-| 0x0000005D | UNSUPPORTED_PROCESSOR                                    | 这表明计算机正尝试在不受支持的处理器上运行 Windows           |
-| 0x0000005E | OBJECT_INITIALIZATION_FAILED                             |                                                              |
-| 0x0000005F | SECURITY_INITIALIZATION_FAILED                           |                                                              |
-| 0x00000060 | PROCESS_INITIALIZATION_FAILED                            |                                                              |
-| 0x00000061 | HAL1_INITIALIZATION_FAILED                               |                                                              |
-| 0x00000062 | OBJECT1_INITIALIZATION_FAILED                            |                                                              |
-| 0x00000063 | SECURITY1_INITIALIZATION_FAILED                          |                                                              |
-| 0x00000064 | SYMBOLIC_INITIALIZATION_FAILED                           |                                                              |
-| 0x00000065 | MEMORY1_INITIALIZATION_FAILED                            |                                                              |
-| 0x00000066 | CACHE_INITIALIZATION_FAILED                              |                                                              |
-| 0x00000067 | CONFIG_INITIALIZATION_FAILED                             | 注册表配置失败                                               |
-| 0x00000068 | FILE_INITIALIZATION_FAILED                               |                                                              |
-| 0x00000069 | IO1_INITIALIZATION_FAILED                                | I/O 系统的初始化由于某种原因失败                             |
-| 0x0000006A | LPC_INITIALIZATION_FAILED                                |                                                              |
-| 0x0000006B | PROCESS1_INITIALIZATION_FAILED                           | 操作系统的初始化失败                                         |
-| 0x0000006C | REFMON_INITIALIZATION_FAILED                             |                                                              |
-| 0x0000006D | SESSION1_INITIALIZATION_FAILED                           | 操作系统的初始化失败                                         |
-| 0x0000006E | SESSION2_INITIALIZATION_FAILED                           | 操作系统的初始化失败                                         |
-| 0x0000006F | SESSION3_INITIALIZATION_FAILED                           | 操作系统的初始化失败                                         |
-| 0x00000070 | SESSION4_INITIALIZATION_FAILED                           | 操作系统的初始化失败                                         |
-| 0x00000071 | SESSION5_INITIALIZATION_FAILED                           | 操作系统的初始化失败                                         |
-| 0x00000072 | ASSIGN_DRIVE_LETTERS_FAILED                              |                                                              |
-| 0x00000073 | CONFIG_LIST_FAILED                                       | 顶级注册表项之一无法在注册表树中链接                         |
-| 0x00000074 | BAD_SYSTEM_CONFIG_INFO                                   | 注册表中存在错误                                             |
-| 0x00000075 | CANNOT_WRITE_CONFIGURATION                               | SYSTEM 注册表配置单元文件无法转换为映射文件                  |
-| 0x00000076 | PROCESS_HAS_LOCKED_PAGES                                 | 驱动程序在 I/O 操作后未能释放锁定的页面，或者它试图解锁已解锁的页面 |
-| 0x00000077 | KERNEL_STACK_INPAGE_ERROR                                | 无法将分页文件中请求的内核数据页读入内存                     |
-| 0x00000078 | PHASE0_EXCEPTION                                         | HAL 初始化期间遇到意外中断                                   |
-| 0x00000079 | MISMATCHED_HAL                                           | 硬件抽象层 (HAL) 修订级别或配置与内核或计算机的版本不匹配    |
-| 0x0000007A | KERNEL_DATA_INPAGE_ERROR                                 | 无法将分页文件中请求的内核数据页读入内存                     |
-| 0x0000007B | INACCESSIBLE_BOOT_DEVICE                                 | 系统在启动期间失去了对系统分区的访问权限                     |
-| 0x0000007C | BUGCODE_NDIS_DRIVER                                      | 操作系统检测到网络驱动程序中错误                             |
-| 0x0000007D | INSTALL_MORE_MEMORY                                      | 没有足够的内存来启动操作系统                                 |
-| 0x0000007E | SYSTEM_THREAD_EXCEPTION_NOT_HANDLED                      | 系统线程产生了错误处理程序未捕获的异常                       |
-| 0x0000007F | UNEXPECTED_KERNEL_MODE_TRAP                              | 表明 Intel CPU 生成了陷阱，而内核未能捕获此陷阱              |
-| 0x00000080 | NMI_HARDWARE_FAILURE                                     | 发生了硬件故障                                               |
-| 0x00000081 | SPIN_LOCK_INIT_FAILURE                                   |                                                              |
-| 0x00000082 | DFS_FILE_SYSTEM                                          |                                                              |
-| 0x00000085 | SETUP_FAILURE                                            | 安装过程中发生了致命错误                                     |
-| 0x0000008B | MBR_CHECKSUM_MISMATCH                                    | MBR 校验和中出现了不匹配                                     |
-| 0x0000008E | KERNEL_MODE_EXCEPTION_NOT_HANDLED                        | 内核模式应用程序产生了错误处理程序未捕获到的异常             |
-| 0x0000008F | PP0_INITIALIZATION_FAILED                                | 无法初始化即插即用 (PnP) 管理器                              |
-| 0x00000090 | PP1_INITIALIZATION_FAILED                                | 无法初始化即插即用 (PnP) 管理器                              |
-| 0x00000092 | UP_DRIVER_ON_MP_SYSTEM                                   | 多处理器系统上加载了仅单处理器驱动程序                       |
-| 0x00000093 | INVALID_KERNEL_HANDLE                                    | 无效或受保护的句柄已传递给 NtClose                           |
-| 0x00000094 | KERNEL_STACK_LOCKED_AT_EXIT                              | 线程在内核堆栈标记为不可交换时退出                           |
-| 0x00000096 | INVALID_WORK_QUEUE_ITEM                                  | 已删除包含 NULL 指针的队列条目                               |
-| 0x00000097 | BOUND_IMAGE_UNSUPPORTED                                  |                                                              |
-| 0x00000098 | END_OF_NT_EVALUATION_PERIOD                              | 作系统的试用期已结束                                         |
-| 0x00000099 | INVALID_REGION_OR_SEGMENT                                |                                                              |
-| 0x0000009A | SYSTEM_LICENSE_VIOLATION                                 | 违反了软件许可协议                                           |
-| 0x0000009B | UDFS_FILE_SYSTEM                                         | UDF 文件系统中出现了问题                                     |
-| 0x0000009C | MACHINE_CHECK_EXCEPTION                                  | 发生了致命的计算机检查异常                                   |
-| 0x0000009E | USER_MODE_HEALTH_MONITOR                                 | 一个或多个关键用户模式组件未能满足运行状况检查               |
-| 0x0000009F | DRIVER_POWER_STATE_FAILURE                               | 驱动程序处于不一致或无效的电源状态                           |
-| 0x000000A0 | INTERNAL_POWER_ERROR                                     | 电源策略管理器遇到致命错误                                   |
-| 0x000000A1 | PCI_BUS_DRIVER_INTERNAL                                  | PCI 总线驱动程序检测到其内部结构中存在不一致问题，无法继续运行 |
-| 0x000000A2 | MEMORY_IMAGE_CORRUPT                                     | 内存中可执行文件的映像出现损坏                               |
-| 0x000000A3 | ACPI_DRIVER_INTERNAL                                     | ACPI 驱动程序检测到内部不一致                                |
-| 0x000000A4 | CNSS_FILE_SYSTEM_FILTER                                  | CNSS 文件系统筛选器中出现了问题                              |
-| 0x000000A5 | ACPI_BIOS_ERROR                                          | 计算机的高级配置和电源接口 (ACPI) BIOS 不完全符合 ACPI 规范  |
-| 0x000000A7 | BAD_EXHANDLE                                             | 内核模式句柄表检测到句柄表条目状态不一致                     |
-| 0x000000AC | HAL_MEMORY_ALLOCATION                                    | 硬件抽象层 (HAL) 无法获取足够的内存                          |
-| 0x000000AD | VIDEO_DRIVER_DEBUG_REPORT_REQUEST                        | 视频端口在运行时代表视频驱动程序创建了一个非致命的小型转储   |
-| 0x000000B1 | BGI_DETECTED_VIOLATION                                   |                                                              |
-| 0x000000B4 | VIDEO_DRIVER_INIT_FAILURE                                | 这表明 Windows 无法进入图形模式                              |
-| 0x000000B8 | ATTEMPTED_SWITCH_FROM_DPC                                | 延迟过程调用 （DPC） 例程尝试了非法操作                      |
-| 0x000000B9 | CHIPSET_DETECTED_ERROR                                   |                                                              |
-| 0x000000BA | SESSION_HAS_VALID_VIEWS_ON_EXIT                          | 这表示卸载会话时，会话驱动程序仍具有映射视图                 |
-| 0x000000BB | NETWORK_BOOT_INITIALIZATION_FAILED                       | 这表示 Windows 未能成功从网络启动                            |
-| 0x000000BC | NETWORK_BOOT_DUPLICATE_ADDRESS                           | 这表示在从网络启动时向该计算机分配了重复的 IP 地址           |
-| 0x000000BD | INVALID_HIBERNATED_STATE                                 | 这表示休眠的内存映像与当前硬件配置不匹配                     |
-| 0x000000BE | ATTEMPTED_WRITE_TO_READONLY_MEMORY                       | 驱动程序试图写入只读内存段                                   |
-| 0x000000BF | MUTEX_ALREADY_OWNED                                      | 这表示线程试图获取其已拥有的互斥体的所有权                   |
-| 0x000000C1 | SPECIAL_POOL_DETECTED_MEMORY_CORRUPTION                  | 这表示驱动程序写入了特殊池的无效部分                         |
-| 0x000000C2 | BAD_POOL_CALLER                                          | 这表示当前线程正在发出错误的池请求                           |
-| 0x000000C4 | DRIVER_VERIFIER_DETECTED_VIOLATION                       | 驱动程序验证程序发现的严重错误                               |
-| 0x000000C5 | DRIVER_CORRUPTED_EXPOOL                                  | 系统试图访问进程 IRQL 过高的无效内存                         |
-| 0x000000C6 | DRIVER_CAUGHT_MODIFYING_FREED_POOL                       | 这表示驱动程序试图访问已释放的内存池                         |
-| 0x000000C7 | TIMER_OR_DPC_INVALID                                     | 如果在不允许内核计时器或延迟过程调用（DPC）的某个位置找到，则会发出此问题 |
-| 0x000000C8 | IRQL_UNEXPECTED_VALUE                                    |                                                              |
-| 0x000000C9 | DRIVER_VERIFIER_IOMANAGER_VIOLATION                      | 驱动程序验证程序 I/O 验证违规                                |
-| 0x000000CA | PNP_DETECTED_FATAL_ERROR                                 | 这表示即插即用管理器遇到严重错误，可能是由于有问题的即插即用驱动程序造成的 |
-| 0x000000CB | DRIVER_LEFT_LOCKED_PAGES_IN_PROCESS                      | 这表示驱动程序或 I/O 管理器在 I/O 操作后未能释放锁定的页面   |
-| 0x000000CC | PAGE_FAULT_IN_FREED_SPECIAL_POOL                         | 这表示系统引用了先前释放的内存                               |
-| 0x000000CD | PAGE_FAULT_BEYOND_END_OF_ALLOCATION                      | 这表示系统访问的内存超出了某个驱动程序池分配的上限           |
-| 0x000000CE | DRIVER_UNLOADED_WITHOUT_CANCELLING_PENDING_OPERATIONS    | 这表示驱动程序未能在卸载前取消挂起的操作                     |
-| 0x000000CF | TERMINAL_SERVER_DRIVER_MADE_INCORRECT_MEMORY_REFERENCE   | 这表示驱动程序被错误地移植到终端服务器                       |
-| 0x000000D0 | DRIVER_CORRUPTED_MMPOOL                                  | 这表示系统试图访问进程 IRQL 过高的无效内存                   |
-| 0x000000D1 | DRIVER_IRQL_NOT_LESS_OR_EQUAL                            | 这表示内核模式驱动程序在进程 IRQL 过高时试图访问可分页内存   |
-| 0x000000D2 | BUGCODE_ID_DRIVER                                        | 这表示 NDIS 驱动程序出现问题                                 |
-| 0x000000D3 | DRIVER_PORTION_MUST_BE_NONPAGED                          | 这表示系统试图访问进程 IRQL 过高的可分页内存                 |
-| 0x000000D4 | SYSTEM_SCAN_AT_RAISED_IRQL_CAUGHT_IMPROPER_DRIVER_UNLOAD | 这表示驱动程序在卸载之前未取消挂起的操作                     |
-| 0x000000D5 | DRIVER_PAGE_FAULT_IN_FREED_SPECIAL_POOL                  | 这表示驱动程序引用了先前释放的内存                           |
-| 0x000000D6 | DRIVER_PAGE_FAULT_BEYOND_END_OF_ALLOCATION               | 这表示驱动程序访问的内存超出了其池分配的上限                 |
-| 0x000000D7 | DRIVER_UNMAPPING_INVALID_VIEW                            | 这表示驱动程序正在尝试取消映射未映射的地址                   |
-| 0x000000D8 | DRIVER_USED_EXCESSIVE_PTES                               | 这表示没有其他系统页表条目 (PTE)                             |
-| 0x000000D9 | LOCKED_PAGES_TRACKER_CORRUPTION                          | 这表示内部锁定的页面跟踪结构已损坏                           |
-| 0x000000DA | SYSTEM_PTE_MISUSE                                        | 这表示页表项 (PTE) 例程的使用方式不正确                      |
-| 0x000000DB | DRIVER_CORRUPTED_SYSPTES                                 | 这表示试图在无效的 IRQL 中操作内存，可能是由于系统 PTE 损坏  |
-| 0x000000DC | DRIVER_INVALID_STACK_ACCESS                              | 这表示驱动程序访问了位于堆栈线程的堆栈指针下方的堆栈地址     |
-| 0x000000DE | POOL_CORRUPTION_IN_FILE_AREA                             | 这表示驱动程序的池内存已损坏，该内存用于存放指向磁盘的页面   |
-| 0x000000DF | IMPERSONATING_WORKER_THREAD                              | 这表示工作项在完成之前没有禁用模拟                           |
-| 0x000000E0 | ACPI_BIOS_FATAL_ERROR                                    | 这表示某个计算机组件出现故障                                 |
-| 0x000000E1 | WORKER_THREAD_RETURNED_AT_BAD_IRQL                       | 这表示用户有意从内核调试器或键盘启动崩溃转储                 |
-| 0x000000E2 | MANUALLY_INITIATED_CRASH                                 |                                                              |
-| 0x000000E3 | RESOURCE_NOT_OWNED                                       | 这表示线程试图释放它不拥有的资源                             |
-| 0x000000E4 | WORKER_INVALID                                           | 这表示不应包含执行工作项的内存中确实包含这样的项，或者当前活动的工作项已排队 |
-| 0x000000E6 | DRIVER_VERIFIER_DMA_VIOLATION                            | 驱动程序验证程序 DMA 验证违规                                |
-| 0x000000E7 | INVALID_FLOATING_POINT_STATE                             | 这表示线程保存的浮点状态无效                                 |
-| 0x000000E8 | INVALID_CANCEL_OF_FILE_OPEN                              | 这表示向 IoCancelFileOpen 传递了一个无效的文件对象           |
-| 0x000000E9 | ACTIVE_EX_WORKER_THREAD_TERMINATION                      | 这表示活动的执行工作线程正在终止                             |
-| 0x000000EA | THREAD_STUCK_IN_DEVICE_DRIVER                            | 这表示设备驱动程序中的线程在无休止地旋转                     |
-| 0x000000EB | DIRTY_MAPPED_PAGES_CONGESTION                            | 这表示没有可用页面来继续操作                                 |
-| 0x000000EC | SESSION_HAS_VALID_SPECIAL_POOL_ON_EXIT                   | 表明在会话驱动程序仍保留内存时发生了会话卸载                 |
-| 0x000000ED | UNMOUNTABLE_BOOT_VOLUME                                  | 这表示 I/O 子系统试图装载启动卷，但失败了                    |
-| 0x000000EF | CRITICAL_PROCESS_DIED                                    | 关键系统进程已终止                                           |
-| 0x000000F0 | STORAGE_MINIPORT_ERROR                                   | 它表示存储微型端口驱动程序无法完成 SRB 请求                  |
-| 0x000000F1 | SCSI_VERIFIER_DETECTED_VIOLATION                         | 驱动程序验证程序 SCSI 验证违规                               |
-| 0x000000F2 | HARDWARE_INTERRUPT_STORM                                 | 这表示内核检测到了中断风暴                                   |
-| 0x000000F3 | DISORDERLY_SHUTDOWN                                      | 这表明 Windows 由于内存不足而无法关闭                        |
-| 0x000000F4 | CRITICAL_OBJECT_TERMINATION                              | 这表示对系统操作至关重要的进程或线程意外退出或已终止         |
-| 0x000000F5 | FLTMGR_FILE_SYSTEM                                       | 这表示筛选器管理器中发生了不可恢复的失败                     |
-| 0x000000F6 | PCI_VERIFIER_DETECTED_VIOLATION                          | 这表示 BIOS 或 PCI 驱动程序正在验证的其他设备中发生错误      |
-| 0x000000F7 | DRIVER_OVERRAN_STACK_BUFFER                              | 这表示驱动程序已溢出基于堆栈的缓冲区                         |
-| 0x000000F8 | RAMDISK_BOOT_INITIALIZATION_FAILED                       | 这表示在尝试从 RAM 磁盘启动时发生初始化故障                  |
-| 0x000000F9 | DRIVER_RETURNED_STATUS_REPARSE_FOR_VOLUME_OPEN           | 这表示驱动程序针对 IRP_MJ_CREATE 请求返回了 STATUS_REPARSE，但没有尾随名称 |
-| 0x000000FA | HTTP_DRIVER_CORRUPTED                                    | 这表示 HTTP 内核驱动程序 (Http.sys) 已达到损坏状态且无法恢复 |
-| 0x000000FC | ATTEMPTED_EXECUTE_OF_NOEXECUTE_MEMORY                    | 这表示试图执行不可执行的内存                                 |
-| 0x000000FD | DIRTY_NOWRITE_PAGES_CONGESTION                           | 这表示没有可用的页面来继续基本的系统操作                     |
-| 0x000000FE | BUGCODE_USB_DRIVER                                       | 这表示通用串行总线 (USB) 驱动程序中发生了错误                |
-| 0x000000FF | RESERVE_QUEUE_OVERFLOW                                   | 这表示试图将新项目插入保留队列，导致队列溢出                 |
-| 0x00000100 | LOADER_BLOCK_MISMATCH                                    | 这表明加载程序块无效，或者它与正在加载的系统不匹配           |
-| 0x00000101 | CLOCK_WATCHDOG_TIMEOUT                                   | 在多处理器系统中，辅助处理器上的预期时钟中断未在分配的时间间隔内收到 |
-| 0x00000102 | DPC_WATCHDOG_TIMEOUT                                     | 这表示未在分配的时间间隔内执行 DPC 监视器例程                |
-| 0x00000103 | MUP_FILE_SYSTEM                                          | 多个 UNC 提供程序 (MUP) 遇到无效或意外的数据                 |
-| 0x00000104 | AGP_INVALID_ACCESS                                       | 这表示 GPU 写入了以前未提交的一系列加速图形端口 (AGP) 内存   |
-| 0x00000105 | AGP_GART_CORRUPTION                                      | 这表示图形孔径定向表 (GART) 已损坏                           |
-| 0x00000106 | AGP_ILLEGALLY_REPROGRAMMED                               | 这表示加速图形端口 (AGP) 硬件已由未经授权的代理重新编程      |
-| 0x00000108 | THIRD_PARTY_FILE_SYSTEM_FAILURE                          | 这表示第三方文件系统或文件系统过滤器中出现了不可恢复的问题   |
-| 0x00000109 | CRITICAL_STRUCTURE_CORRUPTION                            | 这表示内核检测到关键内核代码或数据损坏                       |
-| 0x0000010A | APP_TAGGING_INITIALIZATION_FAILED                        |                                                              |
-| 0x0000010C | FSRTL_EXTRA_CREATE_PARAMETER_VIOLATION                   | 这表示在文件系统运行时库 (FsRtl) 额外创建参数 (ECP) 包中检测到冲突 |
-| 0x0000010D | WDF_VIOLATION                                            | 这表示内核模式驱动程序框架 (KMDF) 检测到 Windows 在基于框架的驱动程序中发现了错误 |
-| 0x0000010E | VIDEO_MEMORY_MANAGEMENT_INTERNAL                         | 这表示视频内存管理器遇到了无法从中恢复的条件                 |
-| 0x0000010F | RESOURCE_MANAGER_EXCEPTION_NOT_HANDLED                   | 这表示内核事务管理器检测到内核模式资源管理器在响应直接回调时引发了异常。 资源管理器处于意外且不可恢复的状态 |
-| 0x00000111 | RECURSIVE_NMI                                            |                                                              |
-| 0x00000112 | MSRPC_STATE_VIOLATION                                    | 这表示 Msrpc.sys 驱动程序已启动 Bug 检查                     |
-| 0x00000113 | VIDEO_DXGKRNL_FATAL_ERROR                                | 这表明 Microsoft DirectX 图形内核子系统检测到违规            |
-| 0x00000114 | VIDEO_SHADOW_DRIVER_FATAL_ERROR                          | 这表示影子驱动程序检测到违规                                 |
-| 0x00000115 | AGP_INTERNAL                                             | 这表示加速图形端口 (AGP) 驱动程序检测到违规                  |
-| 0x00000116 | VIDEO_TDR_FAILURE                                        | 重置显示驱动程序并从超时恢复的尝试失败                       |
-| 0x00000117 | VIDEO_TDR_TIMEOUT_DETECTED                               | 这表示显示驱动程序未能及时响应                               |
-| 0x00000119 | VIDEO_SCHEDULER_INTERNAL_ERROR                           | 视频计划程序检测到严重冲突                                   |
-| 0x0000011A | EM_INITIALIZATION_FAILURE                                |                                                              |
-| 0x0000011B | DRIVER_RETURNED_HOLDING_CANCEL_LOCK                      | 驱动程序已从持有全局取消锁的取消例程返回                     |
-| 0x0000011C | ATTEMPTED_WRITE_TO_CM_PROTECTED_STORAGE                  | 尝试写入配置管理器的只读保护存储                             |
-| 0x0000011D | EVENT_TRACING_FATAL_ERROR                                | 事件跟踪子系统遇到意外的致命错误                             |
-| 0x0000011E | TOO_MANY_RECURSIVE_FAULTS                                | 这表示文件系统在资源不足的情况下导致过多的递归错误而无法处理 |
-| 0x0000011F | INVALID_DRIVER_HANDLE                                    | 这表示在插入驱动程序对象和引用句柄之间，有人关闭了驱动程序的初始句柄 |
-| 0x00000120 | BITLOCKER_FATAL_ERROR                                    | 这表明 BitLocker 驱动器加密遇到无法恢复的问题                |
-| 0x00000121 | DRIVER_VIOLATION                                         | 驱动程序导致了违规                                           |
-| 0x00000122 | WHEA_INTERNAL_ERROR                                      | Windows 硬件错误体系结构 (WHEA) 中发生了内部错误             |
-| 0x00000123 | CRYPTO_SELF_TEST_FAILURE                                 | 这表示加密子系统在启动期间未能通过强制算法自测试             |
-| 0x00000124 | WHEA_UNCORRECTABLE_ERROR                                 | 表明发生了致命的硬件错误                                     |
-| 0x00000125 | NMR_INVALID_STATE                                        | 这表示 NMR（网络模块注册器）检测到无效状态                   |
-| 0x00000126 | NETIO_INVALID_POOL_CALLER                                | 这表示对 netio 托管内存池（例如 FSB 和 MDL）发出了无效的池请求 |
-| 0x00000127 | PAGE_NOT_ZERO                                            | 应该填充零的页面没有填充                                     |
-| 0x00000128 | WORKER_THREAD_RETURNED_WITH_BAD_IO_PRIORITY              |                                                              |
-| 0x00000129 | WORKER_THREAD_RETURNED_WITH_BAD_PAGING_IO_PRIORITY       |                                                              |
-| 0x0000012A | MUI_NO_VALID_SYSTEM_LANGUAGE                             | 这表明 Windows 未找到系统默认 UI 语言的任何已安装的许可语言包 |
-| 0x0000012B | FAULTY_HARDWARE_CORRUPTED_PAGE                           | Windows 内存管理器检测到损坏                                 |
-| 0x0000012C | EXFAT_FILE_SYSTEM                                        | 扩展文件分配表 (exFAT) 文件系统中出现了问题                  |
-| 0x0000012D | VOLSNAP_OVERLAPPED_TABLE_ACCESS                          |                                                              |
-| 0x0000012E | INVALID_MDL_RANGE                                        | 这通常是驱动程序 bug                                         |
-| 0x0000012F | VHD_BOOT_INITIALIZATION_FAILED                           | 这表示尝试从 VHD 启动时出现初始化失败                        |
-| 0x00000130 | DYNAMIC_ADD_PROCESSOR_MISMATCH                           | 添加到系统的新处理器与当前配置不兼容                         |
-| 0x00000131 | INVALID_EXTENDED_PROCESSOR_STATE                         | 这表示保存或还原扩展处理器状态时检测到参数组合无效           |
-| 0x00000132 | RESOURCE_OWNER_POINTER_INVALID                           | 这表示提供了无效的资源所有者指针                             |
-| 0x00000133 | DPC_WATCHDOG_VIOLATION                                   |                                                              |
-| 0x00000134 | DRIVE_EXTENDER                                           | 这表示驱动器扩展程序组件经历了严重的内部错误                 |
-| 0x00000135 | REGISTRY_FILTER_DRIVER_EXCEPTION                         | 是由注册表筛选驱动程序中未经处理的异常引起的                 |
-| 0x00000136 | VHD_BOOT_HOST_VOLUME_NOT_ENOUGH_SPACE                    | 这表示尝试从 VHD 启动时出现初始化失败                        |
-| 0x00000137 | WIN32K_HANDLE_MANAGER                                    | 这表示 win32k/ntuser 句柄管理器检测到致命错误                |
-| 0x00000138 | GPIO_CONTROLLER_DRIVER_ERROR                             | GPIO 类扩展驱动程序遇到致命错误                              |
-| 0x00000139 | KERNEL_SECURITY_CHECK_FAILURE                            | 内核检测到关键数据结构的损坏                                 |
-| 0x0000013A | KERNEL_MODE_HEAP_CORRUPTION                              | 内核模式堆管理器在堆中检测到损坏                             |
-| 0x0000013B | PASSIVE_INTERRUPT_ERROR                                  | 内核检测到被动级别中断的问题                                 |
-| 0x0000013C | INVALID_IO_BOOST_STATE                                   | 这表示线程退出时 I/O 提升状态无效                            |
-| 0x0000013D | CRITICAL_INITIALIZATION_FAILURE                          | 这表示早期内核初始化失败                                     |
-| 0x00000140 | STORAGE_DEVICE_ABNORMALITY_DETECTED                      | 这表示存储驱动程序堆栈遇到响应性冲突、超出阈值或其他响应失败的速率 |
-| 0x00000143 | PROCESSOR_DRIVER_INTERNAL                                | 这表示处理器电源管理 (PPM) 驱动程序遇到致命错误              |
-| 0x00000144 | BUGCODE_USB3_DRIVER                                      |                                                              |
-| 0x00000145 | SECURE_BOOT_VIOLATION                                    | 这表示由于策略无效或所需操作未完成，无法启动安全启动策略强制执行 |
-| 0x00000147 | ABNORMAL_RESET_DETECTED                                  | 这表示 Windows 进行了异常重置                                |
-| 0x00000149 | REFS_FILE_SYSTEM                                         | 这表示发生了文件系统错误                                     |
-| 0x0000014A | KERNEL_WMI_INTERNAL                                      | 这表示内部内核 WMI 子系统遇到致命错误                        |
-| 0x0000014B | SOC_SUBSYSTEM_FAILURE                                    | 这表示芯片上的系统 (SoC) 子系统遇到不可恢复的错误            |
-| 0x0000014C | FATAL_ABNORMAL_RESET_ERROR                               | 这表示发生不可恢复的系统错误或系统已异常重置                 |
-| 0x0000014D | EXCEPTION_SCOPE_INVALID                                  | 这表示检测到异常调度的内部不一致                             |
-| 0x0000014E | SOC_CRITICAL_DEVICE_REMOVED                              | 这表示关键 SOC 设备意外被删除或失败                          |
-| 0x0000014F | PDC_WATCHDOG_TIMEOUT                                     | 这表示系统组件无法在分配的时间段内做出响应，从而阻止系统退出已连接待机状态 |
-| 0x00000150 | TCPIP_AOAC_NIC_ACTIVE_REFERENCE_LEAK                     | 这表示在完全清空发送队列时，应释放 NIC 活动引用              |
-| 0x00000151 | UNSUPPORTED_INSTRUCTION_MODE                             | 这表示已尝试使用不受支持的处理器指令模式执行代码             |
-| 0x00000152 | INVALID_PUSH_LOCK_FLAGS                                  | 这表示提供给其中一个推送锁定 API 的标志无效                  |
-| 0x00000153 | KERNEL_LOCK_ENTRY_LEAKED_ON_THREAD_TERMINATION           | 这表示线程在释放其所有 AutoBoost 锁定条目之前已终止          |
-| 0x00000154 | UNEXPECTED_STORE_EXCEPTION                               | 内核内存存储组件捕获了意外的异常                             |
-| 0x00000155 | OS_DATA_TAMPERING                                        |                                                              |
-| 0x00000157 | KERNEL_THREAD_PRIORITY_FLOOR_VIOLATION                   | 这表示在特定线程的优先级下尝试了非法操作                     |
-| 0x00000158 | ILLEGAL_IOMMU_PAGE_FAULT                                 | 这表示 IOMMU 为无效 ASID 传递了页面故障数据包                |
-| 0x00000159 | HAL_ILLEGAL_IOMMU_PAGE_FAULT                             | 这表示 IOMMU 已针对正在释放的 ASID 提供页面故障              |
-| 0x0000015A | SDBUS_INTERNAL_ERROR                                     | 这表示 SD 附加设备上发生了不可恢复的硬件故障                 |
-| 0x0000015B | WORKER_THREAD_RETURNED_WITH_SYSTEM_PAGE_PRIORITY_ACTIVE  | 这表示工作线程的系统页面优先级被调用的工作例程泄露           |
-| 0x00000160 | WIN32K_ATOMIC_CHECK_FAILURE                              | 这表示 Win32k 函数违反了 ATOMICCHECK                         |
-| 0x00000162 | KERNEL_AUTO_BOOST_INVALID_LOCK_RELEASE                   | 这表示 AutoBoost 跟踪的锁定是由一个不拥有锁定的线程释放的    |
-| 0x00000163 | WORKER_THREAD_TEST_CONDITION                             | 这表示内核工作线程的测试引发了故障                           |
-| 0x00000164 | WIN32K_CRITICAL_FAILURE                                  | 这表示 Win32k 遇到严重故障                                   |
-| 0x0000016C | INVALID_RUNDOWN_PROTECTION_FLAGS                         | 这表示提供给其中一个断开保护 API 的标志无效                  |
-| 0x0000016D | INVALID_SLOT_ALLOCATOR_FLAGS                             | 这表示提供给其中一个插槽分配器 API 的标志无效                |
-| 0x0000016E | ERESOURCE_INVALID_RELEASE                                | 这表示提供给 ExReleaseResourceForThreadLite 的目标线程指针无效 |
-| 0x00000170 | CLUSTER_CSV_CLUSSVC_DISCONNECT_WATCHDOG                  | 这表示群集断开连接未向前推进                                 |
-| 0x00000171 | CRYPTO_LIBRARY_INTERNAL_ERROR                            | 它指示加密库中出现内部错误                                   |
-| 0x00000173 | COREMSGCALL_INTERNAL_ERROR                               | 这指示 CoreMessageCall 检测到不可恢复的错误                  |
-| 0x00000174 | COREMSG_INTERNAL_ERROR                                   | 这指示 CoreMessaging 检测到不可恢复的错误                    |
-| 0x00000178 | ELAM_DRIVER_DETECTED_FATAL_ERROR                         | 这表示 ELAM 驱动程序检测到致命错误                           |
-| 0x0000017B | PROFILER_CONFIGURATION_ILLEGAL                           |                                                              |
-| 0x0000017E | MICROCODE_REVISION_MISMATCH                              | 这表示多处理器配置中的一个或多个处理器加载的微代码不一致     |
-| 0x00000187 | VIDEO_DWMINIT_TIMEOUT_FALLBACK_BDD                       |                                                              |
-| 0x00000189 | BAD_OBJECT_HEADER                                        | 这表示 OBJECT_HEADER 已损坏                                  |
-| 0x0000018B | SECURE_KERNEL_ERROR                                      | 这表示安全内核遇到致命错误                                   |
-| 0x0000018C | HYPERGUARD_VIOLATION                                     | 这表示内核检测到关键内核代码或数据已损坏                     |
-| 0x0000018D | SECURE_FAULT_UNHANDLED                                   | 无法处理安全内核引发的安全故障                               |
-| 0x0000018E | KERNEL_PARTITION_REFERENCE_VIOLATION                     |                                                              |
-| 0x00000191 | PF_DETECTED_CORRUPTION                                   |                                                              |
-| 0x00000192 | KERNEL_AUTO_BOOST_LOCK_ACQUISITION_WITH_RAISED_IRQL      |                                                              |
-| 0x00000196 | LOADER_ROLLBACK_DETECTED                                 | 这表示 OS 加载程序的版本与操作系统不匹配                     |
-| 0x00000197 | WIN32K_SECURITY_FAILURE                                  | 这表示在 win32k 中检测到安全故障                             |
-| 0x00000199 | KERNEL_STORAGE_SLOT_IN_USE                               | 这表示无法释放存储插槽，因为有一个对象在使用存储插槽         |
-| 0x0000019A | WORKER_THREAD_RETURNED_WHILE_ATTACHED_TO_SILO            |                                                              |
-| 0x0000019B | TTM_FATAL_ERROR                                          | 这表示终端拓扑管理器遇到致命错误                             |
-| 0x0000019C | WIN32K_POWER_WATCHDOG_TIMEOUT                            | 这表明 Win32k 没有及时打开监视器                             |
-| 0x000001A0 | TTM_WATCHDOG_TIMEOUT                                     |                                                              |
-| 0x000001A2 | WIN32K_CALLOUT_WATCHDOG_BUGCHECK                         |                                                              |
-| 0x000001AA | EXCEPTION_ON_INVALID_STACK                               |                                                              |
-| 0x000001AB | UNWIND_ON_INVALID_STACK                                  |                                                              |
-| 0x000001C6 | FAST_ERESOURCE_PRECONDITION_VIOLATION                    |                                                              |
-| 0x000001C7 | STORE_DATA_STRUCTURE_CORRUPTION                          |                                                              |
-| 0x000001C8 | MANUALLY_INITIATED_POWER_BUTTON_HOLD                     |                                                              |
-| 0x000001CA | SYNTHETIC_WATCHDOG_TIMEOUT                               |                                                              |
-| 0x000001CB | INVALID_SILO_DETACH                                      |                                                              |
-| 0x000001CD | INVALID_CALLBACK_STACK_ADDRESS                           |                                                              |
-| 0x000001CE | INVALID_KERNEL_STACK_ADDRESS                             |                                                              |
-| 0x000001CF | HARDWARE_WATCHDOG_TIMEOUT                                |                                                              |
-| 0x000001D0 | CPI_FIRMWARE_WATCHDOG_TIMEOUT                            |                                                              |
-| 0x000001D2 | WORKER_THREAD_INVALID_STATE                              |                                                              |
-| 0x000001D3 | WFP_INVALID_OPERATION                                    |                                                              |
-| 0x000001D5 | DRIVER_PNP_WATCHDOG                                      | 这表明驱动程序未能在特定时间内完成 PnP 操作                  |
-| 0x000001D6 | WORKER_THREAD_RETURNED_WITH_NON_DEFAULT_WORKLOAD_CLASS   |                                                              |
-| 0x000001D7 | EFS_FATAL_ERROR                                          |                                                              |
-| 0x000001D8 | UCMUCSI_FAILURE                                          |                                                              |
-| 0x000001D9 | HAL_IOMMU_INTERNAL_ERROR                                 |                                                              |
-| 0x000001DA | HAL_BLOCKED_PROCESSOR_INTERNAL_ERROR                     |                                                              |
-| 0x000001DB | IPI_WATCHDOG_TIMEOUT                                     |                                                              |
-| 0x000001DC | DMA_COMMON_BUFFER_VECTOR_ERROR                           | 它表示驱动程序滥用了 DMA 矢量通用缓冲区 API                  |
-| 0x000001DD | BUGCODE_MBBADAPTER_DRIVER                                | 这表示操作系统遇到了由 MBBCx 管理的网络驱动程序引起的错误    |
-| 0x000001DE | BUGCODE_WIFIADAPTER_DRIVER                               | 这表示作系统遇到由 WiFiCx 管理的网络驱动程序导致的错误       |
-| 0x000001DF | PROCESSOR_START_TIMEOUT                                  | 这表示处理器无法在允许的时间内启动                           |
-| 0x000001E4 | VIDEO_DXGKRNL_SYSMM_FATAL_ERROR                          | 这表明 Microsoft DirectX 图形内核系统内存管理器检测到违规    |
-| 0x000001E9 | ILLEGAL_ATS_INITIALIZATION                               | 这表明驱动程序试图在已启用共享虚拟内存 (SVM) 的设备上非法启用地址转换服务 (ATS) |
-| 0x000001EA | SECURE_PCI_CONFIG_SPACE_ACCESS_VIOLATION                 |                                                              |
-| 0x000001EB | DAM_WATCHDOG_TIMEOUT                                     |                                                              |
-| 0x000001ED | HANDLE_ERROR_ON_CRITICAL_THREAD                          |                                                              |
-| 0x000001F1 | KASAN_ENLIGHTENMENT_VIOLATION                            |                                                              |
-| 0x000001F2 | KASAN_ILLEGAL_ACCESS                                     |                                                              |
-| 0x00000356 | XBOX_ERACTRL_CS_TIMEOUT                                  |                                                              |
-| 0x00000BFE | BC_BLUETOOTH_VERIFIER_FAULT                              | 这表示驱动程序已导致冲突                                     |
-| 0x00000BFF | BC_BTHMINI_VERIFIER_FAULT                                | 这表示蓝牙微型端口可扩展驱动程序验证程序已捕获冲突           |
-| 0x00020001 | HYPERVISOR_ERROR                                         | 这表示虚拟机监控程序遇到致命错误                             |
-| 0x1000007E | SYSTEM_THREAD_EXCEPTION_NOT_HANDLED_M                    | 这表明系统线程产生了错误处理程序未捕获的异常                 |
-| 0x1000007F | UNEXPECTED_KERNEL_MODE_TRAP_M                            | 这表明 Intel CPU 生成了陷阱，而内核未能捕获此陷阱            |
-| 0x1000008E | KERNEL_MODE_EXCEPTION_NOT_HANDLED_M                      |                                                              |
-| 0x100000EA | THREAD_STUCK_IN_DEVICE_DRIVER_M                          |                                                              |
-| 0x4000008A | THREAD_TERMINATE_HELD_MUTEX                              | 这表明驱动程序在一个线程上获取了一个 Mutex，而该线程在释放 Mutex 之前就已退出 |
-| 0xC0000218 | STATUS_CANNOT_LOAD_REGISTRY_FILE                         | 这表示无法加载注册表文件                                     |
-| 0xC000021A | WINLOGON_FATAL_ERROR                                     | 这意味着 Winlogon 进程意外终止                               |
-| 0xC0000221 | STATUS_IMAGE_CHECKSUM_MISMATCH                           | 驱动程序或系统 DLL 已损坏                                    |
-| 0xDEADDEAD | MANUALLY_INITIATED_CRASH1                                |                                                              |
+- 代码 | 名称
+    - 描述
+
+## 0x00000001 至 1F
+- 0x00000001 | APC_INDEX_MISMATCH
+    - 异步过程调用 (APC) 状态索引不匹配
+- 0x00000002 | DEVICE_QUEUE_NOT_BUSY
+- 0x00000003 | INVALID_AFFINITY_SET
+- 0x00000004 | INVALID_DATA_ACCESS_TRAP
+    - 数据访问陷阱不正确
+- 0x00000005 | INVALID_PROCESS_ATTACH_ATTEMPT
+    - 线程在不允许的情况下附加到进程
+- 0x00000006 | INVALID_PROCESS_DETACH_ATTEMPT
+- 0x00000007 | INVALID_SOFTWARE_INTERRUPT
+- 0x00000008 | IRQL_NOT_DISPATCH_LEVEL
+- 0x00000009 | IRQL_NOT_GREATER_OR_EQUAL
+- 0x0000000A | IRQL_NOT_LESS_OR_EQUAL
+    - 在提高中断请求级别时，访问了无效地址
+- 0x0000000B | NO_EXCEPTION_HANDLING_SUPPORT
+- 0x0000000C | MAXIMUM_WAIT_OBJECTS_EXCEEDED
+    - 线程超过了允许的等待对象数
+- 0x0000000D | MUTEX_LEVEL_NUMBER_VIOLATION
+- 0x0000000E | NO_USER_MODE_CONTEXT
+    - 在启动系统线程的过程中，如果控制从初始线程过程返回，则会发生此错误
+- 0x0000000F | SPIN_LOCK_ALREADY_OWNED
+    - 这表示在已拥有自旋锁的情况下启动了对自旋锁的请求
+- 0x00000010 | SPIN_LOCK_NOT_OWNED
+- 0x00000011 | THREAD_NOT_MUTEX_OWNER
+- 0x00000012 | TRAP_CAUSE_UNKNOWN
+- 0x00000013 | EMPTY_THREAD_REAPER_LIST
+- 0x00000014 | CREATE_DELETE_LOCK_NOT_LOCKED
+- 0x00000015 | LAST_CHANCE_CALLED_FROM_KMODE
+- 0x00000016 | CID_HANDLE_CREATION
+- 0x00000017 | CID_HANDLE_DELETION
+- 0x00000018 | REFERENCE_BY_POINTER
+    - 这表示对象的引用计数对于对象的当前状态是非法的
+- 0x00000019 | BAD_POOL_HEADER
+    - 这表示池标头已损坏
+- 0x0000001A | MEMORY_MANAGEMENT
+    - 发生了严重的内存管理错误
+- 0x0000001B | PFN_SHARE_COUNT
+- 0x0000001C | PFN_REFERENCE_COUNT 
+    - 检测到引用计数错误
+- 0x0000001D | NO_SPIN_LOCK_AVAILABLE 
+- 0x0000001E | KMODE_EXCEPTION_NOT_HANDLED
+    - 内核模式应用程序产生了错误处理程序未捕获到的异常
+- 0x0000001F | SHARED_RESOURCE_CONV_ERROR
+
+## 0x00000020 至 3F
+- 0x00000020 | KERNEL_APC_PENDING_DURING_EXIT
+    - 线程退出时，异步过程调用 (APC) 仍处于待处理状态 
+- 0x00000021 | QUOTA_UNDERFLOW
+- 0x00000022 | FILE_SYSTEM
+- 0x00000023 | FAT_FILE_SYSTEM
+    - 这表示 FAT 文件系统出现了问题。 
+- 0x00000024 | NTFS_FILE_SYSTEM
+    - 这表示 ntfs.sys 出现了问题，该驱动文件允许系统读写 NTFS 驱动器
+- 0x00000025 | NPFS_FILE_SYSTEM
+    - 这表示 NPFS 文件系统出现了问题
+- 0x00000026 | CDFS_FILE_SYSTEM
+    - 这表示 CD 文件系统出现了问题
+- 0x00000027 | RDR_FILE_SYSTEM
+    - 表明 SMB 重定向文件系统中出现了问题 
+- 0x00000028 | CORRUPT_ACCESS_TOKEN 
+- 0x00000029 | SECURITY_SYSTEM
+- 0x0000002A | INCONSISTENT_IRP
+    - 这表示发现 IRP 包含不一致的信息 
+- 0x0000002B | PANIC_STACK_SWITCH
+    - 这表示内核模式堆栈已溢出
+- 0x0000002C | PORT_DRIVER_INTERNAL 
+- 0x0000002D | SCSI_DISK_DRIVER_INTERNAL
+- 0x0000002E | DATA_BUS_ERROR
+    - 这通常表示检测到系统内存中的奇偶校验错误
+- 0x0000002F | INSTRUCTION_BUS_ERROR
+- 0x00000030 | SET_OF_INVALID_CONTEXT
+    - 这表示陷阱帧中的堆栈指针值无效
+- 0x00000031 | PHASE0_INITIALIZATION_FAILED
+    - 这表示系统初始化失败
+- 0x00000032 | PHASE1_INITIALIZATION_FAILED
+    - 这表示系统初始化失败
+- 0x00000033 | UNEXPECTED_INITIALIZATION_CALL 
+- 0x00000034 | CACHE_MANAGER
+    - 这表示文件系统的缓存管理器出现了问题
+- 0x00000035 | NO_MORE_IRP_STACK_LOCATIONS
+- 0x00000036 | DEVICE_REFERENCE_COUNT_NOT_ZERO
+    - 这表示驱动程序尝试删除仍具有正引用计数的设备对象
+- 0x00000037 | FLOPPY_INTERNAL_ERROR
+- 0x00000038 | SERIAL_DRIVER_INTERNAL 
+- 0x00000039 | SYSTEM_EXIT_OWNED_MUTEX
+    - 这表示工作例程返回时没有释放它所拥有的 Mutex 对象
+- 0x0000003A | SYSTEM_UNWIND_PREVIOUS_USER
+- 0x0000003B | SYSTEM_SERVICE_EXCEPTION
+    - 这表示在执行从非特权代码转换为特权代码的例程时发生了异常
+- 0x0000003C | INTERRUPT_UNWIND_ATTEMPTED 
+- 0x0000003D | INTERRUPT_EXCEPTION_NOT_HANDLED
+    - 这表示内核中断对象中断管理的异常处理程序无法处理生成的异常
+- 0x0000003E | MULTIPROCESSOR_CONFIGURATION_NOT_SUPPORTED
+    - 这表示系统有多个处理器，但它们彼此之间不对称
+- 0x0000003F | NO_MORE_SYSTEM_PTES
+    - 这是系统执行过多 I/O 操作的结果。 这导致了系统页表条目 (PTE) 碎片化
+
+## 0x00000040 至 5F
+- 0x00000040 | TARGET_MDL_TOO_SMALL
+    - 这表示驱动程序未正确使用 IoBuildPartialMdl
+- 0x00000041 | MUST_SUCCEED_POOL_EMPTY
+    - 这表示内核模式线程请求了太多必须成功的池
+- 0x00000042 | ATDISK_DRIVER_INTERNAL 
+- 0x00000043 | NO_SUCH_PARTITION
+- 0x00000044 | MULTIPLE_IRP_COMPLETE_REQUESTS
+    - 这表示驱动程序已试图请求完成一个已完成的 IRP
+- 0x00000045 | INSUFFICIENT_SYSTEM_MAP_REGS 
+- 0x00000046 | DEREF_UNKNOWN_LOGON_SESSION
+- 0x00000047 | REF_UNKNOWN_LOGON_SESSION
+- 0x00000048 | CANCEL_STATE_IN_COMPLETED_IRP
+    - 这表示 I/O 请求数据包 (IRP) 已完成，随后被取消
+- 0x00000049 | PAGE_FAULT_WITH_INTERRUPTS_OFF 
+- 0x0000004A | IRQL_GT_ZERO_AT_SYSTEM_SERVICE
+    - 这表示当线程的 IRQL 仍高于PASSIVE_LEVEL时，线程正从系统调用返回到用户模式
+- 0x0000004B | STREAMS_INTERNAL_ERROR 
+- 0x0000004C | FATAL_UNHANDLED_HARD_ERROR 
+- 0x0000004D | NO_PAGES_AVAILABLE
+    - 这表示没有可用页面来继续操作
+- 0x0000004E | PFN_LIST_CORRUPT
+    - 这表示页框号 (PFN) 列表已损坏 
+- 0x0000004F | NDIS_INTERNAL_ERROR
+- 0x00000050 | PAGE_FAULT_IN_NONPAGED_AREA
+    - 这表示引用了无效的系统内存
+- 0x00000051 | REGISTRY_ERROR
+    - 这表示发生了严重的注册表错误
+- 0x00000052 | MAILSLOT_FILE_SYSTEM 
+- 0x00000053 | NO_BOOT_DEVICE
+- 0x00000054 | LM_SERVER_INTERNAL_ERROR
+- 0x00000055 | DATA_COHERENCY_EXCEPTION
+- 0x00000056 | INSTRUCTION_COHERENCY_EXCEPTION
+- 0x00000057 | XNS_INTERNAL_ERROR
+- 0x00000058 | FTDISK_INTERNAL_ERROR
+    - 如果系统从镜像分区的错误副本启动，则会出现此问题
+- 0x00000059 | PINBALL_FILE_SYSTEM
+    - 这表示 Pinball 文件系统出现了问题
+- 0x0000005A | CRITICAL_SERVICE_FAILED
+- 0x0000005B | SET_ENV_VAR_FAILED
+- 0x0000005C | HAL_INITIALIZATION_FAILED
+    - 这表示 HAL 初始化失败
+- 0x0000005D | UNSUPPORTED_PROCESSOR
+    - 这表示计算机正尝试在不受支持的处理器上运行 Windows
+- 0x0000005E | OBJECT_INITIALIZATION_FAILED
+- 0x0000005F | SECURITY_INITIALIZATION_FAILED
+
+## 0x00000060 至 7F
+- 0x00000060 | PROCESS_INITIALIZATION_FAILED
+- 0x00000061 | HAL1_INITIALIZATION_FAILED 
+- 0x00000062 | OBJECT1_INITIALIZATION_FAILED
+- 0x00000063 | SECURITY1_INITIALIZATION_FAILED
+- 0x00000064 | SYMBOLIC_INITIALIZATION_FAILED 
+- 0x00000065 | MEMORY1_INITIALIZATION_FAILED
+- 0x00000066 | CACHE_INITIALIZATION_FAILED
+- 0x00000067 | CONFIG_INITIALIZATION_FAILED
+    - 注册表配置失败
+- 0x00000068 | FILE_INITIALIZATION_FAILED 
+- 0x00000069 | IO1_INITIALIZATION_FAILEDI/O
+    - 系统的初始化由于某种原因失败
+- 0x0000006A | LPC_INITIALIZATION_FAILED
+- 0x0000006B | PROCESS1_INITIALIZATION_FAILED
+    - 操作系统的初始化失败
+- 0x0000006C | REFMON_INITIALIZATION_FAILED 
+- 0x0000006D | SESSION1_INITIALIZATION_FAILED
+    - 操作系统的初始化失败
+- 0x0000006E | SESSION2_INITIALIZATION_FAILED
+    - 操作系统的初始化失败
+- 0x0000006F | SESSION3_INITIALIZATION_FAILED
+    - 操作系统的初始化失败
+- 0x00000070 | SESSION4_INITIALIZATION_FAILED
+    - 操作系统的初始化失败
+- 0x00000071 | SESSION5_INITIALIZATION_FAILED
+    - 操作系统的初始化失败
+- 0x00000072 | ASSIGN_DRIVE_LETTERS_FAILED
+- 0x00000073 | CONFIG_LIST_FAILED
+    - 顶级注册表项之一无法在注册表树中链接
+- 0x00000074 | BAD_SYSTEM_CONFIG_INFO
+    - 注册表中存在错误
+- 0x00000075 | CANNOT_WRITE_CONFIGURATION
+    - SYSTEM 注册表配置单元文件无法转换为映射文件 
+- 0x00000076 | PROCESS_HAS_LOCKED_PAGES
+    - 驱动程序在 I/O 操作后未能释放锁定的页面，或者它试图解锁已解锁的页面
+- 0x00000077 | KERNEL_STACK_INPAGE_ERROR
+    - 无法将分页文件中请求的内核数据页读入内存
+- 0x00000078 | PHASE0_EXCEPTION
+    - HAL 初始化期间遇到意外中断
+- 0x00000079 | MISMATCHED_HAL
+    - 硬件抽象层 (HAL) 修订级别或配置与内核或计算机的版本不匹配
+- 0x0000007A | KERNEL_DATA_INPAGE_ERROR
+    - 无法将分页文件中请求的内核数据页读入内存
+- 0x0000007B | INACCESSIBLE_BOOT_DEVICE
+    - 系统在启动期间失去了对系统分区的访问权限
+- 0x0000007C | BUGCODE_NDIS_DRIVER
+    - 操作系统检测到网络驱动程序中错误
+- 0x0000007D | INSTALL_MORE_MEMORY
+    - 没有足够的内存来启动操作系统
+- 0x0000007E | SYSTEM_THREAD_EXCEPTION_NOT_HANDLED
+    - 系统线程产生了错误处理程序未捕获的异常
+- 0x0000007F | UNEXPECTED_KERNEL_MODE_TRAP
+    - 表明 Intel CPU 生成了陷阱，而内核未能捕获此陷阱
+
+## 0x00000080 至 9F
+- 0x00000080 | NMI_HARDWARE_FAILURE
+    - 发生了硬件故障
+- 0x00000081 | SPIN_LOCK_INIT_FAILURE 
+- 0x00000082 | DFS_FILE_SYSTEM
+- 0x00000085 | SETUP_FAILURE
+    - 安装过程中发生了致命错误
+- 0x0000008B | MBR_CHECKSUM_MISMATCHMBR
+    - 校验和中出现了不匹配
+- 0x0000008E | KERNEL_MODE_EXCEPTION_NOT_HANDLED
+    - 内核模式应用程序产生了错误处理程序未捕获到的异常
+- 0x0000008F | PP0_INITIALIZATION_FAILED
+    - 无法初始化即插即用 (PnP) 管理器 
+- 0x00000090 | PP1_INITIALIZATION_FAILED
+    - 无法初始化即插即用 (PnP) 管理器 
+- 0x00000092 | UP_DRIVER_ON_MP_SYSTEM
+    - 多处理器系统上加载了仅单处理器驱动程序
+- 0x00000093 | INVALID_KERNEL_HANDLE
+    - 无效或受保护的句柄已传递给 NtClose
+- 0x00000094 | KERNEL_STACK_LOCKED_AT_EXIT
+    - 线程在内核堆栈标记为不可交换时退出
+- 0x00000096 | INVALID_WORK_QUEUE_ITEM
+    - 已删除包含 NULL 指针的队列条目
+- 0x00000097 | BOUND_IMAGE_UNSUPPORTED
+- 0x00000098 | END_OF_NT_EVALUATION_PERIOD
+    - 作系统的试用期已结束
+- 0x00000099 | INVALID_REGION_OR_SEGMENT 
+- 0x0000009A | SYSTEM_LICENSE_VIOLATION
+    - 违反了软件许可协议
+- 0x0000009B | UDFS_FILE_SYSTEM
+    - UDF 文件系统中出现了问题
+- 0x0000009C | MACHINE_CHECK_EXCEPTION
+    - 发生了致命的计算机检查异常
+- 0x0000009E | USER_MODE_HEALTH_MONITOR
+    - 一个或多个关键用户模式组件未能满足运行状况检查
+- 0x0000009F | DRIVER_POWER_STATE_FAILURE
+    - 驱动程序处于不一致或无效的电源状态
+
+## 0x000000A0 至 BF
+- 0x000000A0 | INTERNAL_POWER_ERROR
+    - 电源策略管理器遇到致命错误
+- 0x000000A1 | PCI_BUS_DRIVER_INTERNALPCI
+    - 总线驱动程序检测到其内部结构中存在不一致问题，无法继续运行
+- 0x000000A2 | MEMORY_IMAGE_CORRUPT
+    - 内存中可执行文件的映像出现损坏
+- 0x000000A3 | ACPI_DRIVER_INTERNAL
+    - ACPI 驱动程序检测到内部不一致 
+- 0x000000A4 | CNSS_FILE_SYSTEM_FILTERCNSS
+    - 文件系统筛选器中出现了问题 
+- 0x000000A5 | ACPI_BIOS_ERROR
+    - 计算机的高级配置和电源接口 (ACPI) BIOS 不完全符合 ACPI 规范
+- 0x000000A7 | BAD_EXHANDLE
+    - 内核模式句柄表检测到句柄表条目状态不一致
+- 0x000000AC | HAL_MEMORY_ALLOCATION
+    - 硬件抽象层 (HAL) 无法获取足够的内存 
+- 0x000000AD | VIDEO_DRIVER_DEBUG_REPORT_REQUEST
+    - 视频端口在运行时代表视频驱动程序创建了一个非致命的小型转储
+- 0x000000B1 | BGI_DETECTED_VIOLATION 
+- 0x000000B4 | VIDEO_DRIVER_INIT_FAILURE
+    - 这表示 Windows 无法进入图形模式 
+- 0x000000B8 | ATTEMPTED_SWITCH_FROM_DPC
+    - 延迟过程调用 （DPC） 例程尝试了非法操作 
+- 0x000000B9 | CHIPSET_DETECTED_ERROR 
+- 0x000000BA | SESSION_HAS_VALID_VIEWS_ON_EXIT
+    - 这表示卸载会话时，会话驱动程序仍具有映射视图
+- 0x000000BB | NETWORK_BOOT_INITIALIZATION_FAILED
+    - 这表示 Windows 未能成功从网络启动 
+- 0x000000BC | NETWORK_BOOT_DUPLICATE_ADDRESS
+    - 这表示在从网络启动时向该计算机分配了重复的 IP 地址
+- 0x000000BD | INVALID_HIBERNATED_STATE
+    - 这表示休眠的内存映像与当前硬件配置不匹配
+- 0x000000BE | ATTEMPTED_WRITE_TO_READONLY_MEMORY
+    - 驱动程序试图写入只读内存段
+- 0x000000BF | MUTEX_ALREADY_OWNED
+    - 这表示线程试图获取其已拥有的互斥体的所有权
+
+## 0x000000C0 至 DF
+- 0x000000C1 | SPECIAL_POOL_DETECTED_MEMORY_CORRUPTION
+    - 这表示驱动程序写入了特殊池的无效部分
+- 0x000000C2 | BAD_POOL_CALLER
+    - 这表示当前线程正在发出错误的池请求
+- 0x000000C4 | DRIVER_VERIFIER_DETECTED_VIOLATION
+    - 驱动程序验证程序发现的严重错误
+- 0x000000C5 | DRIVER_CORRUPTED_EXPOOL
+    - 系统试图访问进程 IRQL 过高的无效内存
+- 0x000000C6 | DRIVER_CAUGHT_MODIFYING_FREED_POOL 
+    - 这表示驱动程序试图访问已释放的内存池
+- 0x000000C7 | TIMER_OR_DPC_INVALID
+    - 如果在不允许内核计时器或延迟过程调用（DPC）的某个位置找到，则会发出此问题
+- 0x000000C8 | IRQL_UNEXPECTED_VALUE
+- 0x000000C9 | DRIVER_VERIFIER_IOMANAGER_VIOLATION
+    - 驱动程序验证程序 I/O 验证违规
+- 0x000000CA | PNP_DETECTED_FATAL_ERROR
+    - 这表示即插即用管理器遇到严重错误，可能是由于有问题的即插即用驱动程序造成的
+- 0x000000CB | DRIVER_LEFT_LOCKED_PAGES_IN_PROCESS
+    - 这表示驱动程序或 I/O 管理器在 I/O 操作后未能释放锁定的页面
+- 0x000000CC | PAGE_FAULT_IN_FREED_SPECIAL_POOL
+    - 这表示系统引用了先前释放的内存
+- 0x000000CD | PAGE_FAULT_BEYOND_END_OF_ALLOCATION
+    - 这表示系统访问的内存超出了某个驱动程序池分配的上限
+- 0x000000CE | DRIVER_UNLOADED_WITHOUT_CANCELLING_PENDING_OPERATIONS
+    - 这表示驱动程序未能在卸载前取消挂起的操作
+- 0x000000CF | TERMINAL_SERVER_DRIVER_MADE_INCORRECT_MEMORY_REFERENCE
+    - 这表示驱动程序被错误地移植到终端服务器
+- 0x000000D0 | DRIVER_CORRUPTED_MMPOOL
+    - 这表示系统试图访问进程 IRQL 过高的无效内存
+- 0x000000D1 | DRIVER_IRQL_NOT_LESS_OR_EQUAL
+    - 这表示内核模式驱动程序在进程 IRQL 过高时试图访问可分页内存
+- 0x000000D2 | BUGCODE_ID_DRIVER
+    - 这表示 NDIS 驱动程序出现问题
+- 0x000000D3 | DRIVER_PORTION_MUST_BE_NONPAGED
+    - 这表示系统试图访问进程 IRQL 过高的可分页内存
+- 0x000000D4 | SYSTEM_SCAN_AT_RAISED_IRQL_CAUGHT_IMPROPER_DRIVER_UNLOAD
+    - 这表示驱动程序在卸载之前未取消挂起的操作
+- 0x000000D5 | DRIVER_PAGE_FAULT_IN_FREED_SPECIAL_POOL
+    - 这表示驱动程序引用了先前释放的内存
+- 0x000000D6 | DRIVER_PAGE_FAULT_BEYOND_END_OF_ALLOCATION
+    - 这表示驱动程序访问的内存超出了其池分配的上限
+- 0x000000D7 | DRIVER_UNMAPPING_INVALID_VIEW
+    - 这表示驱动程序正在尝试取消映射未映射的地址
+- 0x000000D8 | DRIVER_USED_EXCESSIVE_PTES
+    - 这表示没有其他系统页表条目 (PTE)
+- 0x000000D9 | LOCKED_PAGES_TRACKER_CORRUPTION
+    - 这表示内部锁定的页面跟踪结构已损坏
+- 0x000000DA | SYSTEM_PTE_MISUSE
+    - 这表示页表项 (PTE) 例程的使用方式不正确
+- 0x000000DB | DRIVER_CORRUPTED_SYSPTES
+    - 这表示试图在无效的 IRQL 中操作内存，可能是由于系统 PTE 损坏
+- 0x000000DC | DRIVER_INVALID_STACK_ACCESS
+    - 这表示驱动程序访问了位于堆栈线程的堆栈指针下方的堆栈地址
+- 0x000000DE | POOL_CORRUPTION_IN_FILE_AREA
+    - 这表示驱动程序的池内存已损坏，该内存用于存放指向磁盘的页面
+- 0x000000DF | IMPERSONATING_WORKER_THREAD
+    - 这表示工作项在完成之前没有禁用模拟
+
+## 0x000000E0 至 FF
+- 0x000000E0 | ACPI_BIOS_FATAL_ERROR
+    - 这表示某个计算机组件出现故障
+- 0x000000E1 | WORKER_THREAD_RETURNED_AT_BAD_IRQL
+    - 这表示用户有意从内核调试器或键盘启动崩溃转储
+- 0x000000E2 | MANUALLY_INITIATED_CRASH 
+- 0x000000E3 | RESOURCE_NOT_OWNED
+    - 这表示线程试图释放它不拥有的资源
+- 0x000000E4 | WORKER_INVALID
+    - 这表示不应包含执行工作项的内存中确实包含这样的项，或者当前活动的工作项已排队
+- 0x000000E6 | DRIVER_VERIFIER_DMA_VIOLATION
+    - 驱动程序验证程序 DMA 验证违规
+- 0x000000E7 | INVALID_FLOATING_POINT_STATE
+    - 这表示线程保存的浮点状态无效
+- 0x000000E8 | INVALID_CANCEL_OF_FILE_OPEN
+    - 这表示向 IoCancelFileOpen 传递了一个无效的文件对象
+- 0x000000E9 | ACTIVE_EX_WORKER_THREAD_TERMINATION
+    - 这表示活动的执行工作线程正在终止
+- 0x000000EA | THREAD_STUCK_IN_DEVICE_DRIVER
+    - 这表示设备驱动程序中的线程在无休止地旋转
+- 0x000000EB | DIRTY_MAPPED_PAGES_CONGESTION
+    - 这表示没有可用页面来继续操作
+- 0x000000EC | SESSION_HAS_VALID_SPECIAL_POOL_ON_EXIT
+    - 表明在会话驱动程序仍保留内存时发生了会话卸载
+- 0x000000ED | UNMOUNTABLE_BOOT_VOLUME
+    - 这表示 I/O 子系统试图装载启动卷，但失败了 
+- 0x000000EF | CRITICAL_PROCESS_DIED
+    - 关键系统进程已终止
+- 0x000000F0 | STORAGE_MINIPORT_ERROR
+    - 它表示存储微型端口驱动程序无法完成 SRB 请求 
+- 0x000000F1 | SCSI_VERIFIER_DETECTED_VIOLATION
+    - 驱动程序验证程序 SCSI 验证违规
+- 0x000000F2 | HARDWARE_INTERRUPT_STORM 
+    - 这表示内核检测到了中断风暴
+- 0x000000F3 | DISORDERLY_SHUTDOWN
+    - 这表示 Windows 由于内存不足而无法关闭 
+- 0x000000F4 | CRITICAL_OBJECT_TERMINATION
+    - 这表示对系统操作至关重要的进程或线程意外退出或已终止
+- 0x000000F5 | FLTMGR_FILE_SYSTEM 
+    - 这表示筛选器管理器中发生了不可恢复的失败
+- 0x000000F6 | PCI_VERIFIER_DETECTED_VIOLATION
+    - 这表示 BIOS 或 PCI 驱动程序正在验证的其他设备中发生错误
+- 0x000000F7 | DRIVER_OVERRAN_STACK_BUFFER
+    - 这表示驱动程序已溢出基于堆栈的缓冲区
+- 0x000000F8 | RAMDISK_BOOT_INITIALIZATION_FAILED 
+    - 这表示在尝试从 RAM 磁盘启动时发生初始化故障 
+- 0x000000F9 | DRIVER_RETURNED_STATUS_REPARSE_FOR_VOLUME_OPEN
+    - 这表示驱动程序针对 IRP_MJ_CREATE 请求返回了 STATUS_REPARSE，但没有尾随名称
+- 0x000000FA | HTTP_DRIVER_CORRUPTED
+    - 这表示 HTTP 内核驱动程序 (Http.sys) 已达到损坏状态且无法恢复
+- 0x000000FC | ATTEMPTED_EXECUTE_OF_NOEXECUTE_MEMORY
+    - 这表示试图执行不可执行的内存
+- 0x000000FD | DIRTY_NOWRITE_PAGES_CONGESTION
+    - 这表示没有可用的页面来继续基本的系统操作
+- 0x000000FE | BUGCODE_USB_DRIVER 
+    - 这表示通用串行总线 (USB) 驱动程序中发生了错误 
+- 0x000000FF | RESERVE_QUEUE_OVERFLOW 
+    - 这表示试图将新项目插入保留队列，导致队列溢出
+
+## 0x00000100 至 11F
+- 0x00000100 | LOADER_BLOCK_MISMATCH
+    - 这表示加载程序块无效，或者它与正在加载的系统不匹配
+- 0x00000101 | CLOCK_WATCHDOG_TIMEOUT
+    - 在多处理器系统中，辅助处理器上的预期时钟中断未在分配的时间间隔内收到
+- 0x00000102 | DPC_WATCHDOG_TIMEOUT 
+    - 这表示未在分配的时间间隔内执行 DPC 监视器例程 
+- 0x00000103 | MUP_FILE_SYSTEM
+    - 多个 UNC 提供程序 (MUP) 遇到无效或意外的数据
+- 0x00000104 | AGP_INVALID_ACCESS 
+    - 这表示 GPU 写入了以前未提交的一系列加速图形端口 (AGP) 内存
+- 0x00000105 | AGP_GART_CORRUPTION
+    - 这表示图形孔径定向表 (GART) 已损坏
+- 0x00000106 | AGP_ILLEGALLY_REPROGRAMMED 
+    - 这表示加速图形端口 (AGP) 硬件已由未经授权的代理重新编程
+- 0x00000108 | THIRD_PARTY_FILE_SYSTEM_FAILURE
+    - 这表示第三方文件系统或文件系统过滤器中出现了不可恢复的问题
+- 0x00000109 | CRITICAL_STRUCTURE_CORRUPTION
+    - 这表示内核检测到关键内核代码或数据损坏
+- 0x0000010A | APP_TAGGING_INITIALIZATION_FAILED
+- 0x0000010C | FSRTL_EXTRA_CREATE_PARAMETER_VIOLATION 
+    - 这表示在文件系统运行时库 (FsRtl) 额外创建参数 (ECP) 包中检测到冲突
+- 0x0000010D | WDF_VIOLATION
+    - 这表示内核模式驱动程序框架 (KMDF) 检测到 Windows 在基于框架的驱动程序中发现了错误
+- 0x0000010E | VIDEO_MEMORY_MANAGEMENT_INTERNAL 
+    - 这表示视频内存管理器遇到了无法从中恢复的条件
+- 0x0000010F | RESOURCE_MANAGER_EXCEPTION_NOT_HANDLED 
+    - 这表示内核事务管理器检测到内核模式资源管理器在响应直接回调时引发了异常。 资源管理器处于意外且不可恢复的状态
+- 0x00000111 | RECURSIVE_NMI
+- 0x00000112 | MSRPC_STATE_VIOLATION
+    - 这表示 Msrpc.sys 驱动程序已启动 Bug 检查
+- 0x00000113 | VIDEO_DXGKRNL_FATAL_ERROR
+    - 这表示 Microsoft DirectX 图形内核子系统检测到违规
+- 0x00000114 | VIDEO_SHADOW_DRIVER_FATAL_ERROR
+    - 这表示影子驱动程序检测到违规
+- 0x00000115 | AGP_INTERNAL 
+    - 这表示加速图形端口 (AGP) 驱动程序检测到违规
+- 0x00000116 | VIDEO_TDR_FAILURE重置显示驱动程序并从超时恢复的尝试失败
+- 0x00000117 | VIDEO_TDR_TIMEOUT_DETECTED 
+    - 这表示显示驱动程序未能及时响应
+- 0x00000119 | VIDEO_SCHEDULER_INTERNAL_ERROR
+    - 视频计划程序检测到严重冲突
+- 0x0000011A | EM_INITIALIZATION_FAILURE
+- 0x0000011B | DRIVER_RETURNED_HOLDING_CANCEL_LOCK
+    - 驱动程序已从持有全局取消锁的取消例程返回
+- 0x0000011C | ATTEMPTED_WRITE_TO_CM_PROTECTED_STORAGE
+    - 尝试写入配置管理器的只读保护存储
+- 0x0000011D | EVENT_TRACING_FATAL_ERROR
+    - 事件跟踪子系统遇到意外的致命错误
+- 0x0000011E | TOO_MANY_RECURSIVE_FAULTS
+    - 这表示文件系统在资源不足的情况下导致过多的递归错误而无法处理
+- 0x0000011F | INVALID_DRIVER_HANDLE
+    - 这表示在插入驱动程序对象和引用句柄之间，有人关闭了驱动程序的初始句柄
+
+## 0x00000120 至 13F
+- 0x00000120 | BITLOCKER_FATAL_ERROR
+    - 这表示 BitLocker 驱动器加密遇到无法恢复的问题 
+- 0x00000121 | DRIVER_VIOLATION
+    - 驱动程序导致了违规
+- 0x00000122 | WHEA_INTERNAL_ERRORWindows
+    - 硬件错误体系结构 (WHEA) 中发生了内部错误
+- 0x00000123 | CRYPTO_SELF_TEST_FAILURE 
+    - 这表示加密子系统在启动期间未能通过强制算法自测试
+- 0x00000124 | WHEA_UNCORRECTABLE_ERROR
+    - 表明发生了致命的硬件错误
+- 0x00000125 | NMR_INVALID_STATE
+    - 这表示 NMR（网络模块注册器）检测到无效状态
+- 0x00000126 | NETIO_INVALID_POOL_CALLER
+    - 这表示对 netio 托管内存池（例如 FSB 和 MDL）发出了无效的池请求
+- 0x00000127 | PAGE_NOT_ZERO
+    - 应该填充零的页面没有填充
+- 0x00000128 | WORKER_THREAD_RETURNED_WITH_BAD_IO_PRIORITY
+- 0x00000129 | WORKER_THREAD_RETURNED_WITH_BAD_PAGING_IO_PRIORITY
+- 0x0000012A | MUI_NO_VALID_SYSTEM_LANGUAGE 
+    - 这表示 Windows 未找到系统默认 UI 语言的任何已安装的许可语言包
+- 0x0000012B | FAULTY_HARDWARE_CORRUPTED_PAGE
+    - Windows 内存管理器检测到损坏
+- 0x0000012C | EXFAT_FILE_SYSTEM
+    - 扩展文件分配表 (exFAT) 文件系统中出现了问题 
+- 0x0000012D | VOLSNAP_OVERLAPPED_TABLE_ACCESS
+- 0x0000012E | INVALID_MDL_RANGE
+    - 这通常是驱动程序 bug
+- 0x0000012F | VHD_BOOT_INITIALIZATION_FAILED 
+    - 这表示尝试从 VHD 启动时出现初始化失败
+- 0x00000130 | DYNAMIC_ADD_PROCESSOR_MISMATCH
+    - 添加到系统的新处理器与当前配置不兼容
+- 0x00000131 | INVALID_EXTENDED_PROCESSOR_STATE
+    - 这表示保存或还原扩展处理器状态时检测到参数组合无效
+- 0x00000132 | RESOURCE_OWNER_POINTER_INVALID
+    - 这表示提供了无效的资源所有者指针
+- 0x00000133 | DPC_WATCHDOG_VIOLATION
+- 0x00000134 | DRIVE_EXTENDER
+    - 这表示驱动器扩展程序组件经历了严重的内部错误
+- 0x00000135 | REGISTRY_FILTER_DRIVER_EXCEPTION
+    - 是由注册表筛选驱动程序中未经处理的异常引起的
+- 0x00000136 | VHD_BOOT_HOST_VOLUME_NOT_ENOUGH_SPACE
+    - 这表示尝试从 VHD 启动时出现初始化失败
+- 0x00000137 | WIN32K_HANDLE_MANAGER
+    - 这表示 win32k/ntuser 句柄管理器检测到致命错误
+- 0x00000138 | GPIO_CONTROLLER_DRIVER_ERROR
+    - GPIO 类扩展驱动程序遇到致命错误
+- 0x00000139 | KERNEL_SECURITY_CHECK_FAILURE
+    - 内核检测到关键数据结构的损坏
+- 0x0000013A | KERNEL_MODE_HEAP_CORRUPTION
+    - 内核模式堆管理器在堆中检测到损坏
+- 0x0000013B | PASSIVE_INTERRUPT_ERROR
+    - 内核检测到被动级别中断的问题
+- 0x0000013C | INVALID_IO_BOOST_STATE 
+    - 这表示线程退出时 I/O 提升状态无效
+- 0x0000013D | CRITICAL_INITIALIZATION_FAILURE
+    - 这表示早期内核初始化失败
+
+## 0x00000140 至 15F
+- 0x00000140 | STORAGE_DEVICE_ABNORMALITY_DETECTED
+    - 这表示存储驱动程序堆栈遇到响应性冲突、超出阈值或其他响应失败的速率
+- 0x00000143 | PROCESSOR_DRIVER_INTERNAL
+    - 这表示处理器电源管理 (PPM) 驱动程序遇到致命错误
+- 0x00000144 | BUGCODE_USB3_DRIVER
+- 0x00000145 | SECURE_BOOT_VIOLATION
+    - 这表示由于策略无效或所需操作未完成，无法启动安全启动策略强制执行
+- 0x00000147 | ABNORMAL_RESET_DETECTED
+    - 这表示 Windows 进行了异常重置
+- 0x00000149 | REFS_FILE_SYSTEM 
+    - 这表示发生了文件系统错误
+- 0x0000014A | KERNEL_WMI_INTERNAL
+    - 这表示内部内核 WMI 子系统遇到致命错误
+- 0x0000014B | SOC_SUBSYSTEM_FAILURE
+    - 这表示芯片上的系统 (SoC) 子系统遇到不可恢复的错误
+- 0x0000014C | FATAL_ABNORMAL_RESET_ERROR 
+    - 这表示发生不可恢复的系统错误或系统已异常重置
+- 0x0000014D | EXCEPTION_SCOPE_INVALID
+    - 这表示检测到异常调度的内部不一致
+- 0x0000014E | SOC_CRITICAL_DEVICE_REMOVED
+    - 这表示关键 SOC 设备意外被删除或失败
+- 0x0000014F | PDC_WATCHDOG_TIMEOUT
+    - 这表示系统组件无法在分配的时间段内做出响应，从而阻止系统退出已连接待机状态
+- 0x00000150 | TCPIP_AOAC_NIC_ACTIVE_REFERENCE_LEAK
+    - 这表示在完全清空发送队列时，应释放 NIC 活动引用
+- 0x00000151 | UNSUPPORTED_INSTRUCTION_MODE
+    - 这表示已尝试使用不受支持的处理器指令模式执行代码
+- 0x00000152 | INVALID_PUSH_LOCK_FLAGS
+    - 这表示提供给其中一个推送锁定 API 的标志无效
+- 0x00000153 | KERNEL_LOCK_ENTRY_LEAKED_ON_THREAD_TERMINATION
+    - 这表示线程在释放其所有 AutoBoost 锁定条目之前已终止
+- 0x00000154 | UNEXPECTED_STORE_EXCEPTION
+    - 内核内存存储组件捕获了意外的异常
+- 0x00000155 | OS_DATA_TAMPERING
+- 0x00000157 | KERNEL_THREAD_PRIORITY_FLOOR_VIOLATION
+    - 这表示在特定线程的优先级下尝试了非法操作
+- 0x00000158 | ILLEGAL_IOMMU_PAGE_FAULT
+    - 这表示 IOMMU 为无效 ASID 传递了页面故障数据包
+- 0x00000159 | HAL_ILLEGAL_IOMMU_PAGE_FAULT
+    - 这表示 IOMMU 已针对正在释放的 ASID 提供页面故障
+- 0x0000015A | SDBUS_INTERNAL_ERROR
+    - 这表示 SD 附加设备上发生了不可恢复的硬件故障
+- 0x0000015B | WORKER_THREAD_RETURNED_WITH_SYSTEM_PAGE_PRIORITY_ACTIVE
+    - 这表示工作线程的系统页面优先级被调用的工作例程泄露
+
+## 0x00000160 至 17F
+- 0x00000160 | WIN32K_ATOMIC_CHECK_FAILURE
+    - 这表示 Win32k 函数违反了 ATOMICCHECK
+- 0x00000162 | KERNEL_AUTO_BOOST_INVALID_LOCK_RELEASE
+    - 这表示 AutoBoost 跟踪的锁定是由一个不拥有锁定的线程释放的
+- 0x00000163 | WORKER_THREAD_TEST_CONDITION
+    - 这表示内核工作线程的测试引发了故障
+- 0x00000164 | WIN32K_CRITICAL_FAILURE
+    - 这表示 Win32k 遇到严重故障
+- 0x0000016C | INVALID_RUNDOWN_PROTECTION_FLAGS
+    - 这表示提供给其中一个断开保护 API 的标志无效
+- 0x0000016D | INVALID_SLOT_ALLOCATOR_FLAGS
+    - 这表示提供给其中一个插槽分配器 API 的标志无效
+- 0x0000016E | ERESOURCE_INVALID_RELEASE
+    - 这表示提供给 ExReleaseResourceForThreadLite 的目标线程指针无效
+- 0x00000170 | CLUSTER_CSV_CLUSSVC_DISCONNECT_WATCHDOG
+    - 这表示群集断开连接未向前推进
+- 0x00000171 | CRYPTO_LIBRARY_INTERNAL_ERROR
+    - 它指示加密库中出现内部错误
+- 0x00000173 | COREMSGCALL_INTERNAL_ERROR
+    - 这指示 CoreMessageCall 检测到不可恢复的错误
+- 0x00000174 | COREMSG_INTERNAL_ERROR
+    - 这指示 CoreMessaging 检测到不可恢复的错误
+- 0x00000178 | ELAM_DRIVER_DETECTED_FATAL_ERROR
+    - 这表示 ELAM 驱动程序检测到致命错误
+- 0x0000017B | PROFILER_CONFIGURATION_ILLEGAL
+- 0x0000017E | MICROCODE_REVISION_MISMATCH
+    - 这表示多处理器配置中的一个或多个处理器加载的微代码不一致
+
+## 0x00000180 至 19F
+- 0x00000187 | VIDEO_DWMINIT_TIMEOUT_FALLBACK_BDD
+- 0x00000189 | BAD_OBJECT_HEADER
+    - 这表示 OBJECT_HEADER 已损坏
+- 0x0000018B | SECURE_KERNEL_ERROR
+    - 这表示安全内核遇到致命错误
+- 0x0000018C | HYPERGUARD_VIOLATION
+    - 这表示内核检测到关键内核代码或数据已损坏
+- 0x0000018D | SECURE_FAULT_UNHANDLED
+    - 无法处理安全内核引发的安全故障
+- 0x0000018E | KERNEL_PARTITION_REFERENCE_VIOLATION
+- 0x00000191 | PF_DETECTED_CORRUPTION
+- 0x00000192 | KERNEL_AUTO_BOOST_LOCK_ACQUISITION_WITH_RAISED_IRQL
+- 0x00000196 | LOADER_ROLLBACK_DETECTED
+    - 这表示 OS 加载程序的版本与操作系统不匹配
+- 0x00000197 | WIN32K_SECURITY_FAILURE
+    - 这表示在 win32k 中检测到安全故障
+- 0x00000199 | KERNEL_STORAGE_SLOT_IN_USE
+    - 这表示无法释放存储插槽，因为有一个对象在使用存储插槽
+- 0x0000019A | WORKER_THREAD_RETURNED_WHILE_ATTACHED_TO_SILO
+- 0x0000019B | TTM_FATAL_ERROR
+    - 这表示终端拓扑管理器遇到致命错误
+- 0x0000019C | WIN32K_POWER_WATCHDOG_TIMEOUT
+    - 这表示 Win32k 没有及时打开监视器
+
+## 0x000001A0 及以后
+- 0x000001A0 | TTM_WATCHDOG_TIMEOUT
+- 0x000001A2 | WIN32K_CALLOUT_WATCHDOG_BUGCHECK
+- 0x000001AA | EXCEPTION_ON_INVALID_STACK
+- 0x000001AB | UNWIND_ON_INVALID_STACK
+- 0x000001C6 | FAST_ERESOURCE_PRECONDITION_VIOLATION
+- 0x000001C7 | STORE_DATA_STRUCTURE_CORRUPTION
+- 0x000001C8 | MANUALLY_INITIATED_POWER_BUTTON_HOLD
+- 0x000001CA | SYNTHETIC_WATCHDOG_TIMEOUT
+- 0x000001CB | INVALID_SILO_DETACH
+- 0x000001CD | INVALID_CALLBACK_STACK_ADDRESS
+- 0x000001CE | INVALID_KERNEL_STACK_ADDRESS
+- 0x000001CF | HARDWARE_WATCHDOG_TIMEOUT
+- 0x000001D0 | CPI_FIRMWARE_WATCHDOG_TIMEOUT
+- 0x000001D2 | WORKER_THREAD_INVALID_STATE
+- 0x000001D3 | WFP_INVALID_OPERATION
+- 0x000001D5 | DRIVER_PNP_WATCHDOG
+    - 这表示驱动程序未能在特定时间内完成 PnP 操作
+- 0x000001D6 | WORKER_THREAD_RETURNED_WITH_NON_DEFAULT_WORKLOAD_CLASS
+- 0x000001D7 | EFS_FATAL_ERROR
+- 0x000001D8 | UCMUCSI_FAILURE
+- 0x000001D9 | HAL_IOMMU_INTERNAL_ERROR
+- 0x000001DA | HAL_BLOCKED_PROCESSOR_INTERNAL_ERROR
+- 0x000001DB | IPI_WATCHDOG_TIMEOUT
+- 0x000001DC | DMA_COMMON_BUFFER_VECTOR_ERROR
+    - 它表示驱动程序滥用了 DMA 矢量通用缓冲区 API
+- 0x000001DD | BUGCODE_MBBADAPTER_DRIVER
+    - 这表示操作系统遇到了由 MBBCx 管理的网络驱动程序引起的错误
+- 0x000001DE | BUGCODE_WIFIADAPTER_DRIVER 
+    - 这表示作系统遇到由 WiFiCx 管理的网络驱动程序导致的错误
+- 0x000001DF | PROCESSOR_START_TIMEOUT
+    - 这表示处理器无法在允许的时间内启动
+- 0x000001E4 | VIDEO_DXGKRNL_SYSMM_FATAL_ERROR
+    - 这表示 Microsoft DirectX 图形内核系统内存管理器检测到违规
+- 0x000001E9 | ILLEGAL_ATS_INITIALIZATION 
+    - 这表示驱动程序试图在已启用共享虚拟内存 (SVM) 的设备上非法启用地址转换服务 (ATS)
+- 0x000001EA | SECURE_PCI_CONFIG_SPACE_ACCESS_VIOLATION 
+- 0x000001EB | DAM_WATCHDOG_TIMEOUT
+- 0x000001ED | HANDLE_ERROR_ON_CRITICAL_THREAD
+- 0x000001F1 | KASAN_ENLIGHTENMENT_VIOLATION
+- 0x000001F2 | KASAN_ILLEGAL_ACCESS 
+- 0x00000356 | XBOX_ERACTRL_CS_TIMEOUT 
+- 0x00000BFE | BC_BLUETOOTH_VERIFIER_FAULT
+    - 这表示驱动程序已导致冲突
+- 0x00000BFF | BC_BTHMINI_VERIFIER_FAULT
+    - 这表示蓝牙微型端口可扩展驱动程序验证程序已捕获冲突
+- 0x00020001 | HYPERVISOR_ERROR 
+    - 这表示虚拟机监控程序遇到致命错误
+- 0x1000007E | SYSTEM_THREAD_EXCEPTION_NOT_HANDLED_M
+    - 这表示系统线程产生了错误处理程序未捕获的异常
+- 0x1000007F | UNEXPECTED_KERNEL_MODE_TRAP_M
+    - 这表示 Intel CPU 生成了陷阱，而内核未能捕获此陷阱
+- 0x1000008E | KERNEL_MODE_EXCEPTION_NOT_HANDLED_M
+- 0x100000EA | THREAD_STUCK_IN_DEVICE_DRIVER_M
+- 0x4000008A | THREAD_TERMINATE_HELD_MUTEX
+    - 这表示驱动程序在一个线程上获取了一个 Mutex，而该线程在释放 Mutex 之前就已退出
+- 0xC0000218 | STATUS_CANNOT_LOAD_REGISTRY_FILE
+    - 这表示无法加载注册表文件
+- 0xC000021A | WINLOGON_FATAL_ERROR
+    - 这表示味着 Winlogon 进程意外终止
+- 0xC0000221 | STATUS_IMAGE_CHECKSUM_MISMATCH
+    - 驱动程序或系统 DLL 已损坏 
+- 0xDEADDEAD | MANUALLY_INITIATED_CRASH1
