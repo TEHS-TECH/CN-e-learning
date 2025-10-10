@@ -10,6 +10,10 @@
 ## 📋 格式规范
 ### 1. 文章结构
 - **标题**：简洁明了，设为一级标题（`#`）
+- **分级**：用于确定文章难度，分为基础、进阶、高级三级，格式：
+   ```
+   <Badge type="tip" text="你想分的等级" />
+   ```
 - **前言（可选）**：简要说明内容价值，如“本文将分享教室音响杂音消除的实操步骤，适用于多数主流设备”，建议放在引用快中（`>`）
 - **正文**：使用分级标题（`##` 二级、`###` 三级），技术步骤用有序列表，并列信息用无序列表。
 - **结语（可选）**：补充注意事项或适用范围，如“此方法暂不适用于老旧型号XX投影仪”。
@@ -21,9 +25,32 @@
 - 链接格式：`[alt](url)`，请确保链接可访问且安全
 - 注意多行文本或图片间空行
 - 详细 Markdown 语法请阅读[Markdown 教程](https://markdown.com.cn/basic-syntax/)。
+- 一些vitepress专有的markdown拓展：
+   -添加Tip，Important等符号：
+   ```::: info
+      This is an info box.
+      :::
+
+      ::: tip
+      This is a tip.
+      :::
+
+      ::: warning
+      This is a warning.
+      :::
+
+      ::: danger
+      This is a dangerous warning.
+      :::
+
+      ::: details
+      This is a details block.
+      :::
+   ```
+   效果：![images](images\CONTRIBUTING\Custom-Containers-output.png)
 
 ### 3. 图片存储与引用规则
-- **存储路径**：所有图片强烈建议放在 `docs/public/images/[文章英文简称]` 文件夹。
+- **存储路径**：为了使文档文件有序，**强烈建议**所有图片放在 `docs/public/images/[文章英文简称]` 文件夹。
 - **命名规则**：图片文件名建议使用英文简称或数字序号。
 - **引用格式**：在文章中按此格式插入图片，确保路径正确：
   ```markdown

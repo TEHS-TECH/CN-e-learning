@@ -1,4 +1,4 @@
-# Windows 常见蓝屏报错代码
+# Windows 常见蓝屏报错代码  <Badge type="tip" text="高级" />
 
 ![蓝屏](/images/bugcheck-codes/1.webp)
 
