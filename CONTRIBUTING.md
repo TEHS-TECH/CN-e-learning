@@ -47,7 +47,7 @@
       This is a details block.
       :::
    ```
-   效果：![images](images\CONTRIBUTING\Custom-Containers-output.png)
+   效果：![images](docs/public/images/CONTRIBUTING/Custom-Containers-output.png)
 
 ### 3. 图片存储与引用规则
 - **存储路径**：为了使文档文件有序，**强烈建议**所有图片放在 `docs/public/images/[文章英文简称]` 文件夹。
