@@ -1,4 +1,4 @@
-# 为 Windows 长期服务渠道（LTSC）添加微软应用商店以安装必要的系统组件
+# 为 Windows 长期服务渠道（LTSC）添加微软应用商店以安装必要的系统组件  <Badge type="tip" text="高级" />
 > [!TIP]
 > 此文档也适用于其它微软应用商店（下文称 Microsoft Store ）被卸载的 Windows 系统
 
