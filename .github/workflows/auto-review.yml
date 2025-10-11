@@ -4,27 +4,42 @@ on:
   issues:
     types: [opened, labeled]
 
+# 设置并发控制，确保对于同一个 issue，只有一个 workflow 实例在运行
+# issue 号作为组名，cancel-in-progress: true 表示如果新的 workflow 启动，会自动取消同一组中正在运行的旧 workflow
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.issue.number }}
+  cancel-in-progress: true
+
 jobs:
-  add-review-label:
+  process-school-issue: # job 名称可以起得更明确一些
     runs-on: ubuntu-latest
+    
+    # 1. 权限最小化：移除了不必要的 pull-requests: write 权限
     permissions:
       issues: write
-      pull-requests: write
+
+    # 2. 将 if 条件提升到 job 级别：避免重复，提高效率和可维护性
+    # 3. 修正逻辑：使用括号确保标题检查对 opened 和 labeled 事件都生效
+    if: |
+      contains(github.event.issue.title, '学校信息填报') &&
+      (
+        github.event.action == 'opened' ||
+        (github.event.action == 'labeled' && github.event.label.name == '学校信息申请')
+      )
+
     steps:
+      # 步骤 1: 自动添加"待审核"标签
+      # 无需再写 if，因为 job 级别已经判断过了
       - name: 自动添加"待审核"标签
-        if: |
-          github.event.action == 'opened' ||
-          (github.event.action == 'labeled' && github.event.label.name == '学校信息申请') && contains(github.event.issue.title, '学校信息填报')
         uses: actions-ecosystem/action-add-labels@v1
         with:
           labels: 待审核
 
+      # 步骤 2: 自动评论提示
+      # 同样无需再写 if
       - name: 自动评论提示
-        if: |
-          github.event.action == 'opened' ||
-          (github.event.action == 'labeled' && github.event.label.name == '学校信息申请') && contains(github.event.issue.title, '学校信息填报')
         uses: peter-evans/create-or-update-comment@v4
         with:
           issue-number: ${{ github.event.issue.number }}
           body: |
-            👋 感谢提交学校信息，请耐心等待审核人员处理
+            👋 感谢提交学校信息，我们已收到您的申请，请耐心等待审核人员处理。
