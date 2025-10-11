@@ -18,4 +18,4 @@
 >联机修复 会重新下载 Office 并安装
 
 如果以上方法仍然无效，建议尝试彻底卸载 Microsoft Office 并重新安装，或检查该计算机上是否有 恶意软件/组件 等，或者考虑使用其他软件替代
-![打开控制面板](images/How-to-fix-MS_Office_Startup/1.png)
+![打开控制面板](/images/How-to-fix-MS_Office_Startup/1.png)
