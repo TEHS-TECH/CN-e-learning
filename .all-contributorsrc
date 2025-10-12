@@ -51,6 +51,18 @@
         "ideas",
         "review"
       ]
+    },
+    {
+      "login": "jiangyin14",
+      "name": "姜胤",
+      "avatar_url": "https://avatars.githubusercontent.com/u/106649516?v=4",
+      "profile": "https://www.jiangyin14.top/",
+      "contributions": [
+        "code",
+        "business",
+        "ideas",
+        "review"
+      ]
     }
   ],
   "contributorsPerLine": 7,
