@@ -163,6 +163,16 @@
         "code",
         "doc"
       ]
+    },
+    {
+      "login": "MYZ2030",
+      "name": "MYZ2030",
+      "avatar_url": "https://avatars.githubusercontent.com/u/200359622?v=4",
+      "profile": "https://github.com/MYZ2030",
+      "contributions": [
+        "code",
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
