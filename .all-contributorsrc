@@ -173,6 +173,16 @@
         "code",
         "doc"
       ]
+    },
+    {
+      "login": "fhzit",
+      "name": "Hellofhz",
+      "avatar_url": "https://avatars.githubusercontent.com/u/152045732?v=4",
+      "profile": "https://github.com/fhzit",
+      "contributions": [
+        "code",
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,

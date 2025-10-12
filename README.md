@@ -1,6 +1,6 @@
 <div align="center">
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-15-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-16-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 # CN-e-learning 电教委员指南
@@ -98,6 +98,7 @@ npm run docs:build
     </tr>
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/MYZ2030"><img src="https://avatars.githubusercontent.com/u/200359622?v=4?s=100" width="100px;" alt="MYZ2030"/><br /><sub><b>MYZ2030</b></sub></a><br /><a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=MYZ2030" title="Code">💻</a> <a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=MYZ2030" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/fhzit"><img src="https://avatars.githubusercontent.com/u/152045732?v=4?s=100" width="100px;" alt="Hellofhz"/><br /><sub><b>Hellofhz</b></sub></a><br /><a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=fhzit" title="Code">💻</a> <a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=fhzit" title="Documentation">📖</a></td>
     </tr>
   </tbody>
 </table>
