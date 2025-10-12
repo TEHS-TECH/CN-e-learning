@@ -63,6 +63,16 @@
         "ideas",
         "review"
       ]
+    },
+    {
+      "login": "lyang",
+      "name": "Lin Yang",
+      "avatar_url": "https://avatars.githubusercontent.com/u/163554?v=4",
+      "profile": "https://github.com/lyang",
+      "contributions": [
+        "code",
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,

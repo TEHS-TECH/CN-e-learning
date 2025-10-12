@@ -1,6 +1,6 @@
 <div align="center">
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 # CN-e-learning 电教委员指南
@@ -83,6 +83,7 @@ npm run docs:build
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/weizhizhuangwzz"><img src="https://avatars.githubusercontent.com/u/103792860?v=4?s=100" width="100px;" alt="位置装"/><br /><sub><b>位置装</b></sub></a><br /><a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=weizhizhuangwzz" title="Code">💻</a> <a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=weizhizhuangwzz" title="Documentation">📖</a> <a href="#content-weizhizhuangwzz" title="Content">🖋</a> <a href="#ideas-weizhizhuangwzz" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/CN-e-Learning/CN-e-Learning/pulls?q=is%3Apr+reviewed-by%3Aweizhizhuangwzz" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Jursin"><img src="https://avatars.githubusercontent.com/u/127487914?v=4?s=100" width="100px;" alt="Jursin"/><br /><sub><b>Jursin</b></sub></a><br /><a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=Jursin" title="Code">💻</a> <a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=Jursin" title="Documentation">📖</a> <a href="#content-Jursin" title="Content">🖋</a> <a href="#ideas-Jursin" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/CN-e-Learning/CN-e-Learning/pulls?q=is%3Apr+reviewed-by%3AJursin" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://www.jiangyin14.top/"><img src="https://avatars.githubusercontent.com/u/106649516?v=4?s=100" width="100px;" alt="姜胤"/><br /><sub><b>姜胤</b></sub></a><br /><a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=jiangyin14" title="Code">💻</a> <a href="#business-jiangyin14" title="Business development">💼</a> <a href="#ideas-jiangyin14" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/CN-e-Learning/CN-e-Learning/pulls?q=is%3Apr+reviewed-by%3Ajiangyin14" title="Reviewed Pull Requests">👀</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/lyang"><img src="https://avatars.githubusercontent.com/u/163554?v=4?s=100" width="100px;" alt="Lin Yang"/><br /><sub><b>Lin Yang</b></sub></a><br /><a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=lyang" title="Code">💻</a> <a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=lyang" title="Documentation">📖</a></td>
     </tr>
   </tbody>
 </table>
