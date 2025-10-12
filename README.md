@@ -70,144 +70,42 @@ npm run docs:build
 
 ## 🙏 贡献者
 
-<!-- readme: contributors -start -->
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
 <table>
-	<tbody>
-		<tr>
-            <td align="center">
-                <a href="https://github.com/Peter267">
-                    <img src="https://avatars.githubusercontent.com/u/175904095?v=4" width="100;" alt="Peter267"/>
-                    <br />
-                    <sub><b>Wujingbo</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/weizhizhuangwzz">
-                    <img src="https://avatars.githubusercontent.com/u/103792860?v=4" width="100;" alt="weizhizhuangwzz"/>
-                    <br />
-                    <sub><b>位置装</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/Jursin">
-                    <img src="https://avatars.githubusercontent.com/u/127487914?v=4" width="100;" alt="Jursin"/>
-                    <br />
-                    <sub><b>Jursin</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/JerryZeng20142">
-                    <img src="https://avatars.githubusercontent.com/u/131527911?v=4" width="100;" alt="JerryZeng20142"/>
-                    <br />
-                    <sub><b>Jerry Zeng(曾 予翮)</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/jiangyin14">
-                    <img src="https://avatars.githubusercontent.com/u/106649516?v=4" width="100;" alt="jiangyin14"/>
-                    <br />
-                    <sub><b>姜胤</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/Makitoid">
-                    <img src="https://avatars.githubusercontent.com/u/123004192?v=4" width="100;" alt="Makitoid"/>
-                    <br />
-                    <sub><b>Makitoid Wang</b></sub>
-                </a>
-            </td>
-		</tr>
-		<tr>
-            <td align="center">
-                <a href="https://github.com/wwcrdrvf6u">
-                    <img src="https://avatars.githubusercontent.com/u/122241403?v=4" width="100;" alt="wwcrdrvf6u"/>
-                    <br />
-                    <sub><b>wwcrdrvf6u</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/Lyang1273">
-                    <img src="https://avatars.githubusercontent.com/u/160390179?v=4" width="100;" alt="Lyang1273"/>
-                    <br />
-                    <sub><b>Lyang</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/typed-sigterm">
-                    <img src="https://avatars.githubusercontent.com/u/145281501?v=4" width="100;" alt="typed-sigterm"/>
-                    <br />
-                    <sub><b>Typed SIGTERM</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/xingbiao996">
-                    <img src="https://avatars.githubusercontent.com/u/181859181?v=4" width="100;" alt="xingbiao996"/>
-                    <br />
-                    <sub><b>星标</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/hujinming0722ispassword">
-                    <img src="https://avatars.githubusercontent.com/u/156481894?v=4" width="100;" alt="hujinming0722ispassword"/>
-                    <br />
-                    <sub><b>hujinming0722ispassword</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/baldi233">
-                    <img src="https://avatars.githubusercontent.com/u/124134387?v=4" width="100;" alt="baldi233"/>
-                    <br />
-                    <sub><b>baldi233</b></sub>
-                </a>
-            </td>
-		</tr>
-		<tr>
-            <td align="center">
-                <a href="https://github.com/Yihggh">
-                    <img src="https://avatars.githubusercontent.com/u/161115959?v=4" width="100;" alt="Yihggh"/>
-                    <br />
-                    <sub><b>Yihggh</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/Windows-git">
-                    <img src="https://avatars.githubusercontent.com/u/109967664?v=4" width="100;" alt="Windows-git"/>
-                    <br />
-                    <sub><b>緒山まひろ</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/MYZ2030">
-                    <img src="https://avatars.githubusercontent.com/u/200359622?v=4" width="100;" alt="MYZ2030"/>
-                    <br />
-                    <sub><b>MYZ2030</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/fhzit">
-                    <img src="https://avatars.githubusercontent.com/u/152045732?v=4" width="100;" alt="fhzit"/>
-                    <br />
-                    <sub><b>Hellofhz</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/MF-Dust">
-                    <img src="https://avatars.githubusercontent.com/u/128943330?v=4" width="100;" alt="MF-Dust"/>
-                    <br />
-                    <sub><b>MF.</b></sub>
-                </a>
-            </td>
-            <td align="center">
-                <a href="https://github.com/MengHanLOVE1027">
-                    <img src="https://avatars.githubusercontent.com/u/99132833?v=4" width="100;" alt="MengHanLOVE1027"/>
-                    <br />
-                    <sub><b>梦涵LOVE</b></sub>
-                </a>
-            </td>
-		</tr>
-	<tbody>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://peter267.github.io/"><img src="https://avatars.githubusercontent.com/u/175904095?v=4?s=100" width="100px;" alt="Wujingbo"/><br /><sub><b>Wujingbo</b></sub></a><br /><a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=Peter267" title="Code">💻</a> <a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=Peter267" title="Documentation">📖</a> <a href="https://github.com/CN-e-Learning/CN-e-Learning/issues?q=author%3APeter267" title="Bug reports">🐛</a> <a href="#ideas-Peter267" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/CN-e-Learning/CN-e-Learning/pulls?q=is%3Apr+reviewed-by%3APeter267" title="Reviewed Pull Requests">👀</a> <a href="#content-Peter267" title="Content">🖋</a> <a href="#business-Peter267" title="Business development">💼</a> <a href="#design-Peter267" title="Design">🎨</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/weizhizhuangwzz"><img src="https://avatars.githubusercontent.com/u/103792860?v=4?s=100" width="100px;" alt="位置装"/><br /><sub><b>位置装</b></sub></a><br /><a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=weizhizhuangwzz" title="Code">💻</a> <a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=weizhizhuangwzz" title="Documentation">📖</a> <a href="#content-weizhizhuangwzz" title="Content">🖋</a> <a href="#ideas-weizhizhuangwzz" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/CN-e-Learning/CN-e-Learning/pulls?q=is%3Apr+reviewed-by%3Aweizhizhuangwzz" title="Reviewed Pull Requests">👀</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://www.jiangyin14.top/"><img src="https://avatars.githubusercontent.com/u/106649516?v=4?s=100" width="100px;" alt="姜胤"/><br /><sub><b>姜胤</b></sub></a><br /><a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=jiangyin14" title="Code">💻</a> <a href="#business-jiangyin14" title="Business development">💼</a> <a href="#ideas-jiangyin14" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/CN-e-Learning/CN-e-Learning/pulls?q=is%3Apr+reviewed-by%3Ajiangyin14" title="Reviewed Pull Requests">👀</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Jursin"><img src="https://avatars.githubusercontent.com/u/127487914?v=4?s=100" width="100px;" alt="Jursin"/><br /><sub><b>Jursin</b></sub></a><br /><a href="#design-Jursin" title="Design">🎨</a> <a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=Jursin" title="Code">💻</a> <a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=Jursin" title="Documentation">📖</a> <a href="#content-Jursin" title="Content">🖋</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Makitoid"><img src="https://avatars.githubusercontent.com/u/123004192?v=4?s=100" width="100px;" alt="Makitoid Wang"/><br /><sub><b>Makitoid Wang</b></sub></a><br /><a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=Makitoid" title="Code">💻</a> <a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=Makitoid" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/wwcrdrvf6u"><img src="https://avatars.githubusercontent.com/u/122241403?v=4?s=100" width="100px;" alt="wwcrdrvf6u"/><br /><sub><b>wwcrdrvf6u</b></sub></a><br /><a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=wwcrdrvf6u" title="Code">💻</a> <a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=wwcrdrvf6u" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Lyang1273"><img src="https://avatars.githubusercontent.com/u/160390179?v=4?s=100" width="100px;" alt="Lyang"/><br /><sub><b>Lyang</b></sub></a><br /><a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=Lyang1273" title="Code">💻</a> <a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=Lyang1273" title="Documentation">📖</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://typed-sigterm.me/"><img src="https://avatars.githubusercontent.com/u/145281501?v=4?s=100" width="100px;" alt="Typed SIGTERM"/><br /><sub><b>Typed SIGTERM</b></sub></a><br /><a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=typed-sigterm" title="Code">💻</a> <a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=typed-sigterm" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/xingbiao996"><img src="https://avatars.githubusercontent.com/u/181859181?v=4?s=100" width="100px;" alt="星标"/><br /><sub><b>星标</b></sub></a><br /><a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=xingbiao996" title="Code">💻</a> <a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=xingbiao996" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/hujinming0722ispassword"><img src="https://avatars.githubusercontent.com/u/156481894?v=4?s=100" width="100px;" alt="hujinming0722ispassword"/><br /><sub><b>hujinming0722ispassword</b></sub></a><br /><a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=hujinming0722ispassword" title="Code">💻</a> <a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=hujinming0722ispassword" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/baldi233"><img src="https://avatars.githubusercontent.com/u/124134387?v=4?s=100" width="100px;" alt="baldi233"/><br /><sub><b>baldi233</b></sub></a><br /><a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=baldi233" title="Code">💻</a> <a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=baldi233" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Yihggh"><img src="https://avatars.githubusercontent.com/u/161115959?v=4?s=100" width="100px;" alt="missile"/><br /><sub><b>missile</b></sub></a><br /><a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=Yihggh" title="Code">💻</a> <a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=Yihggh" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Windows-git"><img src="https://avatars.githubusercontent.com/u/109967664?v=4?s=100" width="100px;" alt="緒山まひろ"/><br /><sub><b>緒山まひろ</b></sub></a><br /><a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=Windows-git" title="Code">💻</a> <a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=Windows-git" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/MYZ2030"><img src="https://avatars.githubusercontent.com/u/200359622?v=4?s=100" width="100px;" alt="MYZ2030"/><br /><sub><b>MYZ2030</b></sub></a><br /><a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=MYZ2030" title="Documentation">📖</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/fhzit"><img src="https://avatars.githubusercontent.com/u/152045732?v=4?s=100" width="100px;" alt="Hellofhz"/><br /><sub><b>Hellofhz</b></sub></a><br /><a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=fhzit" title="Code">💻</a> <a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=fhzit" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/MF-Dust"><img src="https://avatars.githubusercontent.com/u/128943330?v=4?s=100" width="100px;" alt="MF."/><br /><sub><b>MF.</b></sub></a><br /><a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=MF-Dust" title="Code">💻</a> <a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=MF-Dust" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/MengHanLOVE1027"><img src="https://avatars.githubusercontent.com/u/99132833?v=4?s=100" width="100px;" alt="梦涵LOVE"/><br /><sub><b>梦涵LOVE</b></sub></a><br /><a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=MengHanLOVE1027" title="Code">💻</a> <a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=MengHanLOVE1027" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Zpcin"><img src="https://avatars.githubusercontent.com/u/62590508?v=4?s=100" width="100px;" alt="Zpcin Zhang"/><br /><sub><b>Zpcin Zhang</b></sub></a><br /><a href="#design-Zpcin" title="Design">🎨</a></td>
+    </tr>
+  </tbody>
 </table>
-<!-- readme: contributors -end -->
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 
 ## 📄 许可证
 

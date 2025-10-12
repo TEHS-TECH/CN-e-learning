@@ -1,0 +1,207 @@
+{
+  "projectName": "CN-e-Learning",
+  "projectOwner": "CN-e-Learning",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "commitConvention": "atom",
+  "contributors": [
+    {
+      "login": "Peter267",
+      "name": "Wujingbo",
+      "avatar_url": "https://avatars.githubusercontent.com/u/175904095?v=4",
+      "profile": "https://peter267.github.io/",
+      "contributions": [
+        "code",
+        "doc",
+        "bug",
+        "ideas",
+        "review",
+        "content",
+        "business",
+        "design"
+      ]
+    },
+    {
+      "login": "weizhizhuangwzz",
+      "name": "位置装",
+      "avatar_url": "https://avatars.githubusercontent.com/u/103792860?v=4",
+      "profile": "https://github.com/weizhizhuangwzz",
+      "contributions": [
+        "code",
+        "doc",
+        "content",
+        "ideas",
+        "review"
+      ]
+    },
+    {
+      "login": "jiangyin14",
+      "name": "姜胤",
+      "avatar_url": "https://avatars.githubusercontent.com/u/106649516?v=4",
+      "profile": "https://www.jiangyin14.top/",
+      "contributions": [
+        "code",
+        "business",
+        "ideas",
+        "review"
+      ]
+    },
+    {
+      "login": "Jursin",
+      "name": "Jursin",
+      "avatar_url": "https://avatars.githubusercontent.com/u/127487914?v=4",
+      "profile": "https://github.com/Jursin",
+      "contributions": [
+        "design",
+        "code",
+        "doc",
+        "content"
+      ]
+    },
+    {
+      "login": "Makitoid",
+      "name": "Makitoid Wang",
+      "avatar_url": "https://avatars.githubusercontent.com/u/123004192?v=4",
+      "profile": "https://github.com/Makitoid",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "wwcrdrvf6u",
+      "name": "wwcrdrvf6u",
+      "avatar_url": "https://avatars.githubusercontent.com/u/122241403?v=4",
+      "profile": "https://github.com/wwcrdrvf6u",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "Lyang1273",
+      "name": "Lyang",
+      "avatar_url": "https://avatars.githubusercontent.com/u/160390179?v=4",
+      "profile": "https://github.com/Lyang1273",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "typed-sigterm",
+      "name": "Typed SIGTERM",
+      "avatar_url": "https://avatars.githubusercontent.com/u/145281501?v=4",
+      "profile": "https://typed-sigterm.me/",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "xingbiao996",
+      "name": "星标",
+      "avatar_url": "https://avatars.githubusercontent.com/u/181859181?v=4",
+      "profile": "https://github.com/xingbiao996",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "hujinming0722ispassword",
+      "name": "hujinming0722ispassword",
+      "avatar_url": "https://avatars.githubusercontent.com/u/156481894?v=4",
+      "profile": "https://github.com/hujinming0722ispassword",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "baldi233",
+      "name": "baldi233",
+      "avatar_url": "https://avatars.githubusercontent.com/u/124134387?v=4",
+      "profile": "https://github.com/baldi233",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "Yihggh",
+      "name": "missile",
+      "avatar_url": "https://avatars.githubusercontent.com/u/161115959?v=4",
+      "profile": "https://github.com/Yihggh",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "Windows-git",
+      "name": "緒山まひろ",
+      "avatar_url": "https://avatars.githubusercontent.com/u/109967664?v=4",
+      "profile": "https://github.com/Windows-git",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "MYZ2030",
+      "name": "MYZ2030",
+      "avatar_url": "https://avatars.githubusercontent.com/u/200359622?v=4",
+      "profile": "https://github.com/MYZ2030",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "fhzit",
+      "name": "Hellofhz",
+      "avatar_url": "https://avatars.githubusercontent.com/u/152045732?v=4",
+      "profile": "https://github.com/fhzit",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "MF-Dust",
+      "name": "MF.",
+      "avatar_url": "https://avatars.githubusercontent.com/u/128943330?v=4",
+      "profile": "https://github.com/MF-Dust",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "MengHanLOVE1027",
+      "name": "梦涵LOVE",
+      "avatar_url": "https://avatars.githubusercontent.com/u/99132833?v=4",
+      "profile": "https://github.com/MengHanLOVE1027",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "Zpcin",
+      "name": "Zpcin Zhang",
+      "avatar_url": "https://avatars.githubusercontent.com/u/62590508?v=4",
+      "profile": "https://github.com/Zpcin",
+      "contributions": [
+        "design"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "linkToUsage": false
+}
