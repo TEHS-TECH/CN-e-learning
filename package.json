@@ -27,6 +27,7 @@
   },
   "devDependencies": {
     "algoliasearch": "^5.38.0",
+    "all-contributors-cli": "^6.26.1",
     "busuanzi.pure.js": "^1.0.3",
     "dotenv": "^17.2.2",
     "fs-extra": "^11.3.2",
