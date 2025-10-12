@@ -1,6 +1,6 @@
 <div align="center">
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-9-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-10-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 # CN-e-learning 电教委员指南
@@ -90,6 +90,7 @@ npm run docs:build
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Lyang1273"><img src="https://avatars.githubusercontent.com/u/160390179?v=4?s=100" width="100px;" alt="Lyang"/><br /><sub><b>Lyang</b></sub></a><br /><a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=Lyang1273" title="Code">💻</a> <a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=Lyang1273" title="Documentation">📖</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://typed-sigterm.me/"><img src="https://avatars.githubusercontent.com/u/145281501?v=4?s=100" width="100px;" alt="Typed SIGTERM"/><br /><sub><b>Typed SIGTERM</b></sub></a><br /><a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=typed-sigterm" title="Code">💻</a> <a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=typed-sigterm" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/xingbiao996"><img src="https://avatars.githubusercontent.com/u/181859181?v=4?s=100" width="100px;" alt="星标"/><br /><sub><b>星标</b></sub></a><br /><a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=xingbiao996" title="Code">💻</a> <a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=xingbiao996" title="Documentation">📖</a></td>
     </tr>
   </tbody>
 </table>
