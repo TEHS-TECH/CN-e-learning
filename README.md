@@ -1,6 +1,6 @@
 <div align="center">
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-12-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-13-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 # CN-e-learning 电教委员指南
@@ -93,6 +93,7 @@ npm run docs:build
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/xingbiao996"><img src="https://avatars.githubusercontent.com/u/181859181?v=4?s=100" width="100px;" alt="星标"/><br /><sub><b>星标</b></sub></a><br /><a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=xingbiao996" title="Code">💻</a> <a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=xingbiao996" title="Documentation">📖</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/hujinming0722ispassword"><img src="https://avatars.githubusercontent.com/u/156481894?v=4?s=100" width="100px;" alt="hujinming0722ispassword"/><br /><sub><b>hujinming0722ispassword</b></sub></a><br /><a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=hujinming0722ispassword" title="Code">💻</a> <a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=hujinming0722ispassword" title="Documentation">📖</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/baldi233"><img src="https://avatars.githubusercontent.com/u/124134387?v=4?s=100" width="100px;" alt="baldi233"/><br /><sub><b>baldi233</b></sub></a><br /><a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=baldi233" title="Code">💻</a> <a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=baldi233" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Yihggh"><img src="https://avatars.githubusercontent.com/u/161115959?v=4?s=100" width="100px;" alt="missile"/><br /><sub><b>missile</b></sub></a><br /><a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=Yihggh" title="Code">💻</a> <a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=Yihggh" title="Documentation">📖</a></td>
     </tr>
   </tbody>
 </table>
