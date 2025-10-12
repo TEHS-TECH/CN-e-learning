@@ -1,4 +1,9 @@
-# 如何修复Microsoft Office  <Badge type="tip" text="进阶" />
+---
+tags:
+    - 进阶
+---
+
+# 如何修复Microsoft Office
 在一些操作后，Ofiice可能会**无法正常打开**，甚至出现窗口报错，我们可以通过Office自带的修复程序以解决大多数问题
 
 > 这个方法也适用于常见的很多软件

@@ -1,4 +1,9 @@
-# 在Microsoft Office中启用flash内容  <Badge type="tip" text="进阶" />
+---
+tags:
+    - 进阶
+---
+
+# 在Microsoft Office中启用flash内容
 
 > 本文转载自[2-2-3-trimethylpentane](https://forum.smart-teach.cn/u/2-2-3-trimethylpentane)发布在[STCN论坛](https://forum.smart-teach.cn/)上的文章：[【教程】Microsoft Office启用flash内容](https://forum.smart-teach.cn/d/310)，转载已获得[原作者授权](https://github.com/TEHS-TECH/CN-e-learning/issues/15#issue-3484354303)。以下是原文的转载授权信息：
 >> 本文中的注册表文件、教程及部分插图来源于[@AlanCRL](https://forum.smart-teach.cn/u/AlanCRL)大佬，已获得许可使用，十分感谢他🤝。

@@ -1,4 +1,9 @@
-# 常见品牌 教学一体机/交互白板 触摸校准/触摸驱动 汇总  <Badge type="tip" text="进阶" />
+---
+tags:
+    - 进阶
+---
+
+# 常见品牌 教学一体机/交互白板 触摸校准/触摸驱动 汇总
 
 > 本文转载自[2-2-3-trimethylpentane](https://forum.smart-teach.cn/u/2-2-3-trimethylpentane)发布在[STCN论坛](https://forum.smart-teach.cn/)上的文章：[常见品牌 教学一体机/交互白板 触摸校准/触摸驱动 汇总](https://forum.smart-teach.cn/d/699)，转载已获得[原作者授权](https://github.com/TEHS-TECH/CN-e-learning/issues/15#issue-3484354303)。
 
