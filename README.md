@@ -1,6 +1,6 @@
 <div align="center">
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 # CN-e-learning 电教委员指南
@@ -81,6 +81,7 @@ npm run docs:build
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://peter267.github.io/"><img src="https://avatars.githubusercontent.com/u/175904095?v=4?s=100" width="100px;" alt="Wujingbo"/><br /><sub><b>Wujingbo</b></sub></a><br /><a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=Peter267" title="Code">💻</a> <a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=Peter267" title="Documentation">📖</a> <a href="https://github.com/CN-e-Learning/CN-e-Learning/issues?q=author%3APeter267" title="Bug reports">🐛</a> <a href="#ideas-Peter267" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/CN-e-Learning/CN-e-Learning/pulls?q=is%3Apr+reviewed-by%3APeter267" title="Reviewed Pull Requests">👀</a> <a href="#content-Peter267" title="Content">🖋</a> <a href="#business-Peter267" title="Business development">💼</a> <a href="#design-Peter267" title="Design">🎨</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/weizhizhuangwzz"><img src="https://avatars.githubusercontent.com/u/103792860?v=4?s=100" width="100px;" alt="位置装"/><br /><sub><b>位置装</b></sub></a><br /><a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=weizhizhuangwzz" title="Code">💻</a> <a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=weizhizhuangwzz" title="Documentation">📖</a> <a href="#content-weizhizhuangwzz" title="Content">🖋</a> <a href="#ideas-weizhizhuangwzz" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/CN-e-Learning/CN-e-Learning/pulls?q=is%3Apr+reviewed-by%3Aweizhizhuangwzz" title="Reviewed Pull Requests">👀</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Jursin"><img src="https://avatars.githubusercontent.com/u/127487914?v=4?s=100" width="100px;" alt="Jursin"/><br /><sub><b>Jursin</b></sub></a><br /><a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=Jursin" title="Code">💻</a> <a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=Jursin" title="Documentation">📖</a> <a href="#content-Jursin" title="Content">🖋</a> <a href="#ideas-Jursin" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/CN-e-Learning/CN-e-Learning/pulls?q=is%3Apr+reviewed-by%3AJursin" title="Reviewed Pull Requests">👀</a></td>
     </tr>
   </tbody>
 </table>
