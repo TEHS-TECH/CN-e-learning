@@ -1,0 +1,32 @@
+{
+  "projectName": "CN-e-Learning",
+  "projectOwner": "CN-e-Learning",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "commitConvention": "atom",
+  "contributors": [
+    {
+      "login": "Peter267",
+      "name": "Wujingbo",
+      "avatar_url": "https://avatars.githubusercontent.com/u/175904095?v=4",
+      "profile": "https://peter267.github.io/",
+      "contributions": [
+        "code",
+        "doc",
+        "bug",
+        "ideas",
+        "review",
+        "content",
+        "business",
+        "design"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "linkToUsage": false
+}
