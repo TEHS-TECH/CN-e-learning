@@ -183,6 +183,16 @@
         "code",
         "doc"
       ]
+    },
+    {
+      "login": "MF-Dust",
+      "name": "MF.",
+      "avatar_url": "https://avatars.githubusercontent.com/u/128943330?v=4",
+      "profile": "https://github.com/MF-Dust",
+      "contributions": [
+        "code",
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
