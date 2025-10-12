@@ -8,6 +8,8 @@ import BilibiliVideo from './components/BilibiliVideo.vue'
 import Linkcard from './components/Linkcard.vue'
 import ArticleMetadata from './components/ArticleMetadata.vue'
 import HomeUnderline from './components/HomeUnderline.vue'
+import Twikoo from './components/Twikoo.vue'
+import Tags from './components/Tags.vue'
 import busuanzi from 'busuanzi.pure.js'
 import './style.css'
 import './style/index.css'
@@ -21,8 +23,10 @@ export default {
   enhanceApp({ app, router, siteData }) {
     app.component('BilibiliVideo', BilibiliVideo);
     app.component('Linkcard' , Linkcard);
-    app.component('HomeUnderline' , HomeUnderline)
-    app.component('ArticleMetadata' , ArticleMetadata)
+    app.component('HomeUnderline' , HomeUnderline);
+    app.component('ArticleMetadata' , ArticleMetadata);
+    app.component('Twikoo' , Twikoo);
+    app.component('Tags' , Tags);
 
     if (inBrowser) {
       NProgress.configure({ showSpinner: false })

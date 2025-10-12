@@ -6,7 +6,7 @@
       <Twikoo />
     </template>
     <template #aside-top>
-      <bsz />
+      <Share />
     </template>
     <template #aside-outline-after>
       <Ad />
@@ -20,14 +20,7 @@
 <script setup>
 import Layout from 'vitepress/dist/client/theme-default/Layout.vue'
 import Twikoo from './Twikoo.vue'
-import bsz from "./bsz.vue";
 import backtotop from "./backtotop.vue";
+import Share from './Share.vue';
 import Ad from './Ad.vue';
 </script>
-
-<style scoped>
-.twikoo .el-loading-spinner .circular {
-  margin-left: auto;
-  margin-right: auto;
-}
-</style>
