@@ -103,6 +103,16 @@
         "code",
         "doc"
       ]
+    },
+    {
+      "login": "typed-sigterm",
+      "name": "Typed SIGTERM",
+      "avatar_url": "https://avatars.githubusercontent.com/u/145281501?v=4",
+      "profile": "https://typed-sigterm.me/",
+      "contributions": [
+        "code",
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
