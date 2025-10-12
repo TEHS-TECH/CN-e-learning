@@ -1,6 +1,6 @@
 <div align="center">
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-17-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-18-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 # CN-e-learning 电教委员指南
@@ -100,6 +100,7 @@ npm run docs:build
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/MYZ2030"><img src="https://avatars.githubusercontent.com/u/200359622?v=4?s=100" width="100px;" alt="MYZ2030"/><br /><sub><b>MYZ2030</b></sub></a><br /><a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=MYZ2030" title="Code">💻</a> <a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=MYZ2030" title="Documentation">📖</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/fhzit"><img src="https://avatars.githubusercontent.com/u/152045732?v=4?s=100" width="100px;" alt="Hellofhz"/><br /><sub><b>Hellofhz</b></sub></a><br /><a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=fhzit" title="Code">💻</a> <a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=fhzit" title="Documentation">📖</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/MF-Dust"><img src="https://avatars.githubusercontent.com/u/128943330?v=4?s=100" width="100px;" alt="MF."/><br /><sub><b>MF.</b></sub></a><br /><a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=MF-Dust" title="Code">💻</a> <a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=MF-Dust" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/MengHanLOVE1027"><img src="https://avatars.githubusercontent.com/u/99132833?v=4?s=100" width="100px;" alt="梦涵LOVE"/><br /><sub><b>梦涵LOVE</b></sub></a><br /><a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=MengHanLOVE1027" title="Code">💻</a> <a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=MengHanLOVE1027" title="Documentation">📖</a></td>
     </tr>
   </tbody>
 </table>
