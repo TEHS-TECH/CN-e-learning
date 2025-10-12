@@ -1,0 +1,115 @@
+.twikoo {
+  .el-input-group__append,
+  .el-input-group__prepend,
+  .el-textarea__inner {
+    border: 1px solid #DCDFE6;
+    box-shadow: none;
+  }
+  .el-input-group__prepend {
+    border-right: none;
+  }
+  .el-button--small {
+    height: auto;
+  }
+  .el-textarea > .el-textarea__inner {
+    min-height: 117px !important;
+    border-radius: 12px;
+    margin-top: 24px;
+  }
+  .tk-preview-container {
+    border-radius: 8px;
+  }
+  .tk-comments-count {
+    font-size: 0.875rem;
+    color: rgba(60, 60, 60, 0.7);
+  }
+  .tk-nick,
+  .tk-replies .tk-nick-link {
+    font-size: 1rem;
+    margin-right: 8px;
+    color: var(--vp-c-brand-1);
+  }
+  .tk-tag {
+    margin-right: 8px;
+  }
+  .tk-comments-container > .tk-comment {
+    border: solid 1px #F3F4F6;
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 0;
+    margin-bottom: 48px;
+    transition: all 0.3s ease;
+    &:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+  }
+  .tk-replies-expand > .tk-comment {
+    border-top: solid 1px #f7f7f7;
+    padding-top: 32px;
+  }
+  .tk-content p {
+    line-height: 1.6;
+  }
+  a:not(.tk-ruser):not(.tk-nick-link) {
+    color: var(--vp-c-brand-1);
+    font-weight: 500;
+    text-underline-offset: 2px;
+    text-decoration: underline;
+    &:hover {
+      color: var(--vp-c-brand-1);
+    }
+  }
+  div.code-toolbar {
+    border-radius: 8px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    :not(pre)>code[class*=language-], pre[class*=language-] {
+      background: #f6f8fa;
+      border-radius: 8px;
+    }
+    pre[class*=language-] {
+      &::before, &::after {
+        content: none;
+      }
+      &>code {
+        padding: 1em;
+        border-left: 4px solid #3eaf7c;
+        border-radius: 8px;
+      }
+    }
+    &>div.toolbar {
+      z-index: 1;
+      top: 8px;
+      right: 8px;
+      &>.toolbar-item>button {
+        display: none;
+        padding: 0 6px;
+        font-size: 0.75rem;
+        color: black;
+      }
+    }
+    &:hover>div.toolbar>.toolbar-item>button {
+      display: block;
+    }
+  }
+  .tk-admin-container {
+    z-index: 1;
+  }
+}
+.dark .twikoo {
+  .tk-comments-container > .tk-comment {
+    border-color: #454545;
+    &:hover {
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
+    }
+  }
+  .tk-replies-expand > .tk-comment {
+    border-color: #343434;
+  }
+  div.code-toolbar {
+    pre[class*=language-] {
+      &>code {
+        filter: brightness(0.8);
+      }
+    }
+  }
+}

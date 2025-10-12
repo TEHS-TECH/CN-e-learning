@@ -127,3 +127,13 @@
   vertical-align: middle;
   margin: 0 0.2em !important;
 }
+
+/* 隐藏滚动条但保持滚动功能 */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* 对于 Firefox */
+html {
+  scrollbar-width: none;
+}

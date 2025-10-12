@@ -56,3 +56,19 @@
 .VPFeatures .items .item:hover {
   transform: translateY(-5px);
 }
+
+.VPDoc h1 {
+  background: var(--vp-c-brand-2);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.outline-title {
+  color: var(--vp-c-brand-3);
+}
+
+.outline-link {
+  color: var(--vp-c-brand-1);
+  font-size: large;
+}
