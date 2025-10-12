@@ -40,19 +40,6 @@
       ]
     },
     {
-      "login": "Jursin",
-      "name": "Jursin",
-      "avatar_url": "https://avatars.githubusercontent.com/u/127487914?v=4",
-      "profile": "https://github.com/Jursin",
-      "contributions": [
-        "code",
-        "doc",
-        "content",
-        "ideas",
-        "review"
-      ]
-    },
-    {
       "login": "jiangyin14",
       "name": "姜胤",
       "avatar_url": "https://avatars.githubusercontent.com/u/106649516?v=4",
@@ -170,7 +157,6 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/200359622?v=4",
       "profile": "https://github.com/MYZ2030",
       "contributions": [
-        "code",
         "doc"
       ]
     },
@@ -202,6 +188,15 @@
       "contributions": [
         "code",
         "doc"
+      ]
+    },
+    {
+      "login": "Jursin",
+      "name": "Jursin",
+      "avatar_url": "https://avatars.githubusercontent.com/u/127487914?v=4",
+      "profile": "https://github.com/Jursin",
+      "contributions": [
+        "design"
       ]
     }
   ],
