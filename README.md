@@ -1,6 +1,6 @@
 <div align="center">
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 # CN-e-learning 电教委员指南
@@ -80,6 +80,7 @@ npm run docs:build
   <tbody>
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://peter267.github.io/"><img src="https://avatars.githubusercontent.com/u/175904095?v=4?s=100" width="100px;" alt="Wujingbo"/><br /><sub><b>Wujingbo</b></sub></a><br /><a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=Peter267" title="Code">💻</a> <a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=Peter267" title="Documentation">📖</a> <a href="https://github.com/CN-e-Learning/CN-e-Learning/issues?q=author%3APeter267" title="Bug reports">🐛</a> <a href="#ideas-Peter267" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/CN-e-Learning/CN-e-Learning/pulls?q=is%3Apr+reviewed-by%3APeter267" title="Reviewed Pull Requests">👀</a> <a href="#content-Peter267" title="Content">🖋</a> <a href="#business-Peter267" title="Business development">💼</a> <a href="#design-Peter267" title="Design">🎨</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/weizhizhuangwzz"><img src="https://avatars.githubusercontent.com/u/103792860?v=4?s=100" width="100px;" alt="位置装"/><br /><sub><b>位置装</b></sub></a><br /><a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=weizhizhuangwzz" title="Code">💻</a> <a href="https://github.com/CN-e-Learning/CN-e-Learning/commits?author=weizhizhuangwzz" title="Documentation">📖</a> <a href="#content-weizhizhuangwzz" title="Content">🖋</a> <a href="#ideas-weizhizhuangwzz" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/CN-e-Learning/CN-e-Learning/pulls?q=is%3Apr+reviewed-by%3Aweizhizhuangwzz" title="Reviewed Pull Requests">👀</a></td>
     </tr>
   </tbody>
 </table>
@@ -107,16 +108,3 @@ npm run docs:build
 - <image src="https://forum.smart-teach.cn/assets/favicon-v4ksoaxf.png" height="18"/> [**SmartTeachCN**](https://forum.smart-teach.cn/) - 智教联盟致力于为教学辅助类应用提供全方面扶持与帮助。
 - <image src="https://avatars.githubusercontent.com/u/184760810" height="18"/> **[Awesome-Iwb](https://github.com/awesome-iwb/awesome-iwb)** - ✨ 全网最全的 教学辅助软件/一体机软件 推荐清单
 - <image src="https://nav.jursin.top/acs.png" height="18"/> [**Awesome-Class-Softwares**](https://github.com/Jursin/Awesome-Class-Softwares) - 🌟 适用于班级一体机的优质软件合集
-
-## Contributors ✨
-
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!

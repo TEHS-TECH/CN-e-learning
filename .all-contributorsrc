@@ -25,6 +25,19 @@
         "business",
         "design"
       ]
+    },
+    {
+      "login": "weizhizhuangwzz",
+      "name": "位置装",
+      "avatar_url": "https://avatars.githubusercontent.com/u/103792860?v=4",
+      "profile": "https://github.com/weizhizhuangwzz",
+      "contributions": [
+        "code",
+        "doc",
+        "content",
+        "ideas",
+        "review"
+      ]
     }
   ],
   "contributorsPerLine": 7,
