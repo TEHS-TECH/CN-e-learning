@@ -23,6 +23,7 @@ export default defineConfig({
       md.use(mdItCustomAttrs, 'image', {
         'data-fancybox': "gallery"
       });
+      md.use(markdownItTaskCheckbox);
       md.renderer.rules.heading_close = (tokens, idx, options, env, slf) => {
         let htmlResult = slf.renderToken(tokens, idx, options);
         if (tokens[idx].tag === 'h1') htmlResult += `<ArticleMetadata />`;
