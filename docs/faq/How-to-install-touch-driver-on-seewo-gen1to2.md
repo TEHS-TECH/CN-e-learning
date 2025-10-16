@@ -25,15 +25,15 @@ tags:
 
 若您希望卸载软件，您需要先打开控制面板，若您使用windows7或者windows8，您可以使用图下方法打开开始菜单。
 
-![pic6](/images/How-to-install-touch-driver-on-seewo-gen1to2.md/6.webp)  
+![pic6](/images/How-to-install-touch-driver-on-seewo-gen1to2/6.webp)  
 
 打开控制面板后，请您点击"卸载或更改程序" 或者有相同含义的按钮。 
 
-![pic7](/images/How-to-install-touch-driver-on-seewo-gen1to2.md/7.png)
+![pic7](/images/How-to-install-touch-driver-on-seewo-gen1to2/7.png)
 
 点击后请您查找带有"TouchService"字样的程序，点击卸载。
 
-![pic8](/images/How-to-install-touch-driver-on-seewo-gen1to2.md/8.png)
+![pic8](/images/How-to-install-touch-driver-on-seewo-gen1to2/8.png)
 
 在任何情况下请点击"下一步"或者带有相同含义的按钮来删除出现问题的驱动。
 
@@ -41,20 +41,20 @@ tags:
 
 访问[希沃驱动下载页面](https://www.seewo.com/support/customer/download?c=1)
 
-![pic1](/images/How-to-install-touch-driver-on-seewo-gen1to2.md/1.png)
+![pic1](/images/How-to-install-touch-driver-on-seewo-gen1to2/1.png)
 
 点击TouchService下方的立即下载,下载完成后解压缩您下载到的压缩包。
 
-![pic2](/images/How-to-install-touch-driver-on-seewo-gen1to2.md/2.png)
+![pic2](/images/How-to-install-touch-driver-on-seewo-gen1to2/2.png)
 
 打开压缩包里的文件夹。（TouchService_IR_USB_2155_XPW78_V1.46_20120905-02），点击（setup.exe）双击进行安装。
 
-![pic3](/images/How-to-install-touch-driver-on-seewo-gen1to2.md/3.png)  
+![pic3](/images/How-to-install-touch-driver-on-seewo-gen1to2/3.png)  
 
 请在安装时一直点击下一步，等待到文字下方图片中页面出现，点击启动TouchService，并点击完成。
 
-![pic4](/images/How-to-install-touch-driver-on-seewo-gen1to2.md/4.png)  
+![pic4](/images/How-to-install-touch-driver-on-seewo-gen1to2/4.png)  
 
 当下图界面打开时，程序应显示已连接设备或者其他有相同含义的文字，此时您的触摸会绑定到鼠标，请您点击“多点”按钮，或者点击下图红色箭头所指向的相同位置的按钮，来启用多点触控模式。  
 
-![pic5](/images/How-to-install-touch-driver-on-seewo-gen1to2.md/5.png)
+![pic5](/images/How-to-install-touch-driver-on-seewo-gen1to2/5.png)
