@@ -2,7 +2,7 @@
 ## 1.打开控制面板中的“卸载程序”页面
 对于win7系统,点击开始菜单，点击控制面板。
 
-![pic6](/images/How-to-install-touch-driver-on-seewo-gen1to2.md/6.webp)  
+![pic6](/images/How-to-install-touch-driver-on-seewo-gen1to2/6.webp)  
 
 对于Windows10及其以上版本，请点击开始菜单，点击“全部”按钮（如果有），点击任意字母（如图示）。
 
