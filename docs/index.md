@@ -11,7 +11,7 @@ hero:
   actions:
     - theme: brand
       text: 开始阅读
-      link: /guide/before-starting.md
+      link: /guide/index.md
     - theme: alt
       text: 友情链接
       link: /friendLinks.md
