@@ -14,10 +14,10 @@ hero:
       link: /guide/before-starting.md
     - theme: alt
       text: 友情链接
-      link: /friendLinks.md
+      link: /links
     - theme: alt
       text: GitHub
-      link: https://github.com/CN-E-Learning/CN-e-learning
+      link: https://github.com/TEHS-TECH/CN-e-learning
       target: _blank
 
 features:
